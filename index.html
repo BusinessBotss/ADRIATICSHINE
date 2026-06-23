@@ -212,7 +212,7 @@ body[data-theme="night"] .brand-logo .logo-day{opacity:0}
 body[data-theme="night"] .brand-logo .logo-night{opacity:1}
 .brand b{font-family:var(--font-display);font-size:1.15rem;color:var(--deep-navy);font-weight:600;letter-spacing:.02em;white-space:nowrap}
 body[data-theme="night"] .brand b{color:#fff}
-.nav-links{display:flex;gap:26px;margin-left:auto}
+.nav-links{display:flex;gap:clamp(14px,2vw,24px);margin-left:auto}
 .nav-links a{color:rgba(4,21,39,.78);font-size:.92rem;font-weight:500;position:relative;padding:6px 0;transition:color .3s}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold);transition:width .3s var(--ease)}
 .nav-links a:hover,.nav-links a.active{color:var(--deep-navy)}
@@ -293,6 +293,31 @@ body[data-theme="night"] .burger span{background:#fff}
 .svc-ico svg{width:24px;height:24px}
 .svc-card h3{margin-bottom:9px}
 .svc-card p{font-size:.92rem;line-height:1.55}
+
+
+/* ===============================
+08b. PRICING
+================================ */
+.pricing-section{background:linear-gradient(180deg,var(--warm-white),#fff)}
+.price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:44px}
+.price-card{background:var(--white);border:1px solid rgba(7,31,58,.08);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease)}
+.price-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--hair)}
+.price-card h3{background:var(--navy);color:#fff;padding:20px 24px;font-size:1.25rem}
+.price-list{padding:10px 24px 20px}
+.price-row{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(7,31,58,.08)}
+.price-row:last-child{border-bottom:none}
+.price-row span:first-child{color:var(--text-muted);font-size:.94rem}
+.price-row b{font-family:var(--font-display);font-size:1.25rem;color:var(--navy);white-space:nowrap}
+.price-note{margin-top:28px;background:var(--navy);color:#fff;border-radius:var(--radius);padding:28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.price-note p{color:rgba(248,245,239,.78);max-width:68ch}
+.price-note .btn{flex-shrink:0}
+.price-values{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.price-values span{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--deep-navy);background:var(--soft-gold);border-radius:999px;padding:8px 11px}
+body[data-theme="night"] .pricing-section{background:linear-gradient(180deg,var(--warm-white),#091827)}
+body[data-theme="night"] .price-card{background:#fff;border-color:rgba(7,31,58,.12)}
+body[data-theme="night"] .price-card h3{background:#071F3A;color:#fff}
+body[data-theme="night"] .price-row span:first-child{color:#4F5A64}
+body[data-theme="night"] .price-row b{color:#071F3A}
 
 /* ===============================
 09. PROPERTY OWNERS
@@ -473,6 +498,7 @@ footer{background:var(--deep-navy);color:rgba(248,245,239,.7);padding-block:64px
 ================================ */
 @media (max-width:1024px){
   .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .price-grid{grid-template-columns:1fr}
   .gallery{columns:2 220px}
   .support-cats{grid-template-columns:repeat(2,1fr)}
   .standards{grid-template-columns:1fr}
@@ -519,6 +545,7 @@ html[dir="rtl"] body{text-align:right}
     <ul class="nav-links">
       <li><a href="#home" data-i18n="nav_home">Home</a></li>
       <li><a href="#services" data-i18n="nav_services">Services</a></li>
+      <li><a href="#pricing" data-i18n="nav_prices">Prices</a></li>
       <li><a href="#how" data-i18n="nav_how">How It Works</a></li>
       <li><a href="#areas" data-i18n="nav_areas">Areas</a></li>
       <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
@@ -556,6 +583,7 @@ html[dir="rtl"] body{text-align:right}
 <div class="drawer" id="drawer">
   <a href="#home" data-i18n="nav_home">Home</a>
   <a href="#services" data-i18n="nav_services">Services</a>
+  <a href="#pricing" data-i18n="nav_prices">Prices</a>
   <a href="#how" data-i18n="nav_how">How It Works</a>
   <a href="#areas" data-i18n="nav_areas">Areas</a>
   <a href="#faq" data-i18n="nav_faq">FAQ</a>
@@ -654,6 +682,65 @@ html[dir="rtl"] body{text-align:right}
         <h3 data-i18n="svc8_t">Commercial Cleaning</h3>
         <p data-i18n="svc8_d">Offices, boutique venues and hospitality spaces kept to a professional standard.</p>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===============================
+08b. PRICING
+================================ -->
+<section id="pricing" class="pricing-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="pricing_eyebrow">Istria price list</span>
+      <h2 data-i18n="pricing_title">Transparent cleaning prices</h2>
+      <p class="lead" data-i18n="pricing_sub">Clear starting prices for apartments, holiday homes, villas, extra services and commercial spaces.</p>
+    </div>
+    <div class="price-grid">
+      <article class="price-card reveal">
+        <h3 data-i18n="pricing_apartments">Apartments & holiday homes</h3>
+        <div class="price-list">
+          <div class="price-row"><span data-i18n="price_upto_40">Up to 40 m²</span><b>50 €</b></div>
+          <div class="price-row"><span>41 - 60 m²</span><b>65 €</b></div>
+          <div class="price-row"><span>61 - 80 m²</span><b>80 €</b></div>
+          <div class="price-row"><span>81 - 100 m²</span><b>100 €</b></div>
+          <div class="price-row"><span data-i18n="price_over_100">Over 100 m²</span><b data-i18n="price_by_agreement">By agreement</b></div>
+        </div>
+      </article>
+      <article class="price-card reveal">
+        <h3 data-i18n="pricing_villas">Holiday villas</h3>
+        <div class="price-list">
+          <div class="price-row"><span data-i18n="price_upto_150">Up to 150 m²</span><b>140 €</b></div>
+          <div class="price-row"><span>151 - 250 m²</span><b>180 €</b></div>
+          <div class="price-row"><span data-i18n="price_over_250">Over 250 m²</span><b data-i18n="price_by_agreement">By agreement</b></div>
+        </div>
+      </article>
+      <article class="price-card reveal">
+        <h3 data-i18n="pricing_extra">Additional services</h3>
+        <div class="price-list">
+          <div class="price-row"><span data-i18n="price_windows">Window washing</span><b>3 € / m²</b></div>
+          <div class="price-row"><span data-i18n="price_laundry">Laundry</span><b data-i18n="price_washer">10 € / washer</b></div>
+          <div class="price-row"><span data-i18n="price_ironing">Bed linen ironing</span><b data-i18n="price_set_10">10 € / set</b></div>
+          <div class="price-row"><span data-i18n="price_towels">Towel change</span><b data-i18n="price_set_3">3 € / set</b></div>
+          <div class="price-row"><span data-i18n="price_bedding">Bed linen change</span><b data-i18n="price_bed_5">5 € / bed</b></div>
+          <div class="price-row"><span data-i18n="price_same_day">Emergency same-day arrival</span><b>+20%</b></div>
+        </div>
+      </article>
+      <article class="price-card reveal">
+        <h3 data-i18n="pricing_commercial">Commercial spaces</h3>
+        <div class="price-list">
+          <div class="price-row"><span data-i18n="price_regular">Regular maintenance</span><b data-i18n="price_hour_20">from 20 € / hour</b></div>
+          <div class="price-row"><span data-i18n="price_general">Deep cleaning</span><b data-i18n="price_by_agreement">By agreement</b></div>
+        </div>
+      </article>
+    </div>
+    <div class="price-note reveal">
+      <div>
+        <h3 data-i18n="pricing_note_title">Professional. Reliable. Detailed. With love.</h3>
+        <p data-i18n="pricing_note_body">Prices are starting rates for Istria and may vary depending on condition, access, season, linen volume and special requirements.</p>
+        <div class="price-values"><span data-i18n="pricing_value_1">Professional</span><span data-i18n="pricing_value_2">Reliable</span><span data-i18n="pricing_value_3">Detailed</span><span data-i18n="pricing_value_4">With love</span></div>
+      </div>
+      <a href="https://wa.me/385899281833" target="_blank" rel="noopener" class="btn btn-gold" data-i18n="pricing_cta">Ask for a quote</a>
     </div>
   </div>
 </section>
@@ -915,6 +1002,7 @@ html[dir="rtl"] body{text-align:right}
       <div class="foot-col">
         <h4 data-i18n="footer_explore">Explore</h4>
         <a href="#services" data-i18n="nav_services">Services</a>
+        <a href="#pricing" data-i18n="nav_prices">Prices</a>
         <a href="#how" data-i18n="nav_how">How It Works</a>
         <a href="#areas" data-i18n="nav_areas">Areas</a>
       </div>
@@ -1330,6 +1418,19 @@ translations.hr = Object.assign({}, translations.en, {
   footer_tagline:"Cisti apartmani. Sretni gosti.",footer_about:"Briga o nekretninama i hospitality operacije za apartmane, vile i smjestaj za odmor sirom Istre, Hrvatska.",footer_explore:"Istrazi",footer_contact:"Kontakt",footer_region:"Istra, Hrvatska",footer_rights:"Sva prava pridrzana.",footer_future:"Klijentski portal · Nadzorna ploca nekretnina — uskoro"
 });
 
+
+const pricingTranslations = {
+  en:{nav_prices:"Prices",pricing_eyebrow:"Istria price list",pricing_title:"Transparent cleaning prices",pricing_sub:"Clear starting prices for apartments, holiday homes, villas, extra services and commercial spaces.",pricing_apartments:"Apartments & holiday homes",pricing_villas:"Holiday villas",pricing_extra:"Additional services",pricing_commercial:"Commercial spaces",price_upto_40:"Up to 40 m²",price_over_100:"Over 100 m²",price_upto_150:"Up to 150 m²",price_over_250:"Over 250 m²",price_by_agreement:"By agreement",price_windows:"Window washing",price_laundry:"Laundry",price_washer:"10 € / washer",price_ironing:"Bed linen ironing",price_set_10:"10 € / set",price_towels:"Towel change",price_set_3:"3 € / set",price_bedding:"Bed linen change",price_bed_5:"5 € / bed",price_same_day:"Emergency same-day arrival",price_regular:"Regular maintenance",price_hour_20:"from 20 € / hour",price_general:"Deep cleaning",pricing_note_title:"Professional. Reliable. Detailed. With love.",pricing_note_body:"Prices are starting rates for Istria and may vary depending on condition, access, season, linen volume and special requirements.",pricing_value_1:"Professional",pricing_value_2:"Reliable",pricing_value_3:"Detailed",pricing_value_4:"With love",pricing_cta:"Ask for a quote"},
+  de:{nav_prices:"Preise",pricing_eyebrow:"Preisliste Istrien",pricing_title:"Transparente Reinigungspreise",pricing_sub:"Klare Startpreise für Apartments, Ferienhäuser, Villen, Zusatzleistungen und Gewerbeflächen.",pricing_apartments:"Apartments & Ferienhäuser",pricing_villas:"Ferienvillen",pricing_extra:"Zusatzleistungen",pricing_commercial:"Gewerbeflächen",price_upto_40:"Bis 40 m²",price_over_100:"Über 100 m²",price_upto_150:"Bis 150 m²",price_over_250:"Über 250 m²",price_by_agreement:"Nach Vereinbarung",price_windows:"Fensterreinigung",price_laundry:"Wäsche",price_washer:"10 € / Waschmaschine",price_ironing:"Bettwäsche bügeln",price_set_10:"10 € / Set",price_towels:"Handtuchwechsel",price_set_3:"3 € / Set",price_bedding:"Bettwäschewechsel",price_bed_5:"5 € / Bett",price_same_day:"Dringender Einsatz am selben Tag",price_regular:"Regelmäßige Pflege",price_hour_20:"ab 20 € / Stunde",price_general:"Grundreinigung",pricing_note_title:"Professionell. Zuverlässig. Detailgenau. Mit Liebe.",pricing_note_body:"Preise sind Startpreise für Istrien und können je nach Zustand, Zugang, Saison, Wäschemenge und Sonderwünschen variieren.",pricing_value_1:"Professionell",pricing_value_2:"Zuverlässig",pricing_value_3:"Detailgenau",pricing_value_4:"Mit Liebe",pricing_cta:"Angebot anfragen"},
+  fr:{nav_prices:"Prix",pricing_eyebrow:"Tarifs Istrie",pricing_title:"Prix de nettoyage transparents",pricing_sub:"Prix de départ clairs pour appartements, maisons de vacances, villas, services supplémentaires et locaux commerciaux.",pricing_apartments:"Appartements & maisons de vacances",pricing_villas:"Villas de vacances",pricing_extra:"Services supplémentaires",pricing_commercial:"Locaux commerciaux",price_upto_40:"Jusqu'à 40 m²",price_over_100:"Plus de 100 m²",price_upto_150:"Jusqu'à 150 m²",price_over_250:"Plus de 250 m²",price_by_agreement:"Sur accord",price_windows:"Nettoyage des vitres",price_laundry:"Lessive",price_washer:"10 € / machine",price_ironing:"Repassage du linge de lit",price_set_10:"10 € / set",price_towels:"Changement des serviettes",price_set_3:"3 € / set",price_bedding:"Changement du linge de lit",price_bed_5:"5 € / lit",price_same_day:"Intervention urgente le jour même",price_regular:"Entretien régulier",price_hour_20:"dès 20 € / heure",price_general:"Nettoyage en profondeur",pricing_note_title:"Professionnel. Fiable. Détaillé. Avec soin.",pricing_note_body:"Les prix sont des tarifs de départ pour l'Istrie et peuvent varier selon l'état, l'accès, la saison, le volume de linge et les demandes spéciales.",pricing_value_1:"Professionnel",pricing_value_2:"Fiable",pricing_value_3:"Détaillé",pricing_value_4:"Avec soin",pricing_cta:"Demander un devis"},
+  it:{nav_prices:"Prezzi",pricing_eyebrow:"Listino Istria",pricing_title:"Prezzi di pulizia trasparenti",pricing_sub:"Prezzi di partenza chiari per appartamenti, case vacanza, ville, servizi extra e spazi commerciali.",pricing_apartments:"Appartamenti e case vacanza",pricing_villas:"Ville vacanza",pricing_extra:"Servizi aggiuntivi",pricing_commercial:"Spazi commerciali",price_upto_40:"Fino a 40 m²",price_over_100:"Oltre 100 m²",price_upto_150:"Fino a 150 m²",price_over_250:"Oltre 250 m²",price_by_agreement:"Su accordo",price_windows:"Lavaggio finestre",price_laundry:"Lavanderia",price_washer:"10 € / lavatrice",price_ironing:"Stiratura biancheria letto",price_set_10:"10 € / set",price_towels:"Cambio asciugamani",price_set_3:"3 € / set",price_bedding:"Cambio biancheria letto",price_bed_5:"5 € / letto",price_same_day:"Intervento urgente in giornata",price_regular:"Manutenzione regolare",price_hour_20:"da 20 € / ora",price_general:"Pulizia profonda",pricing_note_title:"Professionale. Affidabile. Dettagliato. Con amore.",pricing_note_body:"I prezzi sono tariffe di partenza per l'Istria e possono variare in base a condizioni, accesso, stagione, volume della biancheria e richieste speciali.",pricing_value_1:"Professionale",pricing_value_2:"Affidabile",pricing_value_3:"Dettagliato",pricing_value_4:"Con amore",pricing_cta:"Richiedi preventivo"},
+  es:{nav_prices:"Precios",pricing_eyebrow:"Lista de precios en Istria",pricing_title:"Precios de limpieza transparentes",pricing_sub:"Precios base claros para apartamentos, casas vacacionales, villas, servicios adicionales y espacios comerciales.",pricing_apartments:"Apartamentos y casas de vacaciones",pricing_villas:"Villas de vacaciones",pricing_extra:"Servicios adicionales",pricing_commercial:"Espacios comerciales",price_upto_40:"Hasta 40 m²",price_over_100:"Más de 100 m²",price_upto_150:"Hasta 150 m²",price_over_250:"Más de 250 m²",price_by_agreement:"A convenir",price_windows:"Limpieza de ventanas",price_laundry:"Lavandería",price_washer:"10 € / lavadora",price_ironing:"Planchado de ropa de cama",price_set_10:"10 € / set",price_towels:"Cambio de toallas",price_set_3:"3 € / set",price_bedding:"Cambio de ropa de cama",price_bed_5:"5 € / cama",price_same_day:"Llegada urgente el mismo día",price_regular:"Mantenimiento regular",price_hour_20:"desde 20 € / hora",price_general:"Limpieza general",pricing_note_title:"Profesional. Fiable. Detallado. Con cariño.",pricing_note_body:"Los precios son tarifas base para Istria y pueden variar según estado, acceso, temporada, volumen de lavandería y requisitos especiales.",pricing_value_1:"Profesional",pricing_value_2:"Fiable",pricing_value_3:"Detallado",pricing_value_4:"Con cariño",pricing_cta:"Pedir presupuesto"},
+  hr:{nav_prices:"Cijene",pricing_eyebrow:"Cjenik za Istru",pricing_title:"Transparentne cijene čišćenja",pricing_sub:"Jasne početne cijene za apartmane, kuće za odmor, vile, dodatne usluge i poslovne prostore.",pricing_apartments:"Apartmani i kuće za odmor",pricing_villas:"Vile za odmor",pricing_extra:"Dodatne usluge",pricing_commercial:"Poslovni prostori",price_upto_40:"Do 40 m²",price_over_100:"Preko 100 m²",price_upto_150:"Do 150 m²",price_over_250:"Preko 250 m²",price_by_agreement:"Po dogovoru",price_windows:"Pranje prozora",price_laundry:"Pranje rublja",price_washer:"10 € / perilica",price_ironing:"Peglanje posteljine",price_set_10:"10 € / set",price_towels:"Promjena ručnika",price_set_3:"3 € / set",price_bedding:"Promjena posteljine",price_bed_5:"5 € / krevet",price_same_day:"Hitni dolazak isti dan",price_regular:"Redovno održavanje",price_hour_20:"od 20 € / sat",price_general:"Generalno čišćenje",pricing_note_title:"Profesionalno. Pouzdano. Detaljno. S ljubavlju.",pricing_note_body:"Cijene su početne za Istru i mogu varirati ovisno o stanju objekta, pristupu, sezoni, količini rublja i posebnim zahtjevima.",pricing_value_1:"Profesionalno",pricing_value_2:"Pouzdano",pricing_value_3:"Detaljno",pricing_value_4:"S ljubavlju",pricing_cta:"Zatražite ponudu"}
+};
+Object.keys(pricingTranslations).forEach(function(lang){
+  translations[lang] = Object.assign({}, translations[lang] || translations.en, pricingTranslations[lang]);
+});
+
 let currentLang = DEFAULT_LANG;
 
 function t(key){
@@ -1604,7 +1705,7 @@ document.addEventListener("DOMContentLoaded", function(){
   counters.forEach(function(el){ cObs.observe(el); });
 
   // active nav tracking
-  const sections = ["home","services","how","areas","faq","contact"];
+  const sections = ["home","services","pricing","how","areas","faq","contact"];
   const navLinks = document.querySelectorAll(".nav-links a");
   const secObs = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
