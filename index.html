@@ -202,7 +202,11 @@ header{position:fixed;inset:0 0 auto 0;z-index:120;background:rgba(4,21,39,.78);
 header.scrolled,header.solid{background:rgba(4,21,39,.94);box-shadow:0 10px 30px rgba(0,0,0,.25);padding-block:10px}
 .nav{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter);display:flex;align-items:center;gap:28px}
 .brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
-.brand img{height:46px;width:auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.35))}
+.brand-logo{position:relative;width:46px;height:46px;flex:0 0 46px}
+.brand-logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.35));transition:opacity .3s var(--ease)}
+.brand-logo .logo-night{opacity:0}
+body[data-theme="night"] .brand-logo .logo-day{opacity:0}
+body[data-theme="night"] .brand-logo .logo-night{opacity:1}
 .brand b{font-family:var(--font-display);font-size:1.15rem;color:#fff;font-weight:600;letter-spacing:.02em;white-space:nowrap}
 .nav-links{display:flex;gap:26px;margin-left:auto}
 .nav-links a{color:rgba(248,245,239,.86);font-size:.92rem;font-weight:500;position:relative;padding:6px 0;transition:color .3s}
@@ -495,7 +499,10 @@ html[dir="rtl"] body{text-align:right}
 <header id="header">
   <nav class="nav" aria-label="Primary">
     <a href="#home" class="brand" aria-label="Adriatic Shine home">
-      <img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782176548/B5939967-0269-4A72-9CD5-79184399AD28_mekq0p.png" alt="Adriatic Shine logo" width="46" height="46" />
+      <span class="brand-logo" aria-hidden="true">
+        <img class="logo-day" src="https://res.cloudinary.com/dqje367sj/image/upload/v1782176548/B5939967-0269-4A72-9CD5-79184399AD28_mekq0p.png" alt="" width="46" height="46" />
+        <img class="logo-night" src="adriatic-logo-white-transparent.png" alt="" width="46" height="46" />
+      </span>
       <b>Adriatic Shine</b>
     </a>
     <ul class="nav-links">
