@@ -141,6 +141,12 @@ body[data-theme="night"] .field textarea::placeholder,
 body[data-theme="night"] .faq-search input::placeholder{color:rgba(248,245,239,.58)}
 body[data-theme="night"] .btn-outline{border-color:rgba(248,245,239,.72);color:var(--text-dark)}
 body[data-theme="night"] .btn-outline:hover{background:var(--text-dark);border-color:var(--text-dark);color:var(--deep-navy)}
+body[data-theme="night"] .faq-item{background:#fff;border-color:rgba(7,31,58,.12)}
+body[data-theme="night"] .faq-q{color:#071F3A}
+body[data-theme="night"] .faq-a p{color:#4F5A64}
+body[data-theme="night"] .faq-q .ic{color:#071F3A;background:#F8F5EF}
+body[data-theme="night"] .hero .btn-ghost{background:#fff;border-color:#fff;color:#071F3A}
+body[data-theme="night"] .hero .btn-ghost:hover{background:var(--soft-gold);border-color:var(--soft-gold);color:#041527}
 
 /* ===============================
 03. TYPOGRAPHY
@@ -615,6 +621,11 @@ html[dir="rtl"] body{text-align:right}
         <p data-i18n="svc3_d">Fresh, hotel-grade linen and towels managed, laundered and replaced on schedule.</p>
       </article>
       <article class="svc-card reveal">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 18c4-1 6-4 7-8M11 10l3 3M14 13c2-2 3-5 3-9M5 21h14M7 14l3 3"/></svg></div>
+        <h3 data-i18n="svc9_t">Deep Cleaning</h3>
+        <p data-i18n="svc9_d">Detailed seasonal or post-stay cleans for kitchens, bathrooms, appliances and hard-to-reach areas.</p>
+      </article>
+      <article class="svc-card reveal">
         <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 3h6v6M21 3l-9 9M10 6H4v14h14v-6"/></svg></div>
         <h3 data-i18n="svc4_t">Guest Check-In</h3>
         <p data-i18n="svc4_d">Warm, professional arrivals with key handover and a guest-ready welcome.</p>
@@ -759,7 +770,7 @@ html[dir="rtl"] body{text-align:right}
       <ul class="aside-list">
         <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-i18n="form_a1">No upfront commitment — request a quote first</span></li>
         <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-i18n="form_a2">Your request becomes a tracked WhatsApp ticket</span></li>
-        <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-i18n="form_a3">Same-day response for urgent requests</span></li>
+        <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-i18n="form_a3">Fast response for urgent requests</span></li>
       </ul>
     </div>
 
@@ -807,6 +818,7 @@ html[dir="rtl"] body{text-align:right}
               <option value="Apartment Cleaning" data-i18n="svc1_t">Apartment Cleaning</option>
               <option value="Villa Cleaning" data-i18n="svc2_t">Villa Cleaning</option>
               <option value="Laundry & Linen" data-i18n="svc3_t">Laundry &amp; Linen</option>
+              <option value="Deep Cleaning" data-i18n="svc9_t">Deep Cleaning</option>
               <option value="Guest Check-In" data-i18n="svc4_t">Guest Check-In</option>
               <option value="Guest Check-Out" data-i18n="svc5_t">Guest Check-Out</option>
               <option value="Property Restocking" data-i18n="svc7_t">Property Restocking</option>
@@ -872,7 +884,7 @@ html[dir="rtl"] body{text-align:right}
     <div class="faq-list" id="faqList">
       <div class="faq-item reveal"><button class="faq-q"><span data-i18n="q1">Do you offer one-time cleaning?</span><span class="ic">+</span></button><div class="faq-a"><p data-i18n="a1">Yes. We handle one-time deep cleans, single turnovers and seasonal resets, as well as recurring schedules.</p></div></div>
       <div class="faq-item reveal"><button class="faq-q"><span data-i18n="q2">Can you manage guest check-ins?</span><span class="ic">+</span></button><div class="faq-a"><p data-i18n="a2">Absolutely. We offer professional check-in and check-out, key handover and a guest-ready welcome on arrival.</p></div></div>
-      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="q3">Do you provide emergency cleaning?</span><span class="ic">+</span></button><div class="faq-a"><p data-i18n="a3">Yes — we offer same-day emergency service across our coverage areas for last-minute bookings and incidents.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="q3">Can you help with last-minute cleaning requests?</span><span class="ic">+</span></button><div class="faq-a"><p data-i18n="a3">When our schedule and location allow, we respond quickly and confirm the earliest available slot.</p></div></div>
       <div class="faq-item reveal"><button class="faq-q"><span data-i18n="q4">Which areas do you cover?</span><span class="ic">+</span></button><div class="faq-a"><p data-i18n="a4">Rovinj, Poreč, Pula, Novigrad, Umag and Medulin, plus additional areas in Istria on request.</p></div></div>
       <div class="faq-item reveal"><button class="faq-q"><span data-i18n="q5">Do you work with agencies?</span><span class="ic">+</span></button><div class="faq-a"><p data-i18n="a5">Yes. We partner with property managers and rental agencies on consistent, scalable operational support.</p></div></div>
       <div class="faq-item reveal"><button class="faq-q"><span data-i18n="q6">Do you provide linen services?</span><span class="ic">+</span></button><div class="faq-a"><p data-i18n="a6">We manage hotel-grade linen and towels — laundered, replaced and restocked to a fresh, consistent standard.</p></div></div>
@@ -899,7 +911,7 @@ html[dir="rtl"] body{text-align:right}
       </div>
       <div class="foot-col">
         <h4 data-i18n="footer_contact">Contact</h4>
-        <a href="https://wa.me/34644075065" target="_blank" rel="noopener">WhatsApp · +34 644 075 065</a>
+        <a href="https://wa.me/34644075065" target="_blank" rel="noopener" data-wa-static>WhatsApp · +34 644 075 065</a>
         <a href="mailto:info@adriaticshine.com">info@adriaticshine.com</a>
         <p data-i18n="footer_region">Istria, Croatia</p>
       </div>
@@ -935,7 +947,10 @@ html[dir="rtl"] body{text-align:right}
 /* ===============================
 19. TRANSLATION SYSTEM
 ================================ */
-const WA = "34644075065";
+const WA_BY_LANG = {
+  default:"34644075065",
+  hr:"385899281833"
+};
 const DEFAULT_LANG = "en";
 const LANGS = ["en","de","fr","it","es","hr"];
 
@@ -967,6 +982,7 @@ const translations = {
     svc1_t:"Apartment Cleaning",svc1_d:"Turnover and deep cleaning tailored to short-stay apartments and rental schedules.",
     svc2_t:"Villa Cleaning",svc2_d:"Comprehensive care for larger properties, including outdoor areas and detailing.",
     svc3_t:"Laundry & Linen",svc3_d:"Fresh, hotel-grade linen and towels managed, laundered and replaced on schedule.",
+    svc9_t:"Deep Cleaning",svc9_d:"Detailed seasonal or post-stay cleans for kitchens, bathrooms, appliances and hard-to-reach areas.",
     svc4_t:"Guest Check-In",svc4_d:"Warm, professional arrivals with key handover and a guest-ready welcome.",
     svc5_t:"Guest Check-Out",svc5_d:"Departure checks, inventory verification and rapid turnaround for the next stay.",
     svc7_t:"Property Restocking",svc7_d:"Consumables, amenities and essentials replenished so guests never find a gap.",
@@ -995,7 +1011,7 @@ const translations = {
     cap_apartment:"Apartment · Turnover",cap_villa:"Villa · Full care",cap_bed:"Bedroom · Linen",cap_bath:"Bathroom · Detailing",cap_bath2:"Bathroom · Polished surfaces",cap_bath3:"Bathroom · Guest ready",cap_terrace:"Terrace · Outdoor areas",cap_pool:"Villa · Pool areas",cap_detail:"Interior · Detail check",cap_guest:"Apartment · Guest ready",cap_villa_detail:"Villa · Arrival check",cap_outdoor_detail:"Outdoor · Ready areas",cap_coast:"Istria · Coastline",
     areas_eyebrow:"Where we operate",areas_title:"Serving Istria's coast",areas_sub:"On-the-ground coverage across Istria's key rental destinations, with additional areas available on request.",area_coastal:"Coastal · Istria",areas_more:"+ Additional areas available on request",
     form_eyebrow:"Request a service",form_title:"Tell us about your property",form_sub:"Share a few details and we'll prepare a structured request. Submitting opens WhatsApp with your service ticket ready to send.",
-    form_a1:"No upfront commitment — request a quote first",form_a2:"Your request becomes a tracked WhatsApp ticket",form_a3:"Same-day response for urgent requests",
+    form_a1:"No upfront commitment — request a quote first",form_a2:"Your request becomes a tracked WhatsApp ticket",form_a3:"Fast response for urgent requests",
     f_name:"Full Name",f_email:"Email",f_phone:"Phone / WhatsApp",f_lang:"Preferred Language",f_ptype:"Property Type",f_location:"Location",f_size:"Property Size (m²)",f_beds:"Bedrooms",f_baths:"Bathrooms",f_outdoor:"Outdoor Area",f_service:"Requested Service",f_frequency:"Frequency",f_date:"Preferred Date",f_urgency:"Urgency",f_notes:"Additional Notes",
     opt_select:"Select…",lang_en:"English",lang_de:"German",lang_fr:"French",lang_it:"Italian",lang_es:"Spanish",lang_hr:"Croatian",
     pt_apartment:"Apartment",pt_villa:"Villa",pt_commercial:"Commercial Space",pt_other:"Other",
@@ -1010,7 +1026,7 @@ const translations = {
     faq_eyebrow:"Good to know",faq_title:"Frequently asked questions",faq_empty:"No questions match your search.",
     q1:"Do you offer one-time cleaning?",a1:"Yes. We handle one-time deep cleans, single turnovers and seasonal resets, as well as recurring schedules.",
     q2:"Can you manage guest check-ins?",a2:"Absolutely. We offer professional check-in and check-out, key handover and a guest-ready welcome on arrival.",
-    q3:"Do you provide emergency cleaning?",a3:"Yes — we offer same-day emergency service across our coverage areas for last-minute bookings and incidents.",
+    q3:"Can you help with last-minute cleaning requests?",a3:"When our schedule and location allow, we respond quickly and confirm the earliest available slot.",
     q4:"Which areas do you cover?",a4:"Rovinj, Poreč, Pula, Novigrad, Umag and Medulin, plus additional areas in Istria on request.",
     q5:"Do you work with agencies?",a5:"Yes. We partner with property managers and rental agencies on consistent, scalable operational support.",
     q6:"Do you provide linen services?",a6:"We manage hotel-grade linen and towels — laundered, replaced and restocked to a fresh, consistent standard.",
@@ -1025,6 +1041,7 @@ const translations = {
     svc1_t:"Apartment-Reinigung",svc1_d:"Wechsel- und Grundreinigung, abgestimmt auf Kurzzeit-Apartments und Vermietungspläne.",
     svc2_t:"Villen-Reinigung",svc2_d:"Umfassende Betreuung größerer Objekte, inklusive Außenbereichen und Detailpflege.",
     svc3_t:"Wäsche & Bettwäsche",svc3_d:"Frische Bettwäsche und Handtücher in Hotelqualität, verwaltet, gewaschen und planmäßig ersetzt.",
+    svc9_t:"Grundreinigung",svc9_d:"Detaillierte saisonale oder nach dem Aufenthalt ausgeführte Reinigung von Küchen, Bädern, Geräten und schwer erreichbaren Bereichen.",
     svc4_t:"Gäste-Check-in",svc4_d:"Herzliche, professionelle Ankunft mit Schlüsselübergabe und gästebereitem Empfang.",
     svc5_t:"Gäste-Check-out",svc5_d:"Abreisekontrolle, Inventarprüfung und schnelle Vorbereitung für den nächsten Aufenthalt.",
     svc7_t:"Auffüllen der Ausstattung",svc7_d:"Verbrauchsartikel, Annehmlichkeiten und Essentials aufgefüllt, damit Gästen nichts fehlt.",
@@ -1053,7 +1070,7 @@ const translations = {
     cap_apartment:"Apartment · Wechsel",cap_villa:"Villa · Komplettbetreuung",cap_bed:"Schlafzimmer · Bettwäsche",cap_bath:"Bad · Detailpflege",cap_bath2:"Bad · Polierte Oberflächen",cap_bath3:"Bad · Gästebereit",cap_terrace:"Terrasse · Außenbereiche",cap_pool:"Villa · Poolbereiche",cap_detail:"Interieur · Detailprüfung",cap_guest:"Apartment · Gästebereit",cap_villa_detail:"Villa · Ankunftscheck",cap_outdoor_detail:"Außenbereich · Bereit",cap_coast:"Istrien · Küste",
     areas_eyebrow:"Wo wir tätig sind",areas_title:"Für Istriens Küste im Einsatz",areas_sub:"Betreuung vor Ort in Istriens wichtigsten Vermietungsorten, weitere Gebiete auf Anfrage.",area_coastal:"Küste · Istrien",areas_more:"+ Weitere Gebiete auf Anfrage",
     form_eyebrow:"Service anfragen",form_title:"Erzählen Sie uns von Ihrer Immobilie",form_sub:"Teilen Sie ein paar Angaben und wir bereiten eine strukturierte Anfrage vor. Beim Absenden öffnet sich WhatsApp mit Ihrem fertigen Service-Ticket.",
-    form_a1:"Keine Vorabverpflichtung — zuerst ein Angebot anfragen",form_a2:"Ihre Anfrage wird zu einem nachverfolgbaren WhatsApp-Ticket",form_a3:"Reaktion am selben Tag bei dringenden Anfragen",
+    form_a1:"Keine Vorabverpflichtung — zuerst ein Angebot anfragen",form_a2:"Ihre Anfrage wird zu einem nachverfolgbaren WhatsApp-Ticket",form_a3:"Schnelle Antwort bei dringenden Anfragen",
     f_name:"Vollständiger Name",f_email:"E-Mail",f_phone:"Telefon / WhatsApp",f_lang:"Bevorzugte Sprache",f_ptype:"Objekttyp",f_location:"Ort",f_size:"Objektgröße (m²)",f_beds:"Schlafzimmer",f_baths:"Bäder",f_outdoor:"Außenbereich",f_service:"Gewünschte Leistung",f_frequency:"Häufigkeit",f_date:"Wunschtermin",f_urgency:"Dringlichkeit",f_notes:"Zusätzliche Hinweise",
     opt_select:"Auswählen…",lang_en:"Englisch",lang_de:"Deutsch",lang_fr:"Französisch",lang_it:"Italienisch",lang_es:"Spanisch",lang_hr:"Kroatisch",
     pt_apartment:"Apartment",pt_villa:"Villa",pt_commercial:"Gewerbefläche",pt_other:"Sonstiges",
@@ -1068,7 +1085,7 @@ const translations = {
     faq_eyebrow:"Gut zu wissen",faq_title:"Häufig gestellte Fragen",faq_empty:"Keine Fragen entsprechen Ihrer Suche.",
     q1:"Bieten Sie einmalige Reinigungen an?",a1:"Ja. Wir übernehmen einmalige Grundreinigungen, einzelne Wechsel und saisonale Auffrischungen sowie wiederkehrende Pläne.",
     q2:"Übernehmen Sie Gäste-Check-ins?",a2:"Selbstverständlich. Wir bieten professionellen Check-in und Check-out, Schlüsselübergabe und einen gästebereiten Empfang bei Ankunft.",
-    q3:"Bieten Sie Notfallreinigungen an?",a3:"Ja — wir bieten Notfallservice am selben Tag in unseren Gebieten für kurzfristige Buchungen und Zwischenfälle.",
+    q3:"Können Sie bei kurzfristigen Reinigungsanfragen helfen?",a3:"Wenn Zeitplan und Standort es erlauben, reagieren wir schnell und bestätigen den frühestmöglichen Termin.",
     q4:"Welche Gebiete decken Sie ab?",a4:"Rovinj, Poreč, Pula, Novigrad, Umag und Medulin sowie weitere Gebiete in Istrien auf Anfrage.",
     q5:"Arbeiten Sie mit Agenturen zusammen?",a5:"Ja. Wir kooperieren mit Hausverwaltungen und Vermietungsagenturen für konsistente, skalierbare operative Unterstützung.",
     q6:"Bieten Sie Wäscheservice an?",a6:"Wir verwalten Bettwäsche und Handtücher in Hotelqualität — gewaschen, ersetzt und aufgefüllt nach einem frischen, gleichbleibenden Standard.",
@@ -1083,6 +1100,7 @@ const translations = {
     svc1_t:"Nettoyage d'appartement",svc1_d:"Remise en état et nettoyage en profondeur adaptés aux courts séjours et aux plannings de location.",
     svc2_t:"Nettoyage de villa",svc2_d:"Prise en charge complète des grandes propriétés, espaces extérieurs et finitions inclus.",
     svc3_t:"Blanchisserie & linge",svc3_d:"Linge et serviettes de qualité hôtelière gérés, lavés et remplacés selon le planning.",
+    svc9_t:"Nettoyage en profondeur",svc9_d:"Nettoyages détaillés saisonniers ou après séjour pour cuisines, salles de bain, appareils et zones difficiles d'accès.",
     svc4_t:"Accueil des hôtes",svc4_d:"Arrivées chaleureuses et professionnelles avec remise des clés et accueil soigné.",
     svc5_t:"Départ des hôtes",svc5_d:"Contrôles de départ, vérification de l'inventaire et remise en état rapide pour le séjour suivant.",
     svc7_t:"Réapprovisionnement",svc7_d:"Consommables, équipements et essentiels réapprovisionnés pour que rien ne manque aux hôtes.",
@@ -1111,7 +1129,7 @@ const translations = {
     cap_apartment:"Appartement · Rotation",cap_villa:"Villa · Prise en charge complète",cap_bed:"Chambre · Linge",cap_bath:"Salle de bain · Finitions",cap_bath2:"Salle de bain · Surfaces polies",cap_bath3:"Salle de bain · Prête pour les hôtes",cap_terrace:"Terrasse · Espaces extérieurs",cap_pool:"Villa · Espaces piscine",cap_detail:"Intérieur · Contrôle des détails",cap_guest:"Appartement · Prêt pour les hôtes",cap_villa_detail:"Villa · Contrôle d'arrivée",cap_outdoor_detail:"Extérieur · Espaces prêts",cap_coast:"Istrie · Littoral",
     areas_eyebrow:"Où nous intervenons",areas_title:"Au service de la côte istrienne",areas_sub:"Une présence sur le terrain dans les principales destinations locatives d'Istrie, avec d'autres zones disponibles sur demande.",area_coastal:"Côte · Istrie",areas_more:"+ Autres zones disponibles sur demande",
     form_eyebrow:"Demander un service",form_title:"Parlez-nous de votre bien",form_sub:"Donnez-nous quelques détails et nous préparerons une demande structurée. L'envoi ouvre WhatsApp avec votre ticket de service prêt à partir.",
-    form_a1:"Aucun engagement préalable — demandez d'abord un devis",form_a2:"Votre demande devient un ticket WhatsApp suivi",form_a3:"Réponse le jour même pour les demandes urgentes",
+    form_a1:"Aucun engagement préalable — demandez d'abord un devis",form_a2:"Votre demande devient un ticket WhatsApp suivi",form_a3:"Réponse rapide pour les demandes urgentes",
     f_name:"Nom complet",f_email:"E-mail",f_phone:"Téléphone / WhatsApp",f_lang:"Langue préférée",f_ptype:"Type de bien",f_location:"Lieu",f_size:"Surface (m²)",f_beds:"Chambres",f_baths:"Salles de bain",f_outdoor:"Espace extérieur",f_service:"Service demandé",f_frequency:"Fréquence",f_date:"Date souhaitée",f_urgency:"Urgence",f_notes:"Notes complémentaires",
     opt_select:"Choisir…",lang_en:"Anglais",lang_de:"Allemand",lang_fr:"Français",lang_it:"Italien",lang_es:"Espagnol",lang_hr:"Croate",
     pt_apartment:"Appartement",pt_villa:"Villa",pt_commercial:"Local commercial",pt_other:"Autre",
@@ -1126,7 +1144,7 @@ const translations = {
     faq_eyebrow:"Bon à savoir",faq_title:"Questions fréquentes",faq_empty:"Aucune question ne correspond à votre recherche.",
     q1:"Proposez-vous un nettoyage ponctuel ?",a1:"Oui. Nous réalisons des nettoyages en profondeur ponctuels, des rotations isolées et des remises en état saisonnières, ainsi que des plannings récurrents.",
     q2:"Pouvez-vous gérer l'accueil des hôtes ?",a2:"Absolument. Nous proposons un check-in et un check-out professionnels, la remise des clés et un accueil soigné à l'arrivée.",
-    q3:"Proposez-vous un nettoyage d'urgence ?",a3:"Oui — nous proposons un service d'urgence le jour même dans nos zones, pour les réservations de dernière minute et les incidents.",
+    q3:"Pouvez-vous aider pour une demande de nettoyage de dernière minute ?",a3:"Lorsque notre planning et la localisation le permettent, nous répondons rapidement et confirmons le premier créneau disponible.",
     q4:"Quelles zones couvrez-vous ?",a4:"Rovinj, Poreč, Pula, Novigrad, Umag et Medulin, ainsi que d'autres zones d'Istrie sur demande.",
     q5:"Travaillez-vous avec des agences ?",a5:"Oui. Nous collaborons avec les gestionnaires de biens et les agences de location pour un support opérationnel cohérent et évolutif.",
     q6:"Proposez-vous un service de linge ?",a6:"Nous gérons le linge et les serviettes de qualité hôtelière — lavés, remplacés et réapprovisionnés selon un standard frais et constant.",
@@ -1141,6 +1159,7 @@ const translations = {
     svc1_t:"Pulizia appartamenti",svc1_d:"Cambio e pulizia profonda su misura per appartamenti a breve termine e calendari di affitto.",
     svc2_t:"Pulizia ville",svc2_d:"Cura completa per proprietà più grandi, inclusi spazi esterni e rifiniture.",
     svc3_t:"Lavanderia & biancheria",svc3_d:"Biancheria e asciugamani in qualità alberghiera gestiti, lavati e sostituiti secondo programma.",
+    svc9_t:"Pulizia profonda",svc9_d:"Pulizie dettagliate stagionali o post-soggiorno per cucine, bagni, elettrodomestici e aree difficili da raggiungere.",
     svc4_t:"Check-in ospiti",svc4_d:"Arrivi cordiali e professionali con consegna chiavi e accoglienza pronta per gli ospiti.",
     svc5_t:"Check-out ospiti",svc5_d:"Controlli alla partenza, verifica dell'inventario e rapido riassetto per il soggiorno successivo.",
     svc7_t:"Rifornimento proprietà",svc7_d:"Consumabili, comfort ed essenziali reintegrati così che agli ospiti non manchi nulla.",
@@ -1169,7 +1188,7 @@ const translations = {
     cap_apartment:"Appartamento · Cambio",cap_villa:"Villa · Cura completa",cap_bed:"Camera · Biancheria",cap_bath:"Bagno · Rifiniture",cap_bath2:"Bagno · Superfici lucidate",cap_bath3:"Bagno · Pronto per gli ospiti",cap_terrace:"Terrazza · Spazi esterni",cap_pool:"Villa · Area piscina",cap_detail:"Interni · Controllo dettagli",cap_guest:"Appartamento · Pronto per gli ospiti",cap_villa_detail:"Villa · Controllo arrivo",cap_outdoor_detail:"Esterni · Aree pronte",cap_coast:"Istria · Costa",
     areas_eyebrow:"Dove operiamo",areas_title:"Al servizio della costa istriana",areas_sub:"Copertura sul posto nelle principali località di affitto dell'Istria, con altre zone disponibili su richiesta.",area_coastal:"Costa · Istria",areas_more:"+ Altre zone disponibili su richiesta",
     form_eyebrow:"Richiedi un servizio",form_title:"Parlaci della tua proprietà",form_sub:"Condividi qualche dettaglio e prepareremo una richiesta strutturata. L'invio apre WhatsApp con il tuo ticket di servizio pronto da inviare.",
-    form_a1:"Nessun impegno iniziale — richiedi prima un preventivo",form_a2:"La tua richiesta diventa un ticket WhatsApp tracciato",form_a3:"Risposta in giornata per le richieste urgenti",
+    form_a1:"Nessun impegno iniziale — richiedi prima un preventivo",form_a2:"La tua richiesta diventa un ticket WhatsApp tracciato",form_a3:"Risposta rapida per le richieste urgenti",
     f_name:"Nome completo",f_email:"Email",f_phone:"Telefono / WhatsApp",f_lang:"Lingua preferita",f_ptype:"Tipo di proprietà",f_location:"Località",f_size:"Superficie (m²)",f_beds:"Camere",f_baths:"Bagni",f_outdoor:"Spazio esterno",f_service:"Servizio richiesto",f_frequency:"Frequenza",f_date:"Data preferita",f_urgency:"Urgenza",f_notes:"Note aggiuntive",
     opt_select:"Seleziona…",lang_en:"Inglese",lang_de:"Tedesco",lang_fr:"Francese",lang_it:"Italiano",lang_es:"Spagnolo",lang_hr:"Croato",
     pt_apartment:"Appartamento",pt_villa:"Villa",pt_commercial:"Spazio commerciale",pt_other:"Altro",
@@ -1184,7 +1203,7 @@ const translations = {
     faq_eyebrow:"Buono a sapersi",faq_title:"Domande frequenti",faq_empty:"Nessuna domanda corrisponde alla tua ricerca.",
     q1:"Offrite pulizie una tantum?",a1:"Sì. Gestiamo pulizie profonde una tantum, singoli cambi e riassetti stagionali, oltre a programmi ricorrenti.",
     q2:"Gestite i check-in degli ospiti?",a2:"Assolutamente. Offriamo check-in e check-out professionali, consegna delle chiavi e un'accoglienza pronta per gli ospiti all'arrivo.",
-    q3:"Offrite pulizie d'emergenza?",a3:"Sì — offriamo un servizio d'emergenza in giornata nelle nostre zone, per prenotazioni last-minute e imprevisti.",
+    q3:"Potete aiutare con richieste di pulizia last-minute?",a3:"Quando programma e posizione lo permettono, rispondiamo rapidamente e confermiamo il primo slot disponibile.",
     q4:"Quali zone coprite?",a4:"Rovinj, Poreč, Pula, Novigrad, Umag e Medulin, oltre ad altre zone dell'Istria su richiesta.",
     q5:"Lavorate con le agenzie?",a5:"Sì. Collaboriamo con property manager e agenzie di affitto per un supporto operativo coerente e scalabile.",
     q6:"Offrite il servizio di biancheria?",a6:"Gestiamo biancheria e asciugamani in qualità alberghiera — lavati, sostituiti e reintegrati secondo uno standard fresco e costante.",
@@ -1199,6 +1218,7 @@ const translations = {
     svc1_t:"Limpieza de apartamentos",svc1_d:"Cambio y limpieza profunda adaptados a apartamentos de corta estancia y calendarios de alquiler.",
     svc2_t:"Limpieza de villas",svc2_d:"Cuidado integral de propiedades más grandes, incluyendo zonas exteriores y acabados.",
     svc3_t:"Lavandería y lencería",svc3_d:"Lencería y toallas de calidad hotelera gestionadas, lavadas y repuestas según calendario.",
+    svc9_t:"Limpieza profunda",svc9_d:"Limpiezas detalladas de temporada o post-estancia para cocinas, baños, electrodomésticos y zonas difíciles de alcanzar.",
     svc4_t:"Check-in de huéspedes",svc4_d:"Llegadas cálidas y profesionales con entrega de llaves y una bienvenida lista para huéspedes.",
     svc5_t:"Check-out de huéspedes",svc5_d:"Controles de salida, verificación de inventario y rápida preparación para la siguiente estancia.",
     svc7_t:"Reposición de la propiedad",svc7_d:"Consumibles, amenidades y esenciales repuestos para que a los huéspedes nunca les falte nada.",
@@ -1227,7 +1247,7 @@ const translations = {
     cap_apartment:"Apartamento · Cambio",cap_villa:"Villa · Cuidado integral",cap_bed:"Dormitorio · Lencería",cap_bath:"Baño · Acabados",cap_bath2:"Baño · Superficies pulidas",cap_bath3:"Baño · Listo para huéspedes",cap_terrace:"Terraza · Zonas exteriores",cap_pool:"Villa · Zona de piscina",cap_detail:"Interior · Revisión de detalles",cap_guest:"Apartamento · Listo para huéspedes",cap_villa_detail:"Villa · Revisión de llegada",cap_outdoor_detail:"Exterior · Zonas listas",cap_coast:"Istria · Costa",
     areas_eyebrow:"Dónde operamos",areas_title:"Al servicio de la costa de Istria",areas_sub:"Cobertura sobre el terreno en los principales destinos de alquiler de Istria, con zonas adicionales disponibles bajo petición.",area_coastal:"Costa · Istria",areas_more:"+ Zonas adicionales disponibles bajo petición",
     form_eyebrow:"Solicitar un servicio",form_title:"Cuéntanos sobre tu propiedad",form_sub:"Comparte unos datos y prepararemos una solicitud estructurada. Al enviar se abre WhatsApp con tu ticket de servicio listo para enviar.",
-    form_a1:"Sin compromiso previo — solicita primero un presupuesto",form_a2:"Tu solicitud se convierte en un ticket de WhatsApp con seguimiento",form_a3:"Respuesta el mismo día para solicitudes urgentes",
+    form_a1:"Sin compromiso previo — solicita primero un presupuesto",form_a2:"Tu solicitud se convierte en un ticket de WhatsApp con seguimiento",form_a3:"Respuesta rápida para solicitudes urgentes",
     f_name:"Nombre completo",f_email:"Email",f_phone:"Teléfono / WhatsApp",f_lang:"Idioma preferido",f_ptype:"Tipo de propiedad",f_location:"Ubicación",f_size:"Superficie (m²)",f_beds:"Dormitorios",f_baths:"Baños",f_outdoor:"Zona exterior",f_service:"Servicio solicitado",f_frequency:"Frecuencia",f_date:"Fecha preferida",f_urgency:"Urgencia",f_notes:"Notas adicionales",
     opt_select:"Seleccionar…",lang_en:"Inglés",lang_de:"Alemán",lang_fr:"Francés",lang_it:"Italiano",lang_es:"Español",lang_hr:"Croata",
     pt_apartment:"Apartamento",pt_villa:"Villa",pt_commercial:"Espacio comercial",pt_other:"Otro",
@@ -1242,7 +1262,7 @@ const translations = {
     faq_eyebrow:"Bueno saberlo",faq_title:"Preguntas frecuentes",faq_empty:"Ninguna pregunta coincide con tu búsqueda.",
     q1:"¿Ofrecéis limpieza puntual?",a1:"Sí. Hacemos limpiezas profundas puntuales, cambios individuales y puestas a punto estacionales, además de calendarios recurrentes.",
     q2:"¿Gestionáis los check-in de huéspedes?",a2:"Por supuesto. Ofrecemos check-in y check-out profesionales, entrega de llaves y una bienvenida lista para huéspedes a la llegada.",
-    q3:"¿Ofrecéis limpieza de emergencia?",a3:"Sí — ofrecemos servicio de emergencia el mismo día en nuestras zonas, para reservas de última hora e incidencias.",
+    q3:"¿Podéis ayudar con limpiezas de última hora?",a3:"Cuando la agenda y la ubicación lo permiten, respondemos rápido y confirmamos el primer horario disponible.",
     q4:"¿Qué zonas cubrís?",a4:"Rovinj, Poreč, Pula, Novigrad, Umag y Medulin, además de otras zonas de Istria bajo petición.",
     q5:"¿Trabajáis con agencias?",a5:"Sí. Colaboramos con gestores de propiedades y agencias de alquiler para un apoyo operativo constante y escalable.",
     q6:"¿Ofrecéis servicio de lencería?",a6:"Gestionamos lencería y toallas de calidad hotelera — lavadas, repuestas y reabastecidas con un estándar fresco y constante.",
@@ -1260,6 +1280,7 @@ translations.hr = Object.assign({}, translations.en, {
   svc1_t:"Ciscenje apartmana",svc1_d:"Ciscenje izmedu smjena i dubinsko ciscenje prilagodeno kratkorocnom najmu.",
   svc2_t:"Ciscenje vila",svc2_d:"Sveobuhvatna briga za vece objekte, ukljucujuci vanjske prostore i detalje.",
   svc3_t:"Pranje i posteljina",svc3_d:"Svjeza posteljina i rucnici hotelske kvalitete, oprani i zamijenjeni prema rasporedu.",
+  svc9_t:"Dubinsko ciscenje",svc9_d:"Detaljna sezonska ili post-stay ciscenja kuhinja, kupaonica, uredaja i tesko dostupnih prostora.",
   svc4_t:"Check-in gostiju",svc4_d:"Lokalna podrska za dolaske, osnovne upute i prve dojmove.",
   svc5_t:"Check-out gostiju",svc5_d:"Pregled nakon odlaska gostiju, izvjestaj o stanju i priprema za sljedeci boravak.",
   owners_eyebrow:"Za vlasnike",owners_title:"Mirniji rad izmedu rezervacija",owners_sub:"Kombiniramo lokalnu dostupnost, jasnu komunikaciju i dosljedne standarde kako bi vlasnici i manageri imali manje operativnog opterecenja.",
@@ -1293,7 +1314,7 @@ translations.hr = Object.assign({}, translations.en, {
   faq_eyebrow:"Pitanja",faq_title:"Brzi odgovori za vlasnike i managere",faq_search:"Pretrazi pitanja…",faq_empty:"Nema rezultata za tu pretragu.",
   q1:"Radite li s apartmanima i vilama?",a1:"Da. Podrzavamo apartmane, vile i smjestaj za odmor diljem Istre.",
   q2:"Mozete li raditi izmedu check-outa i check-ina?",a2:"Da. Usluge se mogu planirati oko smjena gostiju, ovisno o lokaciji i raspolozivosti tima.",
-  q3:"Nudite li hitno ciscenje?",a3:"Da, nudimo hitnu uslugu isti dan u nasim podrucjima za last-minute rezervacije i incidente.",
+  q3:"Mozete li pomoci s last-minute zahtjevima za ciscenje?",a3:"Kada raspored i lokacija dopustaju, brzo odgovaramo i potvrdujemo prvi dostupni termin.",
   q4:"Koja podrucja pokrivate?",a4:"Rovinj, Porec, Pula, Novigrad, Umag i Medulin, uz dodatna podrucja u Istri na zahtjev.",
   q5:"Radite li s agencijama?",a5:"Da. Suradujemo s property managerima i agencijama za najam kroz dosljednu operativnu podrsku.",
   q6:"Nudite li uslugu posteljine?",a6:"Upravljamo posteljinom i rucnicima hotelske kvalitete, opranim, zamijenjenim i nadopunjenim prema svjezem standardu.",
@@ -1326,6 +1347,23 @@ function applySeo(){
   if(md) md.setAttribute("content", s.desc);
 }
 
+function currentWhatsAppNumber(){
+  return WA_BY_LANG[currentLang] || WA_BY_LANG.default;
+}
+
+function currentWhatsAppDisplay(){
+  return currentLang === "hr" ? "+385 89 928 1833" : "+34 644 075 065";
+}
+
+function updateWhatsAppLinks(){
+  const number = currentWhatsAppNumber();
+  document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function(a){
+    if(a.id === "leadWaBtn") return;
+    a.href = "https://wa.me/" + number;
+    if(a.hasAttribute("data-wa-static")) a.textContent = "WhatsApp · " + currentWhatsAppDisplay();
+  });
+}
+
 function updateThemeButton(){
   const btn = document.getElementById("themeToggle");
   if(!btn) return;
@@ -1353,6 +1391,7 @@ function setLanguage(lang, save){
   applyTranslations();
   applySeo();
   updateThemeButton();
+  updateWhatsAppLinks();
   // update language button label
   const codeEl = document.getElementById("langCode");
   if(codeEl) codeEl.textContent = meta.code;
@@ -1397,7 +1436,7 @@ function validate(fieldDefs){
 }
 
 function openWhatsApp(message){
-  const url = "https://wa.me/" + WA + "?text=" + encodeURIComponent(message);
+  const url = "https://wa.me/" + currentWhatsAppNumber() + "?text=" + encodeURIComponent(message);
   const win = window.open(url, "_blank");
   return { url:url, blocked: (!win || win.closed || typeof win.closed === "undefined") };
 }
@@ -1661,8 +1700,10 @@ Project Version: 1.0
 Last Update: 2026-06
 Languages: en (default), de, fr, it, es, hr  ·  stored in localStorage key "adriatic_lang"
 
-WhatsApp Number (display): +34 644 075 065
-WhatsApp Number (technical): 34644075065
+WhatsApp Number EN/DE/FR/IT/ES (display): +34 644 075 065
+WhatsApp Number EN/DE/FR/IT/ES (technical): 34644075065
+WhatsApp Number HR (display): +385 89 928 1833
+WhatsApp Number HR (technical): 385899281833
 
 Logo:            https://res.cloudinary.com/dqje367sj/image/upload/v1782176548/B5939967-0269-4A72-9CD5-79184399AD28_mekq0p.png
 Alternative Logo: https://res.cloudinary.com/dqje367sj/image/upload/v1782176791/E7B2C13D-6BCA-4BD9-AA6B-BD9E248A3E9E_stzkzq.png
