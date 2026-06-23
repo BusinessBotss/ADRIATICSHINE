@@ -184,9 +184,6 @@ section{padding-block:clamp(64px,9vw,128px);position:relative}
 .btn-outline:hover{background:var(--navy);color:var(--white);transform:translateY(-3px)}
 .btn-wa{background:#1FA855;color:#fff}.btn-wa:hover{background:#178a45;transform:translateY(-3px)}
 
-/* scroll progress */
-#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--soft-gold));z-index:200;transition:width .1s linear}
-
 /* reveal */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .reveal.in{opacity:1;transform:none}
@@ -201,8 +198,8 @@ section{padding-block:clamp(64px,9vw,128px);position:relative}
 /* ===============================
 05. HEADER
 ================================ */
-header{position:fixed;inset:0 0 auto 0;z-index:120;transition:background .4s var(--ease),box-shadow .4s var(--ease),padding .4s var(--ease);padding-block:18px}
-header.solid{background:rgba(4,21,39,.92);backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(0,0,0,.25);padding-block:10px}
+header{position:fixed;inset:0 0 auto 0;z-index:120;background:rgba(4,21,39,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .4s var(--ease),box-shadow .4s var(--ease),padding .4s var(--ease);padding-block:18px}
+header.scrolled,header.solid{background:rgba(4,21,39,.94);box-shadow:0 10px 30px rgba(0,0,0,.25);padding-block:10px}
 .nav{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter);display:flex;align-items:center;gap:28px}
 .brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
 .brand img{height:46px;width:auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.35))}
@@ -491,7 +488,6 @@ html[dir="rtl"] body{text-align:right}
 </head>
 <body>
 <a class="skip-link" href="#main" data-i18n="skip_main">Skip to main content</a>
-<div id="progress" aria-hidden="true"></div>
 
 <!-- ===============================
 04. HEADER
@@ -1523,14 +1519,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
   // sticky header
   const header = document.getElementById("header");
-  const progress = document.getElementById("progress");
   function onScroll(){
     const y = window.scrollY || window.pageYOffset;
     if(header) header.classList.toggle("scrolled", y > 40);
-    if(progress){
-      const h = document.documentElement.scrollHeight - window.innerHeight;
-      progress.style.width = (h > 0 ? (y / h) * 100 : 0) + "%";
-    }
     // hero parallax
     const heroBg = document.getElementById("heroBg");
     if(heroBg && y < window.innerHeight) heroBg.style.transform = "translateY(" + (y * 0.25) + "px)";
