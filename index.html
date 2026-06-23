@@ -233,8 +233,8 @@ body[data-theme="night"] .theme-toggle .sun{display:block}
 ================================ */
 .hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--deep-navy);padding-top:120px}
 .hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:120%;object-fit:cover;position:absolute;top:-10%;left:0;will-change:transform}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(4,21,39,.95) 0%,rgba(4,21,39,.78) 38%,rgba(7,31,58,.42) 70%,rgba(7,31,58,.25) 100%)}
+.hero-bg img{width:100%;height:100%;object-fit:contain;object-position:72% center;position:absolute;top:0;left:0;opacity:.28;will-change:transform}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(4,21,39,.96) 0%,rgba(4,21,39,.82) 42%,rgba(7,31,58,.48) 72%,rgba(7,31,58,.22) 100%)}
 .hero-inner{position:relative;z-index:2;max-width:760px}
 .hero h1{color:#fff;margin:20px 0 22px}
 .hero h1 em{font-style:italic;color:var(--soft-gold);font-weight:500}
@@ -498,7 +498,6 @@ html[dir="rtl"] body{text-align:right}
       <li><a href="#how" data-i18n="nav_how">How It Works</a></li>
       <li><a href="#areas" data-i18n="nav_areas">Areas</a></li>
       <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
-      <li><a href="#support" data-i18n="nav_support">Support</a></li>
       <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
     </ul>
     <div class="nav-tools">
@@ -536,7 +535,6 @@ html[dir="rtl"] body{text-align:right}
   <a href="#how" data-i18n="nav_how">How It Works</a>
   <a href="#areas" data-i18n="nav_areas">Areas</a>
   <a href="#faq" data-i18n="nav_faq">FAQ</a>
-  <a href="#support" data-i18n="nav_support">Support</a>
   <a href="#contact" data-i18n="nav_contact">Contact</a>
   <a class="btn btn-gold" href="https://wa.me/34644075065" target="_blank" rel="noopener" data-i18n="hero_cta2">Contact on WhatsApp</a>
 </div>
@@ -547,7 +545,7 @@ html[dir="rtl"] body{text-align:right}
 <main id="main">
 <section class="hero" id="home">
   <div class="hero-bg" id="heroBg">
-    <img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782176227/the_Adriatic_Sea_Croatia_wrk7bf.jpg" alt="Adriatic coastline of Istria, Croatia" fetchpriority="high" width="1600" height="900" />
+    <img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782176791/E7B2C13D-6BCA-4BD9-AA6B-BD9E248A3E9E_stzkzq.png" alt="Adriatic Shine hospitality brand mark" fetchpriority="high" width="1600" height="900" />
   </div>
   <div class="wrap hero-inner">
     <span class="eyebrow" data-i18n="hero_kicker">Property Care · Istria, Croatia</span>
@@ -559,7 +557,7 @@ html[dir="rtl"] body{text-align:right}
     </div>
     <div class="hero-meta">
       <div><div class="num" data-count="6">0</div><div class="lbl" data-i18n="hero_m1">Coverage areas</div></div>
-      <div><div class="num" data-count="24" data-suffix="h">0</div><div class="lbl" data-i18n="hero_m2">Emergency response</div></div>
+      <div><div class="num" data-count="24" data-suffix="h">0</div><div class="lbl" data-i18n="hero_m2">Fast response</div></div>
       <div><div class="num" data-count="100" data-suffix="%">0</div><div class="lbl" data-i18n="hero_m3">Guest-ready standard</div></div>
     </div>
   </div>
@@ -617,11 +615,6 @@ html[dir="rtl"] body{text-align:right}
         <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3H3v6M3 3l9 9M14 18h6v-6M20 21l-9-9"/></svg></div>
         <h3 data-i18n="svc5_t">Guest Check-Out</h3>
         <p data-i18n="svc5_d">Departure checks, inventory verification and rapid turnaround for the next stay.</p>
-      </article>
-      <article class="sic-card reveal">
-        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
-        <h3 data-i18n="svc6_t">Emergency Same-Day</h3>
-        <p data-i18n="svc6_d">Last-minute bookings or incidents handled fast, with same-day response in our areas.</p>
       </article>
       <article class="svc-card reveal">
         <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h12l-1 4H7zM5 6h14v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2zM9 11h6"/></svg></div>
@@ -808,7 +801,6 @@ html[dir="rtl"] body{text-align:right}
               <option value="Laundry & Linen" data-i18n="svc3_t">Laundry &amp; Linen</option>
               <option value="Guest Check-In" data-i18n="svc4_t">Guest Check-In</option>
               <option value="Guest Check-Out" data-i18n="svc5_t">Guest Check-Out</option>
-              <option value="Emergency Same-Day Service" data-i18n="svc6_t">Emergency Same-Day Service</option>
               <option value="Property Restocking" data-i18n="svc7_t">Property Restocking</option>
               <option value="Commercial Cleaning" data-i18n="svc8_t">Commercial Cleaning</option>
               <option value="Partnership Request" data-i18n="opt_partnership">Partnership Request</option>
@@ -882,92 +874,12 @@ html[dir="rtl"] body{text-align:right}
 </section>
 
 <!-- ===============================
-15. MAINTENANCE & SUPPORT (service desk)
-================================ -->
-<section id="support" class="dark" style="background:linear-gradient(180deg,var(--deep-navy),var(--navy))">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow" data-i18n="support_eyebrow">Service desk</span>
-      <h2 data-i18n="support_title">Website Maintenance &amp; Support</h2>
-      <p class="lead" data-i18n="support_desc">Adriatic Shine keeps the website current through a structured support process — content, images, pricing, services, translations and technical fixes.</p>
-    </div>
-
-    <div class="support-cats">
-      <div class="cat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16M4 12h16M4 19h10"/></svg></div><b data-i18n="cat1_t">Content Updates</b><p data-i18n="cat1_d">Text, service descriptions, FAQs and seasonal messaging.</p></div>
-      <div class="cat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 17-5-5L5 21"/></svg></div><b data-i18n="cat2_t">Image Replacement</b><p data-i18n="cat2_d">Property photos, gallery visuals, logo files and hero images.</p></div>
-      <div class="cat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M2 12h20"/></svg></div><b data-i18n="cat3_t">Service Changes</b><p data-i18n="cat3_d">Add, edit or remove services, packages and descriptions.</p></div>
-      <div class="cat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><b data-i18n="cat4_t">Pricing Updates</b><p data-i18n="cat4_d">Update prices, packages and commercial conditions.</p></div>
-      <div class="cat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg></div><b data-i18n="cat5_t">Translation Corrections</b><p data-i18n="cat5_d">Refine EN, DE, FR, IT and ES versions of any content.</p></div>
-      <div class="cat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 13h6M9 17h6"/></svg></div><b data-i18n="cat6_t">Form Updates</b><p data-i18n="cat6_d">Lead fields, enquiry types and WhatsApp ticket structure.</p></div>
-      <div class="cat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><b data-i18n="cat7_t">Performance Review</b><p data-i18n="cat7_d">Page speed, mobile experience, broken links and conversion flow.</p></div>
-      <div class="cat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 3 7v6c0 5 3.5 8 9 9 5.5-1 9-4 9-9V7z"/><path d="m9 12 2 2 4-4"/></svg></div><b data-i18n="cat8_t">Emergency Fixes</b><p data-i18n="cat8_d">Broken WhatsApp links, wrong contact info or critical display issues.</p></div>
-    </div>
-
-    <div class="desk">
-      <div class="reveal">
-        <h3 style="color:#fff;font-size:1.4rem" data-i18n="desk_title">How a support ticket flows</h3>
-        <div class="lifecycle">
-          <span class="stage" data-i18n="lc_new">New</span><span class="arrow">→</span>
-          <span class="stage" data-i18n="lc_review">In Review</span><span class="arrow">→</span>
-          <span class="stage" data-i18n="lc_assigned">Assigned</span><span class="arrow">→</span>
-          <span class="stage" data-i18n="lc_done">Completed</span>
-        </div>
-        <p data-i18n="desk_sub">Choose a priority level and we respond within the matching window.</p>
-        <div class="levels">
-          <div class="level"><b data-i18n="u_normal">Normal</b><span class="sla" data-i18n="sla_normal">Within 48 hours</span></div>
-          <div class="level"><b data-i18n="u_priority">Priority</b><span class="sla" data-i18n="sla_priority">Within 24 hours</span></div>
-          <div class="level"><b data-i18n="lvl_urgent">Urgent</b><span class="sla" data-i18n="sla_urgent">Same day</span></div>
-        </div>
-      </div>
-
-      <div class="card-form reveal">
-        <div id="supportForm" novalidate>
-          <div class="form-grid">
-            <div class="field full"><label for="sName" data-i18n="s_name">Name <span class="req">*</span></label><input id="sName" type="text" required data-i18n-ph="ph_name" /><span class="err" data-i18n="v_required">This field is required</span></div>
-            <div class="field full"><label for="sEmail" data-i18n="s_email">Email <span class="req">*</span></label><input id="sEmail" type="email" required data-i18n-ph="ph_email" /><span class="err" data-i18n="v_email">Enter a valid email</span></div>
-            <div class="field"><label for="sType" data-i18n="s_type">Type of Support <span class="req">*</span></label>
-              <select id="sType" required>
-                <option value="" data-i18n="opt_select">Select…</option>
-                <option value="Content Update" data-i18n="st_content">Content Update</option>
-                <option value="Image Replacement" data-i18n="st_image">Image Replacement</option>
-                <option value="Service Change" data-i18n="st_service">Service Change</option>
-                <option value="Pricing Update" data-i18n="st_pricing">Pricing Update</option>
-                <option value="Translation Correction" data-i18n="st_translation">Translation Correction</option>
-                <option value="Form / Ticket Update" data-i18n="st_form">Form / Ticket Update</option>
-                <option value="Technical Issue" data-i18n="st_technical">Technical Issue</option>
-                <option value="Other" data-i18n="pt_other">Other</option>
-              </select><span class="err" data-i18n="v_required">This field is required</span></div>
-            <div class="field"><label for="sPriority" data-i18n="s_priority">Priority <span class="req">*</span></label>
-              <select id="sPriority" required>
-                <option value="" data-i18n="opt_select">Select…</option>
-                <option value="Normal" data-i18n="u_normal">Normal</option>
-                <option value="Priority" data-i18n="u_priority">Priority</option>
-                <option value="Urgent" data-i18n="lvl_urgent">Urgent</option>
-              </select><span class="err" data-i18n="v_required">This field is required</span></div>
-            <div class="field full"><label for="sDesc" data-i18n="s_desc">Description <span class="req">*</span></label><textarea id="sDesc" required data-i18n-ph="ph_desc"></textarea><span class="err" data-i18n="v_required">This field is required</span></div>
-          </div>
-          <div class="form-actions">
-            <button class="btn btn-gold" id="supportSubmit" type="button"><span class="spinner" id="supportSpinner"></span><span id="supportBtnText" data-i18n="s_submit">Request Website Support</span></button>
-          </div>
-          <div class="ticket" id="supportTicket" aria-live="polite">
-            <div class="stub"><b data-i18n="ticket_sready">Support ticket ready</b><span class="pill">SUPPORT</span></div>
-            <div class="perf"></div>
-            <div class="body"><div class="tid" id="supportTid">SUP-…</div><p class="msg" data-i18n="ticket_msg">Your request has been prepared. WhatsApp will now open with your service ticket.</p><a class="btn btn-wa" id="supportWaBtn" href="#" target="_blank" rel="noopener" data-i18n="ticket_open">Open WhatsApp Ticket</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===============================
 16. FOOTER
 ================================ -->
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782176791/E7B2C13D-6BCA-4BD9-AA6B-BD9E248A3E9E_stzkzq.png" alt="Adriatic Shine" loading="lazy" />
         <div class="tagline" data-i18n="footer_tagline">Clean Apartments. Happy Guests.</div>
         <p data-i18n="footer_about">Property care and hospitality operations for apartments, villas and holiday rentals across Istria, Croatia.</p>
       </div>
@@ -976,7 +888,6 @@ html[dir="rtl"] body{text-align:right}
         <a href="#services" data-i18n="nav_services">Services</a>
         <a href="#how" data-i18n="nav_how">How It Works</a>
         <a href="#areas" data-i18n="nav_areas">Areas</a>
-        <a href="#support" data-i18n="nav_support">Support</a>
       </div>
       <div class="foot-col">
         <h4 data-i18n="footer_contact">Contact</h4>
@@ -1042,7 +953,7 @@ const seo = {
 const translations = {
   en:{
     skip_main:"Skip to main content",theme_day:"Switch to day mode",theme_night:"Switch to night mode",nav_home:"Home",nav_services:"Services",nav_how:"How It Works",nav_areas:"Areas",nav_faq:"FAQ",nav_support:"Support",nav_contact:"Contact",nav_cta:"WhatsApp",
-    hero_kicker:"Property Care · Istria, Croatia",hero_title_a:"Professional property care",hero_title_b:"in Istria.",hero_sub:"Reliable cleaning, guest services and operational support for apartments, villas and holiday rentals.",hero_cta1:"Request a Service",hero_cta2:"Contact on WhatsApp",hero_m1:"Coverage areas",hero_m2:"Emergency response",hero_m3:"Guest-ready standard",scroll:"Scroll",
+    hero_kicker:"Property Care · Istria, Croatia",hero_title_a:"Professional property care",hero_title_b:"in Istria.",hero_sub:"Reliable cleaning, guest services and operational support for apartments, villas and holiday rentals.",hero_cta1:"Request a Service",hero_cta2:"Contact on WhatsApp",hero_m1:"Coverage areas",hero_m2:"Fast response",hero_m3:"Guest-ready standard",scroll:"Scroll",
     trust_1:"Professional",trust_2:"Reliable",trust_3:"Guest Ready",trust_4:"Local Expertise",trust_5:"Detail Focused",trust_6:"Hospitality Standards",
     services_eyebrow:"What we manage",services_title:"Operational care, end to end",services_sub:"Every service is delivered to a documented standard, so your property is consistently guest-ready between stays.",
     svc1_t:"Apartment Cleaning",svc1_d:"Turnover and deep cleaning tailored to short-stay apartments and rental schedules.",
@@ -1050,7 +961,6 @@ const translations = {
     svc3_t:"Laundry & Linen",svc3_d:"Fresh, hotel-grade linen and towels managed, laundered and replaced on schedule.",
     svc4_t:"Guest Check-In",svc4_d:"Warm, professional arrivals with key handover and a guest-ready welcome.",
     svc5_t:"Guest Check-Out",svc5_d:"Departure checks, inventory verification and rapid turnaround for the next stay.",
-    svc6_t:"Emergency Same-Day",svc6_d:"Last-minute bookings or incidents handled fast, with same-day response in our areas.",
     svc7_t:"Property Restocking",svc7_d:"Consumables, amenities and essentials replenished so guests never find a gap.",
     svc8_t:"Commercial Cleaning",svc8_d:"Offices, boutique venues and hospitality spaces kept to a professional standard.",
     owners_tag_b:"Guest-ready, always",owners_tag_s:"Verified before every arrival",owners_eyebrow:"For property owners",owners_title:"A trusted operational partner, not just a cleaner",owners_body:"We take the operational weight off owners and hosts — keeping properties consistently guest-ready while you stay in control and at ease.",
@@ -1096,24 +1006,12 @@ const translations = {
     q4:"Which areas do you cover?",a4:"Rovinj, Poreč, Pula, Novigrad, Umag and Medulin, plus additional areas in Istria on request.",
     q5:"Do you work with agencies?",a5:"Yes. We partner with property managers and rental agencies on consistent, scalable operational support.",
     q6:"Do you provide linen services?",a6:"We manage hotel-grade linen and towels — laundered, replaced and restocked to a fresh, consistent standard.",
-    support_eyebrow:"Service desk",support_title:"Website Maintenance & Support",support_desc:"Adriatic Shine keeps the website current through a structured support process — content, images, pricing, services, translations and technical fixes.",
-    cat1_t:"Content Updates",cat1_d:"Text, service descriptions, FAQs and seasonal messaging.",
-    cat2_t:"Image Replacement",cat2_d:"Property photos, gallery visuals, logo files and hero images.",
-    cat3_t:"Service Changes",cat3_d:"Add, edit or remove services, packages and descriptions.",
-    cat4_t:"Pricing Updates",cat4_d:"Update prices, packages and commercial conditions.",
-    cat5_t:"Translation Corrections",cat5_d:"Refine EN, DE, FR, IT and ES versions of any content.",
-    cat6_t:"Form Updates",cat6_d:"Lead fields, enquiry types and WhatsApp ticket structure.",
-    cat7_t:"Performance Review",cat7_d:"Page speed, mobile experience, broken links and conversion flow.",
-    cat8_t:"Emergency Fixes",cat8_d:"Broken WhatsApp links, wrong contact info or critical display issues.",
-    desk_title:"How a support ticket flows",lc_new:"New",lc_review:"In Review",lc_assigned:"Assigned",lc_done:"Completed",desk_sub:"Choose a priority level and we respond within the matching window.",
     sla_normal:"Within 48 hours",sla_priority:"Within 24 hours",sla_urgent:"Same day",lvl_urgent:"Urgent",
-    s_name:"Name",s_email:"Email",s_type:"Type of Support",s_priority:"Priority",s_desc:"Description",
-    st_content:"Content Update",st_image:"Image Replacement",st_service:"Service Change",st_pricing:"Pricing Update",st_translation:"Translation Correction",st_form:"Form / Ticket Update",st_technical:"Technical Issue",s_submit:"Request Website Support",
     footer_tagline:"Clean Apartments. Happy Guests.",footer_about:"Property care and hospitality operations for apartments, villas and holiday rentals across Istria, Croatia.",footer_explore:"Explore",footer_contact:"Contact",footer_region:"Istria, Croatia",footer_rights:"All rights reserved.",footer_future:"Client Portal · Property Dashboard — coming soon"
   },
   de:{
     skip_main:"Zum Hauptinhalt springen",theme_day:"Zum Tagesmodus wechseln",theme_night:"Zum Nachtmodus wechseln",nav_home:"Start",nav_services:"Leistungen",nav_how:"Ablauf",nav_areas:"Gebiete",nav_faq:"FAQ",nav_support:"Support",nav_contact:"Kontakt",nav_cta:"WhatsApp",
-    hero_kicker:"Immobilienbetreuung · Istrien, Kroatien",hero_title_a:"Professionelle Immobilienbetreuung",hero_title_b:"in Istrien.",hero_sub:"Zuverlässige Reinigung, Gästeservice und operative Unterstützung für Apartments, Villen und Ferienunterkünfte.",hero_cta1:"Service anfragen",hero_cta2:"Per WhatsApp kontaktieren",hero_m1:"Einsatzgebiete",hero_m2:"Notfallreaktion",hero_m3:"Gästebereit-Standard",scroll:"Scrollen",
+    hero_kicker:"Immobilienbetreuung · Istrien, Kroatien",hero_title_a:"Professionelle Immobilienbetreuung",hero_title_b:"in Istrien.",hero_sub:"Zuverlässige Reinigung, Gästeservice und operative Unterstützung für Apartments, Villen und Ferienunterkünfte.",hero_cta1:"Service anfragen",hero_cta2:"Per WhatsApp kontaktieren",hero_m1:"Einsatzgebiete",hero_m2:"Schnelle Antwort",hero_m3:"Gästebereit-Standard",scroll:"Scrollen",
     trust_1:"Professionell",trust_2:"Zuverlässig",trust_3:"Gästebereit",trust_4:"Lokale Expertise",trust_5:"Detailorientiert",trust_6:"Hotelstandards",
     services_eyebrow:"Was wir übernehmen",services_title:"Operative Betreuung, von A bis Z",services_sub:"Jede Leistung wird nach einem dokumentierten Standard erbracht, damit Ihre Immobilie zwischen den Aufenthalten stets gästebereit ist.",
     svc1_t:"Apartment-Reinigung",svc1_d:"Wechsel- und Grundreinigung, abgestimmt auf Kurzzeit-Apartments und Vermietungspläne.",
@@ -1121,7 +1019,6 @@ const translations = {
     svc3_t:"Wäsche & Bettwäsche",svc3_d:"Frische Bettwäsche und Handtücher in Hotelqualität, verwaltet, gewaschen und planmäßig ersetzt.",
     svc4_t:"Gäste-Check-in",svc4_d:"Herzliche, professionelle Ankunft mit Schlüsselübergabe und gästebereitem Empfang.",
     svc5_t:"Gäste-Check-out",svc5_d:"Abreisekontrolle, Inventarprüfung und schnelle Vorbereitung für den nächsten Aufenthalt.",
-    svc6_t:"Notfall am selben Tag",svc6_d:"Kurzfristige Buchungen oder Zwischenfälle werden schnell bearbeitet, mit Reaktion am selben Tag in unseren Gebieten.",
     svc7_t:"Auffüllen der Ausstattung",svc7_d:"Verbrauchsartikel, Annehmlichkeiten und Essentials aufgefüllt, damit Gästen nichts fehlt.",
     svc8_t:"Gewerbereinigung",svc8_d:"Büros, Boutique-Locations und Gastgewerbeflächen auf professionellem Niveau gepflegt.",
     owners_tag_b:"Immer gästebereit",owners_tag_s:"Vor jeder Ankunft geprüft",owners_eyebrow:"Für Eigentümer",owners_title:"Ein verlässlicher operativer Partner, nicht nur eine Reinigungskraft",owners_body:"Wir nehmen Eigentümern und Gastgebern die operative Last ab — Ihre Immobilie bleibt durchgehend gästebereit, während Sie entspannt die Kontrolle behalten.",
@@ -1167,24 +1064,12 @@ const translations = {
     q4:"Welche Gebiete decken Sie ab?",a4:"Rovinj, Poreč, Pula, Novigrad, Umag und Medulin sowie weitere Gebiete in Istrien auf Anfrage.",
     q5:"Arbeiten Sie mit Agenturen zusammen?",a5:"Ja. Wir kooperieren mit Hausverwaltungen und Vermietungsagenturen für konsistente, skalierbare operative Unterstützung.",
     q6:"Bieten Sie Wäscheservice an?",a6:"Wir verwalten Bettwäsche und Handtücher in Hotelqualität — gewaschen, ersetzt und aufgefüllt nach einem frischen, gleichbleibenden Standard.",
-    support_eyebrow:"Service-Desk",support_title:"Website-Wartung & Support",support_desc:"Adriatic Shine hält die Website über einen strukturierten Support-Prozess aktuell — Inhalte, Bilder, Preise, Leistungen, Übersetzungen und technische Korrekturen.",
-    cat1_t:"Inhaltsaktualisierungen",cat1_d:"Texte, Leistungsbeschreibungen, FAQs und saisonale Botschaften.",
-    cat2_t:"Bildaustausch",cat2_d:"Objektfotos, Galeriebilder, Logodateien und Hero-Bilder.",
-    cat3_t:"Leistungsänderungen",cat3_d:"Leistungen, Pakete und Beschreibungen hinzufügen, bearbeiten oder entfernen.",
-    cat4_t:"Preisaktualisierungen",cat4_d:"Preise, Pakete und kommerzielle Konditionen aktualisieren.",
-    cat5_t:"Übersetzungskorrekturen",cat5_d:"EN-, DE-, FR-, IT- und ES-Versionen jedes Inhalts verfeinern.",
-    cat6_t:"Formularaktualisierungen",cat6_d:"Lead-Felder, Anfragearten und WhatsApp-Ticketstruktur.",
-    cat7_t:"Performance-Prüfung",cat7_d:"Seitentempo, mobile Erfahrung, defekte Links und Conversion-Fluss.",
-    cat8_t:"Notfallkorrekturen",cat8_d:"Defekte WhatsApp-Links, falsche Kontaktdaten oder kritische Anzeigeprobleme.",
-    desk_title:"So läuft ein Support-Ticket",lc_new:"Neu",lc_review:"In Prüfung",lc_assigned:"Zugewiesen",lc_done:"Abgeschlossen",desk_sub:"Wählen Sie eine Prioritätsstufe und wir reagieren im passenden Zeitfenster.",
     sla_normal:"Innerhalb von 48 Stunden",sla_priority:"Innerhalb von 24 Stunden",sla_urgent:"Am selben Tag",lvl_urgent:"Dringend",
-    s_name:"Name",s_email:"E-Mail",s_type:"Art des Supports",s_priority:"Priorität",s_desc:"Beschreibung",
-    st_content:"Inhaltsaktualisierung",st_image:"Bildaustausch",st_service:"Leistungsänderung",st_pricing:"Preisaktualisierung",st_translation:"Übersetzungskorrektur",st_form:"Formular- / Ticket-Aktualisierung",st_technical:"Technisches Problem",s_submit:"Website-Support anfragen",
     footer_tagline:"Saubere Apartments. Zufriedene Gäste.",footer_about:"Immobilienbetreuung und Gastgewerbe-Operationen für Apartments, Villen und Ferienunterkünfte in ganz Istrien, Kroatien.",footer_explore:"Entdecken",footer_contact:"Kontakt",footer_region:"Istrien, Kroatien",footer_rights:"Alle Rechte vorbehalten.",footer_future:"Kundenportal · Immobilien-Dashboard — in Kürze"
   },
   fr:{
     skip_main:"Aller au contenu principal",theme_day:"Passer au mode jour",theme_night:"Passer au mode nuit",nav_home:"Accueil",nav_services:"Services",nav_how:"Méthode",nav_areas:"Zones",nav_faq:"FAQ",nav_support:"Support",nav_contact:"Contact",nav_cta:"WhatsApp",
-    hero_kicker:"Gestion immobilière · Istrie, Croatie",hero_title_a:"Gestion immobilière professionnelle",hero_title_b:"en Istrie.",hero_sub:"Nettoyage fiable, services aux hôtes et support opérationnel pour appartements, villas et locations de vacances.",hero_cta1:"Demander un service",hero_cta2:"Contacter via WhatsApp",hero_m1:"Zones couvertes",hero_m2:"Réponse d'urgence",hero_m3:"Standard prêt pour les hôtes",scroll:"Défiler",
+    hero_kicker:"Gestion immobilière · Istrie, Croatie",hero_title_a:"Gestion immobilière professionnelle",hero_title_b:"en Istrie.",hero_sub:"Nettoyage fiable, services aux hôtes et support opérationnel pour appartements, villas et locations de vacances.",hero_cta1:"Demander un service",hero_cta2:"Contacter via WhatsApp",hero_m1:"Zones couvertes",hero_m2:"Réponse rapide",hero_m3:"Standard prêt pour les hôtes",scroll:"Défiler",
     trust_1:"Professionnel",trust_2:"Fiable",trust_3:"Prêt pour les hôtes",trust_4:"Expertise locale",trust_5:"Souci du détail",trust_6:"Standards hôteliers",
     services_eyebrow:"Ce que nous gérons",services_title:"Une gestion opérationnelle de A à Z",services_sub:"Chaque service est réalisé selon un standard documenté, pour que votre bien soit toujours prêt à accueillir entre deux séjours.",
     svc1_t:"Nettoyage d'appartement",svc1_d:"Remise en état et nettoyage en profondeur adaptés aux courts séjours et aux plannings de location.",
@@ -1192,7 +1077,6 @@ const translations = {
     svc3_t:"Blanchisserie & linge",svc3_d:"Linge et serviettes de qualité hôtelière gérés, lavés et remplacés selon le planning.",
     svc4_t:"Accueil des hôtes",svc4_d:"Arrivées chaleureuses et professionnelles avec remise des clés et accueil soigné.",
     svc5_t:"Départ des hôtes",svc5_d:"Contrôles de départ, vérification de l'inventaire et remise en état rapide pour le séjour suivant.",
-    svc6_t:"Urgence le jour même",svc6_d:"Réservations de dernière minute ou incidents traités rapidement, avec réponse le jour même dans nos zones.",
     svc7_t:"Réapprovisionnement",svc7_d:"Consommables, équipements et essentiels réapprovisionnés pour que rien ne manque aux hôtes.",
     svc8_t:"Nettoyage commercial",svc8_d:"Bureaux, lieux de charme et espaces d'accueil maintenus à un niveau professionnel.",
     owners_tag_b:"Toujours prêt pour les hôtes",owners_tag_s:"Vérifié avant chaque arrivée",owners_eyebrow:"Pour les propriétaires",owners_title:"Un partenaire opérationnel de confiance, pas seulement un agent de ménage",owners_body:"Nous déchargeons les propriétaires et les hôtes du poids opérationnel — votre bien reste constamment prêt à accueillir, pendant que vous gardez le contrôle, l'esprit tranquille.",
@@ -1238,24 +1122,12 @@ const translations = {
     q4:"Quelles zones couvrez-vous ?",a4:"Rovinj, Poreč, Pula, Novigrad, Umag et Medulin, ainsi que d'autres zones d'Istrie sur demande.",
     q5:"Travaillez-vous avec des agences ?",a5:"Oui. Nous collaborons avec les gestionnaires de biens et les agences de location pour un support opérationnel cohérent et évolutif.",
     q6:"Proposez-vous un service de linge ?",a6:"Nous gérons le linge et les serviettes de qualité hôtelière — lavés, remplacés et réapprovisionnés selon un standard frais et constant.",
-    support_eyebrow:"Service desk",support_title:"Maintenance & support du site",support_desc:"Adriatic Shine maintient le site à jour via un processus de support structuré — contenu, images, tarifs, services, traductions et corrections techniques.",
-    cat1_t:"Mises à jour de contenu",cat1_d:"Textes, descriptions de services, FAQ et messages saisonniers.",
-    cat2_t:"Remplacement d'images",cat2_d:"Photos de biens, visuels de galerie, fichiers de logo et images hero.",
-    cat3_t:"Changements de services",cat3_d:"Ajouter, modifier ou supprimer des services, forfaits et descriptions.",
-    cat4_t:"Mises à jour de tarifs",cat4_d:"Mettre à jour les prix, forfaits et conditions commerciales.",
-    cat5_t:"Corrections de traduction",cat5_d:"Affiner les versions EN, DE, FR, IT et ES de tout contenu.",
-    cat6_t:"Mises à jour de formulaire",cat6_d:"Champs de lead, types de demande et structure du ticket WhatsApp.",
-    cat7_t:"Revue de performance",cat7_d:"Vitesse, expérience mobile, liens cassés et parcours de conversion.",
-    cat8_t:"Corrections urgentes",cat8_d:"Liens WhatsApp cassés, coordonnées erronées ou problèmes d'affichage critiques.",
-    desk_title:"Le parcours d'un ticket de support",lc_new:"Nouveau",lc_review:"En revue",lc_assigned:"Assigné",lc_done:"Terminé",desk_sub:"Choisissez un niveau de priorité et nous répondons dans le délai correspondant.",
     sla_normal:"Sous 48 heures",sla_priority:"Sous 24 heures",sla_urgent:"Le jour même",lvl_urgent:"Urgent",
-    s_name:"Nom",s_email:"E-mail",s_type:"Type de support",s_priority:"Priorité",s_desc:"Description",
-    st_content:"Mise à jour de contenu",st_image:"Remplacement d'image",st_service:"Changement de service",st_pricing:"Mise à jour de tarif",st_translation:"Correction de traduction",st_form:"Mise à jour formulaire / ticket",st_technical:"Problème technique",s_submit:"Demander un support",
     footer_tagline:"Des appartements impeccables. Des hôtes ravis.",footer_about:"Gestion immobilière et opérations hôtelières pour appartements, villas et locations de vacances en Istrie, Croatie.",footer_explore:"Explorer",footer_contact:"Contact",footer_region:"Istrie, Croatie",footer_rights:"Tous droits réservés.",footer_future:"Portail client · Tableau de bord — bientôt disponible"
   },
   it:{
     skip_main:"Vai al contenuto principale",theme_day:"Passa alla modalità giorno",theme_night:"Passa alla modalità notte",nav_home:"Home",nav_services:"Servizi",nav_how:"Come funziona",nav_areas:"Zone",nav_faq:"FAQ",nav_support:"Supporto",nav_contact:"Contatti",nav_cta:"WhatsApp",
-    hero_kicker:"Property care · Istria, Croazia",hero_title_a:"Property care professionale",hero_title_b:"in Istria.",hero_sub:"Pulizie affidabili, servizi per gli ospiti e supporto operativo per appartamenti, ville e case vacanza.",hero_cta1:"Richiedi un servizio",hero_cta2:"Contatta su WhatsApp",hero_m1:"Zone coperte",hero_m2:"Risposta d'emergenza",hero_m3:"Standard pronto-ospiti",scroll:"Scorri",
+    hero_kicker:"Property care · Istria, Croazia",hero_title_a:"Property care professionale",hero_title_b:"in Istria.",hero_sub:"Pulizie affidabili, servizi per gli ospiti e supporto operativo per appartamenti, ville e case vacanza.",hero_cta1:"Richiedi un servizio",hero_cta2:"Contatta su WhatsApp",hero_m1:"Zone coperte",hero_m2:"Risposta rapida",hero_m3:"Standard pronto-ospiti",scroll:"Scorri",
     trust_1:"Professionali",trust_2:"Affidabili",trust_3:"Pronto-ospiti",trust_4:"Competenza locale",trust_5:"Attenti ai dettagli",trust_6:"Standard alberghieri",
     services_eyebrow:"Cosa gestiamo",services_title:"Cura operativa, dall'inizio alla fine",services_sub:"Ogni servizio segue uno standard documentato, così la tua proprietà è sempre pronta per gli ospiti tra un soggiorno e l'altro.",
     svc1_t:"Pulizia appartamenti",svc1_d:"Cambio e pulizia profonda su misura per appartamenti a breve termine e calendari di affitto.",
@@ -1263,7 +1135,6 @@ const translations = {
     svc3_t:"Lavanderia & biancheria",svc3_d:"Biancheria e asciugamani in qualità alberghiera gestiti, lavati e sostituiti secondo programma.",
     svc4_t:"Check-in ospiti",svc4_d:"Arrivi cordiali e professionali con consegna chiavi e accoglienza pronta per gli ospiti.",
     svc5_t:"Check-out ospiti",svc5_d:"Controlli alla partenza, verifica dell'inventario e rapido riassetto per il soggiorno successivo.",
-    svc6_t:"Emergenza in giornata",svc6_d:"Prenotazioni last-minute o imprevisti gestiti in fretta, con risposta in giornata nelle nostre zone.",
     svc7_t:"Rifornimento proprietà",svc7_d:"Consumabili, comfort ed essenziali reintegrati così che agli ospiti non manchi nulla.",
     svc8_t:"Pulizie commerciali",svc8_d:"Uffici, locali boutique e spazi dell'ospitalità mantenuti a livello professionale.",
     owners_tag_b:"Sempre pronto-ospiti",owners_tag_s:"Verificata prima di ogni arrivo",owners_eyebrow:"Per i proprietari",owners_title:"Un partner operativo di fiducia, non solo un addetto alle pulizie",owners_body:"Togliamo il peso operativo a proprietari e host — la tua proprietà resta sempre pronta per gli ospiti, mentre tu mantieni il controllo in tutta tranquillità.",
@@ -1309,24 +1180,12 @@ const translations = {
     q4:"Quali zone coprite?",a4:"Rovinj, Poreč, Pula, Novigrad, Umag e Medulin, oltre ad altre zone dell'Istria su richiesta.",
     q5:"Lavorate con le agenzie?",a5:"Sì. Collaboriamo con property manager e agenzie di affitto per un supporto operativo coerente e scalabile.",
     q6:"Offrite il servizio di biancheria?",a6:"Gestiamo biancheria e asciugamani in qualità alberghiera — lavati, sostituiti e reintegrati secondo uno standard fresco e costante.",
-    support_eyebrow:"Service desk",support_title:"Manutenzione & supporto del sito",support_desc:"Adriatic Shine mantiene il sito aggiornato con un processo di supporto strutturato — contenuti, immagini, prezzi, servizi, traduzioni e correzioni tecniche.",
-    cat1_t:"Aggiornamenti contenuti",cat1_d:"Testi, descrizioni dei servizi, FAQ e messaggi stagionali.",
-    cat2_t:"Sostituzione immagini",cat2_d:"Foto delle proprietà, visual della galleria, file del logo e immagini hero.",
-    cat3_t:"Modifiche ai servizi",cat3_d:"Aggiungere, modificare o rimuovere servizi, pacchetti e descrizioni.",
-    cat4_t:"Aggiornamenti prezzi",cat4_d:"Aggiornare prezzi, pacchetti e condizioni commerciali.",
-    cat5_t:"Correzioni traduzioni",cat5_d:"Rifinire le versioni EN, DE, FR, IT ed ES di qualsiasi contenuto.",
-    cat6_t:"Aggiornamenti moduli",cat6_d:"Campi dei lead, tipi di richiesta e struttura del ticket WhatsApp.",
-    cat7_t:"Analisi performance",cat7_d:"Velocità, esperienza mobile, link rotti e flusso di conversione.",
-    cat8_t:"Correzioni urgenti",cat8_d:"Link WhatsApp rotti, contatti errati o problemi di visualizzazione critici.",
-    desk_title:"Come scorre un ticket di supporto",lc_new:"Nuovo",lc_review:"In revisione",lc_assigned:"Assegnato",lc_done:"Completato",desk_sub:"Scegli un livello di priorità e rispondiamo entro la finestra corrispondente.",
     sla_normal:"Entro 48 ore",sla_priority:"Entro 24 ore",sla_urgent:"In giornata",lvl_urgent:"Urgente",
-    s_name:"Nome",s_email:"Email",s_type:"Tipo di supporto",s_priority:"Priorità",s_desc:"Descrizione",
-    st_content:"Aggiornamento contenuti",st_image:"Sostituzione immagine",st_service:"Modifica servizio",st_pricing:"Aggiornamento prezzi",st_translation:"Correzione traduzione",st_form:"Aggiornamento modulo / ticket",st_technical:"Problema tecnico",s_submit:"Richiedi supporto sito",
     footer_tagline:"Appartamenti impeccabili. Ospiti felici.",footer_about:"Property care e operazioni di ospitalità per appartamenti, ville e case vacanza in tutta l'Istria, Croazia.",footer_explore:"Esplora",footer_contact:"Contatti",footer_region:"Istria, Croazia",footer_rights:"Tutti i diritti riservati.",footer_future:"Portale clienti · Dashboard proprietà — in arrivo"
   },
   es:{
     skip_main:"Saltar al contenido principal",theme_day:"Cambiar a modo día",theme_night:"Cambiar a modo noche",nav_home:"Inicio",nav_services:"Servicios",nav_how:"Cómo funciona",nav_areas:"Zonas",nav_faq:"FAQ",nav_support:"Soporte",nav_contact:"Contacto",nav_cta:"WhatsApp",
-    hero_kicker:"Property care · Istria, Croacia",hero_title_a:"Property care profesional",hero_title_b:"en Istria.",hero_sub:"Limpieza fiable, servicios para huéspedes y apoyo operativo para apartamentos, villas y alojamientos vacacionales.",hero_cta1:"Solicitar un servicio",hero_cta2:"Contactar por WhatsApp",hero_m1:"Zonas cubiertas",hero_m2:"Respuesta de emergencia",hero_m3:"Estándar listo para huéspedes",scroll:"Desliza",
+    hero_kicker:"Property care · Istria, Croacia",hero_title_a:"Property care profesional",hero_title_b:"en Istria.",hero_sub:"Limpieza fiable, servicios para huéspedes y apoyo operativo para apartamentos, villas y alojamientos vacacionales.",hero_cta1:"Solicitar un servicio",hero_cta2:"Contactar por WhatsApp",hero_m1:"Zonas cubiertas",hero_m2:"Respuesta rápida",hero_m3:"Estándar listo para huéspedes",scroll:"Desliza",
     trust_1:"Profesional",trust_2:"Fiable",trust_3:"Listo para huéspedes",trust_4:"Experiencia local",trust_5:"Atención al detalle",trust_6:"Estándares hoteleros",
     services_eyebrow:"Lo que gestionamos",services_title:"Cuidado operativo, de principio a fin",services_sub:"Cada servicio se realiza con un estándar documentado, para que tu propiedad esté siempre lista para huéspedes entre estancias.",
     svc1_t:"Limpieza de apartamentos",svc1_d:"Cambio y limpieza profunda adaptados a apartamentos de corta estancia y calendarios de alquiler.",
@@ -1334,7 +1193,6 @@ const translations = {
     svc3_t:"Lavandería y lencería",svc3_d:"Lencería y toallas de calidad hotelera gestionadas, lavadas y repuestas según calendario.",
     svc4_t:"Check-in de huéspedes",svc4_d:"Llegadas cálidas y profesionales con entrega de llaves y una bienvenida lista para huéspedes.",
     svc5_t:"Check-out de huéspedes",svc5_d:"Controles de salida, verificación de inventario y rápida preparación para la siguiente estancia.",
-    svc6_t:"Emergencia el mismo día",svc6_d:"Reservas de última hora o incidencias resueltas con rapidez, con respuesta el mismo día en nuestras zonas.",
     svc7_t:"Reposición de la propiedad",svc7_d:"Consumibles, amenidades y esenciales repuestos para que a los huéspedes nunca les falte nada.",
     svc8_t:"Limpieza comercial",svc8_d:"Oficinas, locales boutique y espacios de hostelería mantenidos a nivel profesional.",
     owners_tag_b:"Siempre listo para huéspedes",owners_tag_s:"Verificada antes de cada llegada",owners_eyebrow:"Para propietarios",owners_title:"Un socio operativo de confianza, no solo limpieza",owners_body:"Quitamos la carga operativa a propietarios y anfitriones — tu propiedad se mantiene siempre lista para huéspedes mientras tú mantienes el control con tranquilidad.",
@@ -1380,19 +1238,7 @@ const translations = {
     q4:"¿Qué zonas cubrís?",a4:"Rovinj, Poreč, Pula, Novigrad, Umag y Medulin, además de otras zonas de Istria bajo petición.",
     q5:"¿Trabajáis con agencias?",a5:"Sí. Colaboramos con gestores de propiedades y agencias de alquiler para un apoyo operativo constante y escalable.",
     q6:"¿Ofrecéis servicio de lencería?",a6:"Gestionamos lencería y toallas de calidad hotelera — lavadas, repuestas y reabastecidas con un estándar fresco y constante.",
-    support_eyebrow:"Service desk",support_title:"Mantenimiento y soporte de la web",support_desc:"Adriatic Shine mantiene la web actualizada mediante un proceso de soporte estructurado — contenido, imágenes, precios, servicios, traducciones y correcciones técnicas.",
-    cat1_t:"Actualizaciones de contenido",cat1_d:"Textos, descripciones de servicios, FAQ y mensajes estacionales.",
-    cat2_t:"Sustitución de imágenes",cat2_d:"Fotos de propiedades, visuales de galería, archivos de logo e imágenes hero.",
-    cat3_t:"Cambios de servicios",cat3_d:"Añadir, editar o eliminar servicios, paquetes y descripciones.",
-    cat4_t:"Actualizaciones de precios",cat4_d:"Actualizar precios, paquetes y condiciones comerciales.",
-    cat5_t:"Correcciones de traducción",cat5_d:"Refinar las versiones EN, DE, FR, IT y ES de cualquier contenido.",
-    cat6_t:"Actualizaciones de formularios",cat6_d:"Campos del lead, tipos de consulta y estructura del ticket de WhatsApp.",
-    cat7_t:"Revisión de rendimiento",cat7_d:"Velocidad, experiencia móvil, enlaces rotos y flujo de conversión.",
-    cat8_t:"Correcciones urgentes",cat8_d:"Enlaces de WhatsApp rotos, datos de contacto erróneos o problemas críticos de visualización.",
-    desk_title:"Cómo fluye un ticket de soporte",lc_new:"Nuevo",lc_review:"En revisión",lc_assigned:"Asignado",lc_done:"Completado",desk_sub:"Elige un nivel de prioridad y respondemos dentro de la ventana correspondiente.",
     sla_normal:"En 48 horas",sla_priority:"En 24 horas",sla_urgent:"El mismo día",lvl_urgent:"Urgente",
-    s_name:"Nombre",s_email:"Email",s_type:"Tipo de soporte",s_priority:"Prioridad",s_desc:"Descripción",
-    st_content:"Actualización de contenido",st_image:"Sustitución de imagen",st_service:"Cambio de servicio",st_pricing:"Actualización de precios",st_translation:"Corrección de traducción",st_form:"Actualización de formulario / ticket",st_technical:"Problema técnico",s_submit:"Solicitar soporte web",
     footer_tagline:"Apartamentos impecables. Huéspedes felices.",footer_about:"Property care y operaciones de hospitality para apartamentos, villas y alojamientos vacacionales en toda Istria, Croacia.",footer_explore:"Explorar",footer_contact:"Contacto",footer_region:"Istria, Croacia",footer_rights:"Todos los derechos reservados.",footer_future:"Portal de clientes · Panel de propiedades — próximamente"
   }
 };
@@ -1400,7 +1246,7 @@ const translations = {
 translations.hr = Object.assign({}, translations.en, {
   skip_main:"Preskoci na glavni sadrzaj",theme_day:"Prebaci na dnevni nacin",theme_night:"Prebaci na nocni nacin",
   nav_home:"Pocetna",nav_services:"Usluge",nav_how:"Kako radimo",nav_areas:"Podrucja",nav_faq:"FAQ",nav_support:"Podrska",nav_contact:"Kontakt",nav_cta:"WhatsApp",
-  hero_kicker:"Briga o nekretninama · Istra, Hrvatska",hero_title_a:"Profesionalna briga o nekretninama",hero_title_b:"u Istri.",hero_sub:"Pouzdano ciscenje, usluge za goste i operativna podrska za apartmane, vile i smjestaj za odmor.",hero_cta1:"Zatrazite uslugu",hero_cta2:"Kontakt putem WhatsAppa",hero_m1:"Podrucja pokrivenosti",hero_m2:"Hitna reakcija",hero_m3:"Standard spremno za goste",scroll:"Pomaknite",
+  hero_kicker:"Briga o nekretninama · Istra, Hrvatska",hero_title_a:"Profesionalna briga o nekretninama",hero_title_b:"u Istri.",hero_sub:"Pouzdano ciscenje, usluge za goste i operativna podrska za apartmane, vile i smjestaj za odmor.",hero_cta1:"Zatrazite uslugu",hero_cta2:"Kontakt putem WhatsAppa",hero_m1:"Podrucja pokrivenosti",hero_m2:"Brz odgovor",hero_m3:"Standard spremno za goste",scroll:"Pomaknite",
   trust_1:"Profesionalno",trust_2:"Pouzdano",trust_3:"Spremno za goste",trust_4:"Lokalno znanje",trust_5:"Paznja na detalje",trust_6:"Hospitality standardi",
   services_eyebrow:"Sto preuzimamo",services_title:"Operativna briga od pocetka do kraja",services_sub:"Svaka usluga izvodi se prema dokumentiranom standardu, kako bi vasa nekretnina bila spremna za goste izmedu boravaka.",
   svc1_t:"Ciscenje apartmana",svc1_d:"Ciscenje izmedu smjena i dubinsko ciscenje prilagodeno kratkorocnom najmu.",
@@ -1408,7 +1254,6 @@ translations.hr = Object.assign({}, translations.en, {
   svc3_t:"Pranje i posteljina",svc3_d:"Svjeza posteljina i rucnici hotelske kvalitete, oprani i zamijenjeni prema rasporedu.",
   svc4_t:"Check-in gostiju",svc4_d:"Lokalna podrska za dolaske, osnovne upute i prve dojmove.",
   svc5_t:"Check-out gostiju",svc5_d:"Pregled nakon odlaska gostiju, izvjestaj o stanju i priprema za sljedeci boravak.",
-  svc6_t:"Hitna usluga isti dan",svc6_d:"Brza reakcija za last-minute rezervacije, incidente i hitne potrebe.",
   owners_eyebrow:"Za vlasnike",owners_title:"Mirniji rad izmedu rezervacija",owners_sub:"Kombiniramo lokalnu dostupnost, jasnu komunikaciju i dosljedne standarde kako bi vlasnici i manageri imali manje operativnog opterecenja.",
   owners_cta:"Zatrazite uslugu",
   ben1_t:"Stvarno lokalna pokrivenost",ben1_d:"Tim u Istri za brzu koordinaciju i provjeru na terenu.",
@@ -1444,19 +1289,7 @@ translations.hr = Object.assign({}, translations.en, {
   q4:"Koja podrucja pokrivate?",a4:"Rovinj, Porec, Pula, Novigrad, Umag i Medulin, uz dodatna podrucja u Istri na zahtjev.",
   q5:"Radite li s agencijama?",a5:"Da. Suradujemo s property managerima i agencijama za najam kroz dosljednu operativnu podrsku.",
   q6:"Nudite li uslugu posteljine?",a6:"Upravljamo posteljinom i rucnicima hotelske kvalitete, opranim, zamijenjenim i nadopunjenim prema svjezem standardu.",
-  support_eyebrow:"Service desk",support_title:"Odrzavanje i podrska web stranice",support_desc:"Adriatic Shine odrzava web stranicu aktualnom kroz strukturiran proces podrske: sadrzaj, slike, cijene, usluge, prijevodi i tehnicke korekcije.",
-  cat1_t:"Azuriranje sadrzaja",cat1_d:"Tekstovi, opisi usluga, FAQ i sezonske poruke.",
-  cat2_t:"Zamjena slika",cat2_d:"Fotografije nekretnina, galerija, logo datoteke i hero slike.",
-  cat3_t:"Promjene usluga",cat3_d:"Dodavanje, uredivanje ili uklanjanje usluga, paketa i opisa.",
-  cat4_t:"Azuriranje cijena",cat4_d:"Azuriranje cijena, paketa i komercijalnih uvjeta.",
-  cat5_t:"Korekcije prijevoda",cat5_d:"Dorade EN, DE, FR, IT, ES i HR verzija sadrzaja.",
-  cat6_t:"Azuriranje obrazaca",cat6_d:"Lead polja, tipovi upita i struktura WhatsApp ticketa.",
-  cat7_t:"Provjera performansi",cat7_d:"Brzina, mobilno iskustvo, neispravni linkovi i konverzijski tok.",
-  cat8_t:"Hitni popravci",cat8_d:"Neispravni WhatsApp linkovi, pogresni kontakt podaci ili kriticni prikaz.",
-  desk_title:"Kako tece support ticket",lc_new:"Novo",lc_review:"U pregledu",lc_assigned:"Dodijeljeno",lc_done:"Zavrseno",desk_sub:"Odaberite prioritet i odgovorit cemo u odgovarajucem roku.",
   sla_normal:"Unutar 48 sati",sla_priority:"Unutar 24 sata",sla_urgent:"Isti dan",lvl_urgent:"Hitno",
-  s_name:"Ime",s_email:"Email",s_type:"Tip podrske",s_priority:"Prioritet",s_desc:"Opis",
-  st_content:"Azuriranje sadrzaja",st_image:"Zamjena slike",st_service:"Promjena usluge",st_pricing:"Azuriranje cijene",st_translation:"Korekcija prijevoda",st_form:"Azuriranje obrasca / ticketa",st_technical:"Tehnicki problem",s_submit:"Zatrazi web podrsku",
   footer_tagline:"Cisti apartmani. Sretni gosti.",footer_about:"Briga o nekretninama i hospitality operacije za apartmane, vile i smjestaj za odmor sirom Istre, Hrvatska.",footer_explore:"Istrazi",footer_contact:"Kontakt",footer_region:"Istra, Hrvatska",footer_rights:"Sva prava pridrzana.",footer_future:"Klijentski portal · Nadzorna ploca nekretnina — uskoro"
 });
 
@@ -1623,46 +1456,6 @@ function generateWhatsAppTicket(){
   }, 650);
 }
 
-// SUPPORT TICKET — generateSupportTicket()
-function generateSupportTicket(){
-  const fields = [
-    {id:"sName",required:true},{id:"sEmail",required:true,email:true},
-    {id:"sType",required:true},{id:"sPriority",required:true},{id:"sDesc",required:true}
-  ];
-  if(!validate(fields)) return;
-
-  const btn = document.getElementById("supportSubmit");
-  const spinner = document.getElementById("supportSpinner");
-  btn.classList.add("loading"); if(spinner) spinner.style.display="inline-block";
-
-  setTimeout(function(){
-    const id = ticketId("SUP");
-    const supportData = {
-      ticketId:id, source:"Website Support Section",
-      name:val("sName"), email:val("sEmail"), type:val("sType"), priority:val("sPriority"), description:val("sDesc")
-    };
-    const msg =
-"ADRIATIC SHINE WEBSITE SUPPORT REQUEST\n\n"+
-"Ticket ID:\n"+id+"\n\n"+
-"Name: "+supportData.name+"\n"+
-"Email: "+supportData.email+"\n"+
-"Support Type: "+supportData.type+"\n"+
-"Priority: "+supportData.priority+"\n"+
-"Description:\n"+supportData.description+"\n\n"+
-"Source:\nWebsite Support Section";
-
-    const res = openWhatsApp(msg);
-    btn.classList.remove("loading"); if(spinner) spinner.style.display="none";
-
-    const ticket = document.getElementById("supportTicket");
-    const tid = document.getElementById("supportTid");
-    const wa = document.getElementById("supportWaBtn");
-    if(tid) tid.textContent = id;
-    if(wa) wa.href = res.url;
-    if(ticket) ticket.classList.add("show");
-  }, 650);
-}
-
 /* ===============================
 21. UTILITIES (UI behaviour)
 ================================ */
@@ -1763,7 +1556,7 @@ document.addEventListener("DOMContentLoaded", function(){
   counters.forEach(function(el){ cObs.observe(el); });
 
   // active nav tracking
-  const sections = ["home","services","how","areas","faq","support","contact"];
+  const sections = ["home","services","how","areas","faq","contact"];
   const navLinks = document.querySelectorAll(".nav-links a");
   const secObs = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
@@ -1844,9 +1637,6 @@ document.addEventListener("DOMContentLoaded", function(){
   // form submit hooks
   const leadBtn = document.getElementById("leadSubmit");
   if(leadBtn) leadBtn.addEventListener("click", generateWhatsAppTicket);
-  const supBtn = document.getElementById("supportSubmit");
-  if(supBtn) supBtn.addEventListener("click", generateSupportTicket);
-
   // clear error on input
   document.querySelectorAll(".field input, .field select, .field textarea").forEach(function(el){
     el.addEventListener("input", function(){ const w = el.closest(".field"); if(w) w.classList.remove("error"); });
@@ -1882,19 +1672,16 @@ LEAD TICKET STRUCTURE (generateWhatsAppTicket → wa.me/34644075065):
   ID format: ADR-YYYYMMDD-HHMMSS
   Fields: fullName*, email*, phone*, preferredLanguage*, propertyType*, location*, propertySize,
           bedrooms, bathrooms, outdoorArea, requestedService*, frequency*, preferredDate, urgency*, notes
-SUPPORT TICKET STRUCTURE (generateSupportTicket → wa.me/34644075065):
-  ID format: SUP-YYYYMMDD-HHMMSS
-  Fields: sName*, sEmail*, sType*, sPriority*, sDesc*
 
 SERVICE LIST: Apartment Cleaning, Villa Cleaning, Laundry & Linen, Guest Check-In, Guest Check-Out,
-  Emergency Same-Day Service, Property Restocking, Commercial Cleaning, Partnership Request, General Question
+  Property Restocking, Commercial Cleaning, Partnership Request, General Question
 SUPPORT CATEGORIES: Content Update, Image Replacement, Service Change, Pricing Update,
   Translation Correction, Form / Ticket Update, Technical Issue, Other
 
 FUTURE INTEGRATION NOTES:
-  - leadData / supportData objects in the script are JSON-ready. To connect a CRM (Google Sheets via Apps Script,
-    Airtable, Notion, HubSpot, Pipedrive): POST the object to your endpoint inside generateWhatsAppTicket() /
-    generateSupportTicket() BEFORE openWhatsApp(). Keep the WhatsApp open as a fallback/confirmation.
+  - leadData object in the script is JSON-ready. To connect a CRM (Google Sheets via Apps Script,
+    Airtable, Notion, HubSpot, Pipedrive): POST the object to your endpoint inside generateWhatsAppTicket()
+    BEFORE openWhatsApp(). Keep the WhatsApp open as a fallback/confirmation.
   - Per-city local SEO: structure supports one page per city (Rovinj, Poreč, Pula, Novigrad, Umag, Medulin).
     Duplicate index.html per city, adjust <title>, meta description, schema areaServed and hero copy.
   - Client Portal / Property Dashboard / Service History / Invoice Center: placeholders only (see footer).
