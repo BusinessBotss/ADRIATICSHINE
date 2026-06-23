@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ===============================
+22. SEO  (multilingual title/description swapped at runtime)
+================================ -->
+<title>Adriatic Shine — Property Care & Hospitality Operations in Istria</title>
+<meta name="description" content="Reliable cleaning, guest services and operational support for apartments, villas and holiday rentals across Istria, Croatia." />
+<meta name="keywords" content="property care istria, villa cleaning croatia, apartment cleaning istria, holiday rental cleaning, guest services croatia, property support istria, airbnb cleaning croatia, villa management support" />
+<meta name="theme-color" content="#071F3A" />
+<link rel="canonical" href="https://adriaticshine.com/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Adriatic Shine" />
+<meta property="og:title" content="Adriatic Shine — Property Care & Hospitality Operations in Istria" />
+<meta property="og:description" content="Reliable cleaning, guest services and operational support for apartments, villas and holiday rentals in Istria, Croatia." />
+<meta property="og:image" content="https://res.cloudinary.com/dqje367sj/image/upload/v1782176227/the_Adriatic_Sea_Croatia_wrk7bf.jpg" />
+<meta property="og:url" content="https://adriaticshine.com/" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Adriatic Shine — Property Care in Istria" />
+<meta name="twitter:description" content="Reliable cleaning, guest services and operational support for holiday rentals in Istria, Croatia." />
+<meta name="twitter:image" content="https://res.cloudinary.com/dqje367sj/image/upload/v1782176227/the_Adriatic_Sea_Croatia_wrk7bf.jpg" />
+
+<link rel="icon" href="https://res.cloudinary.com/dqje367sj/image/upload/v1782176548/B5939967-0269-4A72-9CD5-79184399AD28_mekq0p.png" />
+
+<!-- Schema.org LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Adriatic Shine",
+  "image": "https://res.cloudinary.com/dqje367sj/image/upload/v1782176227/the_Adriatic_Sea_Croatia_wrk7bf.jpg",
+  "description": "Property care, cleaning and hospitality operations for apartments, villas and holiday rentals in Istria, Croatia.",
+  "telephone": "+34644075065",
+  "email": "info@adriaticshine.com",
+  "areaServed": ["Rovinj","Poreč","Pula","Novigrad","Umag","Medulin"],
+  "address": { "@type": "PostalAddress", "addressRegion": "Istria", "addressCountry": "HR" },
+  "slogan": "Clean Apartments. Happy Guests.",
+  "priceRange": "€€€"
+}
+</script>
+
+<!-- Fonts: Playfair Display (display), Inter (body), IBM Plex Mono (data / ticket IDs) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+/* ===============================
+01. RESET
+================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{min-height:100%;line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:none;background:none}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+.skip-link{position:fixed;left:var(--gutter);top:12px;z-index:500;background:var(--gold);color:var(--deep-navy);padding:10px 14px;border-radius:999px;font-weight:700;transform:translateY(-140%);transition:transform .25s var(--ease)}
+.skip-link:focus{transform:none}
+
+/* ===============================
+02. VARIABLES
+================================ */
+:root{
+  --navy:#071F3A;
+  --deep-navy:#041527;
+  --blue-soft:#12395A;
+  --gold:#C89B3C;
+  --soft-gold:#E8C56A;
+  --warm-white:#F8F5EF;
+  --sand:#E9DFCF;
+  --white:#FFFFFF;
+  --text-dark:#1B1B1B;
+  --text-muted:#6E6A64;
+
+  --font-display:"Playfair Display",Georgia,serif;
+  --font-body:"Inter",system-ui,-apple-system,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,monospace;
+
+  --maxw:1200px;
+  --gutter:clamp(20px,5vw,64px);
+  --radius:18px;
+  --radius-sm:12px;
+  --shadow-sm:0 4px 18px rgba(7,31,58,.08);
+  --shadow-md:0 18px 50px rgba(7,31,58,.14);
+  --shadow-gold:0 10px 40px rgba(200,155,60,.28);
+  --hair:rgba(200,155,60,.35);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+body[data-theme="night"]{
+  --navy:#071F3A;
+  --deep-navy:#030B14;
+  --blue-soft:#12395A;
+  --warm-white:#071421;
+  --sand:#12263A;
+  --white:#0E2135;
+  --text-dark:#F8F5EF;
+  --text-muted:#B8C5D0;
+  --shadow-sm:0 8px 24px rgba(0,0,0,.28);
+  --shadow-md:0 24px 60px rgba(0,0,0,.36);
+  background:var(--warm-white);
+}
+body[data-theme="night"] h1,
+body[data-theme="night"] h2,
+body[data-theme="night"] h3,
+body[data-theme="night"] h4{color:var(--text-dark)}
+body[data-theme="night"] .hero h1,
+body[data-theme="night"] .dark h2,
+body[data-theme="night"] .dark h3,
+body[data-theme="night"] .form-aside h2{color:#fff}
+body[data-theme="night"] .svc-card,
+body[data-theme="night"] .area-card,
+body[data-theme="night"] .cat,
+body[data-theme="night"] .faq-item,
+body[data-theme="night"] .card-form{border-color:rgba(232,197,106,.16)}
+body[data-theme="night"] .area-card b,
+body[data-theme="night"] .cat b,
+body[data-theme="night"] .faq-q{color:var(--text-dark)}
+body[data-theme="night"] .filters button{border-color:rgba(248,245,239,.2);color:var(--text-muted)}
+body[data-theme="night"] .filters button.active,
+body[data-theme="night"] .filters button:hover{background:var(--gold);border-color:var(--gold);color:var(--deep-navy)}
+body[data-theme="night"] .field input,
+body[data-theme="night"] .field select,
+body[data-theme="night"] .field textarea,
+body[data-theme="night"] .faq-search input{background:#091827;border-color:rgba(232,197,106,.22);color:var(--text-dark)}
+body[data-theme="night"] .benefits b,
+body[data-theme="night"] .benefits span,
+body[data-theme="night"] #owners .lead,
+body[data-theme="night"] .field label{color:var(--text-dark)}
+body[data-theme="night"] .field input::placeholder,
+body[data-theme="night"] .field textarea::placeholder,
+body[data-theme="night"] .faq-search input::placeholder{color:rgba(248,245,239,.58)}
+body[data-theme="night"] .btn-outline{border-color:rgba(248,245,239,.72);color:var(--text-dark)}
+body[data-theme="night"] .btn-outline:hover{background:var(--text-dark);border-color:var(--text-dark);color:var(--deep-navy)}
+body[data-theme="night"] .faq-item{background:#fff;border-color:rgba(7,31,58,.12)}
+body[data-theme="night"] .faq-q{color:#071F3A}
+body[data-theme="night"] .faq-a p{color:#4F5A64}
+body[data-theme="night"] .faq-q .ic{color:#071F3A;background:#F8F5EF}
+body[data-theme="night"] .hero .btn-ghost{background:#fff;border-color:#fff;color:#071F3A}
+body[data-theme="night"] .hero .btn-ghost:hover{background:var(--soft-gold);border-color:var(--soft-gold);color:#041527}
+
+/* ===============================
+03. TYPOGRAPHY
+================================ */
+body{font-family:var(--font-body);background:var(--warm-white);color:var(--text-dark);font-weight:400}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;color:var(--navy)}
+h1{font-size:clamp(2.4rem,5.6vw,4.4rem);font-weight:600;letter-spacing:-.5px}
+h2{font-size:clamp(1.9rem,3.6vw,3rem)}
+h3{font-size:clamp(1.2rem,1.6vw,1.45rem);font-weight:600}
+p{color:var(--text-muted)}
+.eyebrow{font-family:var(--font-mono);font-size:.74rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:.7em}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);display:inline-block}
+.lead{font-size:clamp(1.02rem,1.4vw,1.18rem);color:var(--text-muted);max-width:60ch}
+
+/* ===============================
+04. GLOBAL LAYOUT / UTILITIES
+================================ */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter)}
+section{padding-block:clamp(64px,9vw,128px);position:relative}
+.section-head{max-width:64ch;margin-bottom:clamp(36px,5vw,60px)}
+.section-head h2{margin-top:14px}
+.section-head .lead{margin-top:16px}
+.dark{background:var(--navy);color:var(--warm-white)}
+.dark h2,.dark h3{color:var(--white)}
+.dark p{color:rgba(248,245,239,.72)}
+.center{text-align:center}.center .section-head{margin-inline:auto}.center .eyebrow{justify-content:center}
+
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:15px 30px;border-radius:999px;font-weight:600;font-size:.95rem;letter-spacing:.01em;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s var(--ease),color .35s var(--ease);will-change:transform}
+.btn svg{width:18px;height:18px}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--soft-gold));color:var(--deep-navy);box-shadow:var(--shadow-gold)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(200,155,60,.42)}
+.btn-ghost{border:1px solid rgba(255,255,255,.4);color:var(--white)}
+.btn-ghost:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+.btn-outline{border:1px solid var(--navy);color:var(--navy)}
+.btn-outline:hover{background:var(--navy);color:var(--white);transform:translateY(-3px)}
+.btn-wa{background:#1FA855;color:#fff}.btn-wa:hover{background:#178a45;transform:translateY(-3px)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<style>
+
+/* ===============================
+05. HEADER
+================================ */
+header{position:fixed;inset:0 0 auto 0;z-index:120;background:rgba(4,21,39,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .4s var(--ease),box-shadow .4s var(--ease),padding .4s var(--ease);padding-block:18px}
+header.scrolled,header.solid{background:rgba(4,21,39,.94);box-shadow:0 10px 30px rgba(0,0,0,.25);padding-block:10px}
+.nav{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter);display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand img{height:46px;width:auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.35))}
+.brand b{font-family:var(--font-display);font-size:1.15rem;color:#fff;font-weight:600;letter-spacing:.02em;white-space:nowrap}
+.nav-links{display:flex;gap:26px;margin-left:auto}
+.nav-links a{color:rgba(248,245,239,.86);font-size:.92rem;font-weight:500;position:relative;padding:6px 0;transition:color .3s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold);transition:width .3s var(--ease)}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-tools{display:flex;align-items:center;gap:14px}
+.theme-toggle{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.22);color:#fff;display:grid;place-items:center;transition:transform .3s var(--ease),border-color .3s,background .3s}
+.theme-toggle:hover{transform:translateY(-2px);border-color:var(--gold);background:rgba(255,255,255,.08)}
+.theme-toggle svg{width:18px;height:18px}
+.theme-toggle .moon{display:block}.theme-toggle .sun{display:none}
+body[data-theme="night"] .theme-toggle .moon{display:none}
+body[data-theme="night"] .theme-toggle .sun{display:block}
+.lang-select{position:relative}
+.lang-btn{display:flex;align-items:center;gap:7px;color:#fff;font-family:var(--font-mono);font-size:.8rem;font-weight:500;letter-spacing:.08em;padding:8px 12px;border:1px solid rgba(255,255,255,.22);border-radius:999px;transition:border-color .3s,background .3s}
+.lang-btn:hover{border-color:var(--gold)}
+.lang-menu{position:absolute;top:calc(100% + 10px);right:0;background:#fff;border-radius:12px;box-shadow:var(--shadow-md);padding:7px;min-width:150px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s var(--ease);z-index:30}
+.lang-select.open .lang-menu{opacity:1;visibility:visible;transform:none}
+.lang-menu button{display:flex;width:100%;align-items:center;gap:9px;padding:9px 12px;border-radius:8px;color:var(--text-dark);font-size:.88rem;font-weight:500;text-align:left;transition:background .2s}
+.lang-menu button:hover,.lang-menu button[aria-current="true"]{background:var(--warm-white);color:var(--navy)}
+.header-wa{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--gold),var(--soft-gold));color:var(--deep-navy);padding:10px 18px;border-radius:999px;font-weight:600;font-size:.86rem;transition:transform .3s var(--ease)}
+.header-wa:hover{transform:translateY(-2px)}
+.header-wa svg{width:16px;height:16px}
+.burger{display:none;flex-direction:column;gap:5px;padding:8px}
+.burger span{width:24px;height:2px;background:#fff;transition:.3s var(--ease)}
+.burger.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.x span:nth-child(2){opacity:0}
+.burger.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* mobile drawer */
+.drawer{position:fixed;inset:0;z-index:115;background:var(--deep-navy);transform:translateX(100%);transition:transform .45s var(--ease);display:flex;flex-direction:column;padding:100px var(--gutter) 40px;gap:6px}
+.drawer.open{transform:none}
+.drawer a{color:#fff;font-family:var(--font-display);font-size:1.5rem;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.drawer .btn{margin-top:24px;justify-content:center}
+.drawer .btn-gold{color:var(--deep-navy)}
+
+/* ===============================
+06. HERO
+================================ */
+.hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--deep-navy);padding-top:120px}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:contain;object-position:72% center;position:absolute;top:0;left:0;opacity:.62;will-change:transform}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(4,21,39,.78) 0%,rgba(4,21,39,.56) 40%,rgba(7,31,58,.20) 72%,rgba(7,31,58,.04) 100%)}
+.hero-inner{position:relative;z-index:2;max-width:760px}
+.hero h1{color:#fff;margin:20px 0 22px}
+.hero h1 em{font-style:italic;color:var(--soft-gold);font-weight:500}
+.hero .lead{color:rgba(248,245,239,.85);font-size:clamp(1.05rem,1.6vw,1.3rem)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:48px;padding-top:30px;border-top:1px solid rgba(255,255,255,.12)}
+.hero-meta div{min-width:90px}
+.hero-meta .num{font-family:var(--font-display);font-size:2rem;color:var(--soft-gold);line-height:1}
+.hero-meta .lbl{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(248,245,239,.6);margin-top:8px}
+/* ===============================
+07. TRUST BAR
+================================ */
+.trustbar{background:var(--deep-navy);border-top:1px solid rgba(200,155,60,.2);padding-block:0}
+.trustbar .wrap{display:flex;flex-wrap:wrap;gap:0;padding-block:0}
+.trustbar ul{display:flex;flex-wrap:wrap;width:100%}
+.trustbar li{flex:1 1 160px;text-align:center;padding:26px 16px;border-right:1px solid rgba(255,255,255,.07);font-family:var(--font-mono);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(248,245,239,.78);display:flex;align-items:center;justify-content:center;gap:9px}
+.trustbar li:last-child{border-right:none}
+.trustbar li span{color:var(--gold)}
+
+/* ===============================
+08. SERVICES
+================================ */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.svc-card{background:var(--white);border:1px solid rgba(7,31,58,.07);border-radius:var(--radius);padding:30px 26px;box-shadow:var(--shadow-sm);transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease);position:relative;overflow:hidden}
+.svc-card::before{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--soft-gold));transition:width .45s var(--ease)}
+.svc-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);border-color:var(--hair)}
+.svc-card:hover::before{width:100%}
+.svc-ico{width:50px;height:50px;border-radius:13px;background:var(--warm-white);display:grid;place-items:center;color:var(--gold);margin-bottom:20px;transition:background .4s,color .4s}
+.svc-card:hover .svc-ico{background:var(--navy);color:var(--soft-gold)}
+.svc-ico svg{width:24px;height:24px}
+.svc-card h3{margin-bottom:9px}
+.svc-card p{font-size:.92rem;line-height:1.55}
+
+/* ===============================
+09. PROPERTY OWNERS
+================================ */
+.owners{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(30px,5vw,72px);align-items:center}
+.owners-media{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-md)}
+.owners-media img{width:100%;height:100%;min-height:420px;object-fit:cover}
+.owners-media .tag{position:absolute;left:22px;bottom:22px;background:rgba(4,21,39,.82);backdrop-filter:blur(8px);color:#fff;padding:14px 18px;border-radius:12px;border:1px solid var(--hair);max-width:240px}
+.owners-media .tag b{font-family:var(--font-display);color:var(--soft-gold);font-size:1.3rem}
+.owners-media .tag small{display:block;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:5px}
+.benefits{margin-top:28px;display:grid;gap:2px}
+.benefits li{display:flex;gap:15px;padding:15px 0;border-bottom:1px solid rgba(7,31,58,.08);align-items:flex-start}
+.benefits .chk{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--navy);color:var(--soft-gold);display:grid;place-items:center;margin-top:2px}
+.benefits .chk svg{width:14px;height:14px}
+.benefits b{display:block;color:var(--navy);font-family:var(--font-body);font-weight:600;font-size:1rem}
+.benefits span{font-size:.9rem;color:var(--text-muted)}
+
+/* ===============================
+10. HOW IT WORKS (timeline) + 07b STANDARDS
+================================ */
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:step;position:relative}
+.timeline::before{content:"";position:absolute;top:31px;left:8%;right:8%;height:1px;background:repeating-linear-gradient(90deg,var(--hair) 0 8px,transparent 8px 16px)}
+.step{text-align:center;position:relative}
+.step .dot{width:64px;height:64px;border-radius:50%;background:var(--navy);color:var(--soft-gold);display:grid;place-items:center;margin:0 auto 18px;font-family:var(--font-display);font-size:1.5rem;position:relative;z-index:2;border:4px solid var(--warm-white);transition:transform .4s var(--ease),background .4s}
+.step:hover .dot{transform:translateY(-5px);background:linear-gradient(135deg,var(--gold),var(--soft-gold));color:var(--deep-navy)}
+.step h3{font-size:1.05rem;margin-bottom:7px}
+.step p{font-size:.86rem}
+.standards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);overflow:hidden;margin-top:64px}
+.standards .cell{background:var(--navy);padding:30px 26px}
+.standards .cell .k{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.standards .cell b{display:block;font-family:var(--font-display);font-size:1.2rem;color:#fff;margin-bottom:8px}
+.standards .cell p{font-size:.88rem}
+
+/* ===============================
+11. GALLERY
+================================ */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+.filters button{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:9px 18px;border-radius:999px;border:1px solid rgba(7,31,58,.16);color:var(--text-muted);transition:.3s var(--ease)}
+.filters button.active,.filters button:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.gallery{columns:4 230px;column-gap:14px}
+.gallery figure{position:relative;overflow:hidden;border-radius:var(--radius-sm);cursor:pointer;background:transparent;break-inside:avoid;margin:0 0 14px;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.gallery figure.tall,.gallery figure.wide{break-inside:avoid}
+.gallery img{width:100%;height:auto;object-fit:unset;transition:filter .45s var(--ease);border-radius:var(--radius-sm)}
+.gallery figure:hover{transform:translateY(-4px);box-shadow:0 18px 45px rgba(4,21,39,.22)}
+.gallery figure:hover img{filter:saturate(1.04) contrast(1.03)}
+.gallery figcaption{position:absolute;inset:auto 0 0 0;padding:34px 16px 14px;background:linear-gradient(transparent,rgba(4,21,39,.85));color:#fff;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:.4s var(--ease)}
+.gallery figure:hover figcaption{opacity:1;transform:none}
+.gallery figure.hide{display:none}
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:300;background:rgba(4,21,39,.94);display:none;align-items:center;justify-content:center;padding:30px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:86vh;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.lightbox .close{position:absolute;top:24px;right:28px;color:#fff;font-size:2rem;line-height:1;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:grid;place-items:center}
+.lightbox .nav-arrow{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2rem;width:54px;height:54px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;transition:background .3s}
+.lightbox .nav-arrow:hover{background:rgba(255,255,255,.12)}
+.lightbox .prev{left:24px}.lightbox .next{right:24px}
+
+/* ===============================
+12. SERVICE AREA
+================================ */
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.area-card{background:var(--white);border-radius:var(--radius);padding:26px;border:1px solid rgba(7,31,58,.07);box-shadow:var(--shadow-sm);display:flex;align-items:center;gap:16px;color:var(--text-dark);transition:transform .4s var(--ease),border-color .4s}
+.area-card:hover{transform:translateY(-5px);border-color:var(--hair)}
+.area-card .pin{width:44px;height:44px;border-radius:12px;background:var(--warm-white);color:var(--gold);display:grid;place-items:center;flex-shrink:0}
+.area-card .pin svg{width:22px;height:22px}
+.area-card b{font-family:var(--font-display);font-size:1.2rem;color:var(--navy);display:block}
+.area-card small{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}
+.areas-more{margin-top:22px;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;color:var(--text-muted);text-transform:uppercase}
+
+/* ===============================
+13. LEAD FORM  +  15. SUPPORT FORM
+================================ */
+.form-section{background:linear-gradient(180deg,var(--deep-navy),var(--navy))}
+.form-shell{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,4vw,56px);align-items:start}
+.form-aside .eyebrow{color:var(--soft-gold)}
+.form-aside h2{color:#fff}
+.form-aside .lead{color:rgba(248,245,239,.75)}
+.aside-list{margin-top:30px;display:grid;gap:16px}
+.aside-list li{display:flex;gap:13px;color:rgba(248,245,239,.85);font-size:.95rem;align-items:flex-start}
+.aside-list .chk{width:24px;height:24px;border-radius:50%;background:rgba(200,155,60,.16);color:var(--soft-gold);display:grid;place-items:center;flex-shrink:0}
+.aside-list .chk svg{width:13px;height:13px}
+.card-form{background:var(--warm-white);border-radius:var(--radius);padding:clamp(24px,3vw,40px);box-shadow:var(--shadow-md)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:.8rem;font-weight:600;color:var(--navy);letter-spacing:.02em}
+.field label .req{color:var(--gold)}
+.field input,.field select,.field textarea{background:#fff;border:1px solid rgba(7,31,58,.16);border-radius:10px;padding:12px 14px;font-size:.92rem;transition:border-color .3s,box-shadow .3s;width:100%}
+.field textarea{resize:vertical;min-height:96px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,155,60,.18)}
+.field.error input,.field.error select,.field.error textarea{border-color:#c0392b;box-shadow:0 0 0 3px rgba(192,57,43,.12)}
+.field .err{font-size:.72rem;color:#c0392b;display:none;font-weight:500}
+.field.error .err{display:block}
+.form-actions{margin-top:24px;display:flex;flex-direction:column;gap:14px}
+.form-actions .btn{justify-content:center;width:100%}
+.btn[disabled]{opacity:.7;cursor:not-allowed}
+.spinner{width:17px;height:17px;border:2px solid rgba(4,21,39,.3);border-top-color:var(--deep-navy);border-radius:50%;animation:spin .7s linear infinite;display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.form-note{font-size:.74rem;color:var(--text-muted);text-align:center}
+
+/* ticket success (signature element) */
+.ticket{display:none;margin-top:22px;background:var(--navy);border-radius:14px;color:#fff;overflow:hidden;position:relative;box-shadow:var(--shadow-md)}
+.ticket.show{display:block;animation:ticketIn .6s var(--ease)}
+@keyframes ticketIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+.ticket .stub{background:linear-gradient(135deg,var(--gold),var(--soft-gold));color:var(--deep-navy);padding:16px 22px;display:flex;align-items:center;justify-content:space-between}
+.ticket .stub b{font-family:var(--font-display);font-size:1.05rem}
+.ticket .stub .pill{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;background:rgba(4,21,39,.16);padding:5px 10px;border-radius:999px}
+.ticket .perf{height:0;border-top:2px dashed rgba(255,255,255,.25);position:relative}
+.ticket .perf::before,.ticket .perf::after{content:"";position:absolute;top:-9px;width:18px;height:18px;border-radius:50%;background:var(--warm-white)}
+.ticket .perf::before{left:-9px}.ticket .perf::after{right:-9px}
+.ticket .body{padding:20px 22px}
+.ticket .tid{font-family:var(--font-mono);font-size:1.05rem;color:var(--soft-gold);letter-spacing:.04em}
+.ticket .msg{font-size:.88rem;color:rgba(248,245,239,.8);margin:10px 0 16px}
+.ticket .btn{width:100%;justify-content:center}
+
+/* ===============================
+14. FAQ
+================================ */
+.faq-search{position:relative;max-width:440px;margin-bottom:26px}
+.faq-search input{width:100%;padding:13px 16px 13px 44px;border-radius:999px;border:1px solid rgba(7,31,58,.16);background:#fff;font-size:.92rem}
+.faq-search input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,155,60,.18)}
+.faq-search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--text-muted)}
+.faq-list{display:grid;gap:12px;max-width:840px}
+.faq-item{background:#fff;border:1px solid rgba(7,31,58,.08);border-radius:var(--radius-sm);overflow:hidden;transition:box-shadow .3s,border-color .3s}
+.faq-item.open{box-shadow:var(--shadow-sm);border-color:var(--hair)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px;text-align:left;font-family:var(--font-display);font-size:1.08rem;color:var(--navy)}
+.faq-q .ic{flex-shrink:0;width:28px;height:28px;border-radius:50%;border:1px solid var(--hair);display:grid;place-items:center;color:var(--gold);transition:transform .35s var(--ease),background .35s}
+.faq-item.open .faq-q .ic{transform:rotate(45deg);background:var(--gold);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+.faq-a p{padding:0 22px 22px;font-size:.94rem;line-height:1.6}
+.faq-item.hide{display:none}
+.faq-empty{color:var(--text-muted);font-size:.92rem;padding:14px 0;display:none}
+
+/* ===============================
+15. SUPPORT (service desk) — uses form styles above
+================================ */
+.support-cats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:48px}
+.cat{background:var(--white);border:1px solid rgba(7,31,58,.07);border-radius:var(--radius-sm);padding:22px;box-shadow:var(--shadow-sm);color:var(--text-dark);transition:transform .4s var(--ease)}
+.cat:hover{transform:translateY(-5px)}
+.cat .ic{width:40px;height:40px;border-radius:11px;background:var(--warm-white);color:var(--gold);display:grid;place-items:center;margin-bottom:14px}
+.cat .ic svg{width:20px;height:20px}
+.cat b{display:block;font-family:var(--font-display);font-size:1.02rem;color:var(--navy);margin-bottom:5px}
+.cat p{font-size:.84rem;line-height:1.5;color:var(--text-muted)}
+.desk{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start}
+.lifecycle{display:flex;align-items:center;gap:8px;margin:24px 0 30px;flex-wrap:wrap}
+.lifecycle .stage{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:7px 13px;border-radius:999px;background:rgba(200,155,60,.12);color:var(--gold)}
+.lifecycle .arrow{color:var(--text-muted)}
+.levels{display:grid;gap:12px;margin-top:8px}
+.level{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-radius:12px;border:1px solid rgba(7,31,58,.1);background:#fff}
+.level b{color:var(--navy);font-family:var(--font-body);font-weight:600}
+.level .sla{font-family:var(--font-mono);font-size:.78rem;color:var(--gold)}
+
+/* ===============================
+16. FOOTER
+================================ */
+footer{background:var(--deep-navy);color:rgba(248,245,239,.7);padding-block:64px 30px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-brand img{height:54px;margin-bottom:16px}
+.foot-brand .tagline{font-family:var(--font-display);font-style:italic;color:var(--soft-gold);font-size:1.15rem}
+.foot-brand p{margin-top:14px;max-width:38ch;font-size:.9rem}
+.foot-col h4{color:#fff;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:18px;font-weight:500}
+.foot-col a,.foot-col p{display:block;color:rgba(248,245,239,.7);font-size:.92rem;padding:5px 0;transition:color .3s}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;padding-top:24px;font-size:.8rem;color:rgba(248,245,239,.5)}
+.foot-bottom .future{font-family:var(--font-mono);letter-spacing:.06em}
+
+/* ===============================
+18. WHATSAPP FLOAT
+================================ */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:130;width:58px;height:58px;border-radius:50%;background:#1FA855;color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px rgba(31,168,85,.45);transition:transform .35s var(--ease)}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:28px;height:28px}
+.wa-float::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #1FA855;animation:ping 2.4s ease-out infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.7);opacity:0}}
+
+/* ===============================
+20. RESPONSIVE
+================================ */
+@media (max-width:1024px){
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery{columns:2 220px}
+  .support-cats{grid-template-columns:repeat(2,1fr)}
+  .standards{grid-template-columns:1fr}
+  .areas-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:860px){
+  .nav-links{display:none}
+  .header-wa{display:none}
+  .burger{display:flex}
+  .owners,.form-shell,.desk{grid-template-columns:1fr}
+  .timeline{grid-template-columns:1fr;gap:0}
+  .timeline::before{display:none}
+  .step{display:flex;text-align:left;gap:18px;padding:14px 0;align-items:flex-start}
+  .step .dot{margin:0;flex-shrink:0;width:54px;height:54px;font-size:1.25rem}
+  .step h3{margin-bottom:4px}
+}
+@media (max-width:560px){
+  .svc-grid,.areas-grid,.support-cats,.form-grid{grid-template-columns:1fr}
+  .gallery{columns:1}
+  .hero-meta{gap:20px}
+  .foot-grid{grid-template-columns:1fr;gap:28px}
+}
+
+/* RTL hook (future Arabic expansion) */
+html[dir="rtl"] .eyebrow::before{margin-left:.7em;margin-right:0}
+html[dir="rtl"] body{text-align:right}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="skip_main">Skip to main content</a>
+
+<!-- ===============================
+04. HEADER
+================================ -->
+<header id="header">
+  <nav class="nav" aria-label="Primary">
+    <a href="#home" class="brand" aria-label="Adriatic Shine home">
+      <img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782176548/B5939967-0269-4A72-9CD5-79184399AD28_mekq0p.png" alt="Adriatic Shine logo" width="46" height="46" />
+      <b>Adriatic Shine</b>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home" data-i18n="nav_home">Home</a></li>
+      <li><a href="#services" data-i18n="nav_services">Services</a></li>
+      <li><a href="#how" data-i18n="nav_how">How It Works</a></li>
+      <li><a href="#areas" data-i18n="nav_areas">Areas</a></li>
+      <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+      <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to night mode" title="Switch to night mode">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 13.4A8.5 8.5 0 0 1 10.6 3a7 7 0 1 0 10.4 10.4z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <div class="lang-select">
+        <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Select language">
+          <span id="langCode">EN</span>
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="lang-menu" id="langMenu" role="menu">
+          <button role="menuitem" data-lang="en">English</button>
+          <button role="menuitem" data-lang="de">Deutsch</button>
+          <button role="menuitem" data-lang="fr">Français</button>
+          <button role="menuitem" data-lang="it">Italiano</button>
+          <button role="menuitem" data-lang="es">Español</button>
+          <button role="menuitem" data-lang="hr">Hrvatski</button>
+        </div>
+      </div>
+      <a class="header-wa" href="https://wa.me/34644075065" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+        <span data-i18n="nav_cta">WhatsApp</span>
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<!-- mobile drawer -->
+<div class="drawer" id="drawer">
+  <a href="#home" data-i18n="nav_home">Home</a>
+  <a href="#services" data-i18n="nav_services">Services</a>
+  <a href="#how" data-i18n="nav_how">How It Works</a>
+  <a href="#areas" data-i18n="nav_areas">Areas</a>
+  <a href="#faq" data-i18n="nav_faq">FAQ</a>
+  <a href="#contact" data-i18n="nav_contact">Contact</a>
+  <a class="btn btn-gold" href="https://wa.me/34644075065" target="_blank" rel="noopener" data-i18n="hero_cta2">Contact on WhatsApp</a>
+</div>
+
+<!-- ===============================
+05. HERO
+================================ -->
+<main id="main">
+<section class="hero" id="home">
+  <div class="hero-bg" id="heroBg">
+    <img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782176791/E7B2C13D-6BCA-4BD9-AA6B-BD9E248A3E9E_stzkzq.png" alt="Adriatic Shine hospitality brand mark" fetchpriority="high" width="1600" height="900" />
+  </div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow" data-i18n="hero_kicker">Property Care · Istria, Croatia</span>
+    <h1><span data-i18n="hero_title_a">Professional property care</span> <em data-i18n="hero_title_b">in Istria.</em></h1>
+    <p class="lead" data-i18n="hero_sub">Reliable cleaning, guest services and operational support for apartments, villas and holiday rentals.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-gold" data-i18n="hero_cta1">Request a Service</a>
+      <a href="https://wa.me/34644075065" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="hero_cta2">Contact on WhatsApp</a>
+    </div>
+    <div class="hero-meta">
+      <div><div class="num" data-count="6">0</div><div class="lbl" data-i18n="hero_m1">Coverage areas</div></div>
+      <div><div class="num" data-count="24" data-suffix="h">0</div><div class="lbl" data-i18n="hero_m2">Fast response</div></div>
+      <div><div class="num" data-count="100" data-suffix="%">0</div><div class="lbl" data-i18n="hero_m3">Guest-ready standard</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===============================
+07. TRUST BAR
+================================ -->
+<div class="trustbar">
+  <div class="wrap">
+    <ul>
+      <li><span>✦</span><span data-i18n="trust_1">Professional</span></li>
+      <li><span>✦</span><span data-i18n="trust_2">Reliable</span></li>
+      <li><span>✦</span><span data-i18n="trust_3">Guest Ready</span></li>
+      <li><span>✦</span><span data-i18n="trust_4">Local Expertise</span></li>
+      <li><span>✦</span><span data-i18n="trust_5">Detail Focused</span></li>
+      <li><span>✦</span><span data-i18n="trust_6">Hospitality Standards</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===============================
+08. SERVICES
+================================ -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="services_eyebrow">What we manage</span>
+      <h2 data-i18n="services_title">Operational care, end to end</h2>
+      <p class="lead" data-i18n="services_sub">Every service is delivered to a documented standard, so your property is consistently guest-ready between stays.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc-card reveal">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <h3 data-i18n="svc1_t">Apartment Cleaning</h3>
+        <p data-i18n="svc1_d">Turnover and deep cleaning tailored to short-stay apartments and rental schedules.</p>
+      </article>
+      <article class="svc-card reveal">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V10l9-6 9 6v11M3 21h18M8 21v-5h3v5M14 13h3v3h-3z"/></svg></div>
+        <h3 data-i18n="svc2_t">Villa Cleaning</h3>
+        <p data-i18n="svc2_d">Comprehensive care for larger properties, including outdoor areas and detailing.</p>
+      </article>
+      <article class="svc-card reveal">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v6H4zM4 14h16v6H4zM8 7h.01M8 17h.01"/></svg></div>
+        <h3 data-i18n="svc3_t">Laundry &amp; Linen</h3>
+        <p data-i18n="svc3_d">Fresh, hotel-grade linen and towels managed, laundered and replaced on schedule.</p>
+      </article>
+      <article class="svc-card reveal">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 18c4-1 6-4 7-8M11 10l3 3M14 13c2-2 3-5 3-9M5 21h14M7 14l3 3"/></svg></div>
+        <h3 data-i18n="svc9_t">Deep Cleaning</h3>
+        <p data-i18n="svc9_d">Detailed seasonal or post-stay cleans for kitchens, bathrooms, appliances and hard-to-reach areas.</p>
+      </article>
+      <article class="svc-card reveal">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 3h6v6M21 3l-9 9M10 6H4v14h14v-6"/></svg></div>
+        <h3 data-i18n="svc4_t">Guest Check-In</h3>
+        <p data-i18n="svc4_d">Warm, professional arrivals with key handover and a guest-ready welcome.</p>
+      </article>
+      <article class="svc-card reveal">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3H3v6M3 3l9 9M14 18h6v-6M20 21l-9-9"/></svg></div>
+        <h3 data-i18n="svc5_t">Guest Check-Out</h3>
+        <p data-i18n="svc5_d">Departure checks, inventory verification and rapid turnaround for the next stay.</p>
+      </article>
+      <article class="svc-card reveal">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h12l-1 4H7zM5 6h14v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2zM9 11h6"/></svg></div>
+        <h3 data-i18n="svc7_t">Property Restocking</h3>
+        <p data-i18n="svc7_d">Consumables, amenities and essentials replenished so guests never find a gap.</p>
+      </article>
+      <article class="svc-card reveal">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V8l6-4 6 4M15 21V11l6-3v13M3 21h18M7 12h.01M7 16h.01"/></svg></div>
+        <h3 data-i18n="svc8_t">Commercial Cleaning</h3>
+        <p data-i18n="svc8_d">Offices, boutique venues and hospitality spaces kept to a professional standard.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===============================
+09. PROPERTY OWNERS
+================================ -->
+<section id="owners">
+  <div class="wrap owners">
+    <div class="owners-media reveal">
+      <img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782176227/nlwr8dyoq1ug6tsuil27.jpg" alt="Luxury villa interior in Istria" loading="lazy" width="800" height="600" />
+      <div class="tag"><b data-i18n="owners_tag_b">Guest-ready, always</b><small data-i18n="owners_tag_s">Verified before every arrival</small></div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="owners_eyebrow">For property owners</span>
+      <h2 data-i18n="owners_title">A trusted operational partner, not just a cleaner</h2>
+      <p class="lead" data-i18n="owners_body">We take the operational weight off owners and hosts — keeping properties consistently guest-ready while you stay in control and at ease.</p>
+      <ul class="benefits">
+        <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><div><b data-i18n="ben1_t">Less operational stress</b><span data-i18n="ben1_d">One reliable point of contact for every turnover and request.</span></div></li>
+        <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><div><b data-i18n="ben2_t">Better guest experience</b><span data-i18n="ben2_d">Spotless spaces and smooth arrivals that earn five-star reviews.</span></div></li>
+        <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><div><b data-i18n="ben3_t">Reliable, consistent service</b><span data-i18n="ben3_d">A documented standard applied the same way, every single time.</span></div></li>
+        <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><div><b data-i18n="ben4_t">Professional standards</b><span data-i18n="ben4_d">Hospitality-grade quality control on every property we touch.</span></div></li>
+        <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><div><b data-i18n="ben5_t">Local support in Istria</b><span data-i18n="ben5_d">A team on the ground that knows the region and responds quickly.</span></div></li>
+      </ul>
+      <a href="#contact" class="btn btn-outline" style="margin-top:28px" data-i18n="owners_cta">Request a Service</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===============================
+10. HOW IT WORKS + STANDARDS
+================================ -->
+<section id="how" class="dark">
+  <div class="wrap center">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="how_eyebrow">A clear, simple process</span>
+      <h2 data-i18n="how_title">From request to verified result</h2>
+    </div>
+    <div class="timeline">
+      <div class="step reveal"><div class="dot">1</div><h3 data-i18n="step1_t">Submit Request</h3><p data-i18n="step1_d">Send your details through the form or WhatsApp in minutes.</p></div>
+      <div class="step reveal"><div class="dot">2</div><h3 data-i18n="step2_t">Property Review</h3><p data-i18n="step2_d">We assess your property, needs and schedule.</p></div>
+      <div class="step reveal"><div class="dot">3</div><h3 data-i18n="step3_t">Receive Quote</h3><p data-i18n="step3_d">A clear, transparent proposal with no surprises.</p></div>
+      <div class="step reveal"><div class="dot">4</div><h3 data-i18n="step4_t">Service Delivery</h3><p data-i18n="step4_d">Our team delivers to a documented standard.</p></div>
+      <div class="step reveal"><div class="dot">5</div><h3 data-i18n="step5_t">Quality Check</h3><p data-i18n="step5_d">A final walkthrough verifies every property is guest-ready.</p></div>
+    </div>
+
+    <div class="standards" style="text-align:left">
+      <div class="cell reveal"><div class="k" data-i18n="std1_k">Standards</div><b data-i18n="std1_t">Service Standards</b><p data-i18n="std1_d">A defined scope for every service so nothing is left to chance.</p></div>
+      <div class="cell reveal"><div class="k" data-i18n="std2_k">Control</div><b data-i18n="std2_t">Quality Control</b><p data-i18n="std2_d">Independent checks before a property is signed off as ready.</p></div>
+      <div class="cell reveal"><div class="k" data-i18n="std3_k">Checklist</div><b data-i18n="std3_t">Property Checklist</b><p data-i18n="std3_d">Room-by-room verification covering cleaning, inventory and presentation.</p></div>
+      <div class="cell reveal"><div class="k" data-i18n="std4_k">Response</div><b data-i18n="std4_t">Response Time</b><p data-i18n="std4_d">Same-day capability for urgent turnovers and incidents in our areas.</p></div>
+      <div class="cell reveal"><div class="k" data-i18n="std5_k">Local</div><b data-i18n="std5_t">Local Expertise</b><p data-i18n="std5_d">A team based in Istria that understands the rental season on the ground.</p></div>
+      <div class="cell reveal"><div class="k" data-i18n="std6_k">Hospitality</div><b data-i18n="std6_t">Hospitality Experience</b><p data-i18n="std6_d">Standards drawn from boutique hospitality, applied to private rentals.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===============================
+11. GALLERY
+================================ -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="gallery_eyebrow">Visual proof</span>
+      <h2 data-i18n="gallery_title">Properties kept to standard</h2>
+    </div>
+    <div class="filters reveal" role="tablist" aria-label="Gallery filters">
+      <button class="active" data-filter="all" data-i18n="filter_all" aria-pressed="true">All</button>
+      <button data-filter="apartments" data-i18n="filter_apartments" aria-pressed="false">Apartments</button>
+      <button data-filter="villas" data-i18n="filter_villas" aria-pressed="false">Villas</button>
+      <button data-filter="bathrooms" data-i18n="filter_bathrooms" aria-pressed="false">Bathrooms</button>
+      <button data-filter="bedrooms" data-i18n="filter_bedrooms" aria-pressed="false">Bedrooms</button>
+      <button data-filter="outdoor" data-i18n="filter_outdoor" aria-pressed="false">Outdoor</button>
+    </div>
+    <div class="gallery" id="galleryGrid">
+      <figure class="tall reveal" data-cat="apartments"><img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782209535/Spring_cleaning_essentials_cleangirlroutine___wmqq9g.jpg" alt="Professional apartment cleaning supplies ready for turnover" loading="lazy" width="735" height="1104" /><figcaption data-i18n="cap_apartment">Apartment · Turnover</figcaption></figure>
+      <figure class="tall reveal" data-cat="villas"><img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782209534/Luxury_holiday_villa_with_pool_in_Istria_-_Homes_of_Croatia_cd8tt3.jpg" alt="Luxury holiday villa with pool in Istria" loading="lazy" width="736" height="1104" /><figcaption data-i18n="cap_villa">Villa · Full care</figcaption></figure>
+      <figure class="reveal" data-cat="bedrooms"><img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782209534/Move-in_Move-out_cleaning_ajxval.jpg" alt="Fresh bed preparation for guest arrival" loading="lazy" width="736" height="981" /><figcaption data-i18n="cap_bed">Bedroom · Linen</figcaption></figure>
+      <figure class="reveal" data-cat="bathrooms"><img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782176499/__-_2026-06-23T030049.341_hrjoao.jpg" alt="Detailed bathroom cleaning for a holiday rental" loading="lazy" width="736" height="1104" /><figcaption data-i18n="cap_bath">Bathroom · Detailing</figcaption></figure>
+      <figure class="tall reveal" data-cat="bathrooms"><img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782209532/__-_2026-06-23T120754.990_bnwudj.jpg" alt="Bathroom surfaces cleaned and polished" loading="lazy" width="640" height="959" /><figcaption data-i18n="cap_bath2">Bathroom · Polished surfaces</figcaption></figure>
+      <figure class="reveal" data-cat="bathrooms"><img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782209533/__-_2026-06-23T120906.878_cic2ow.jpg" alt="Clean bathroom detail after service" loading="lazy" width="736" height="1308" /><figcaption data-i18n="cap_bath3">Bathroom · Guest ready</figcaption></figure>
+      <figure class="tall reveal" data-cat="outdoor"><img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782209534/Modern_villa_with_private_pool_and_jacuzzi_-_Homes_of_Croatie_collection_sc9s3p.jpg" alt="Modern Istrian villa with private pool and jacuzzi" loading="lazy" width="736" height="1104" /><figcaption data-i18n="cap_pool">Villa · Pool areas</figcaption></figure>
+      <figure class="reveal" data-cat="apartments"><img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782209532/__-_2026-06-23T120818.392_zwshlg.jpg" alt="Clean rental interior prepared for guests" loading="lazy" width="736" height="1104" /><figcaption data-i18n="cap_detail">Interior · Detail check</figcaption></figure>
+      <figure class="reveal" data-cat="apartments"><img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782209532/__-_2026-06-23T120822.208_cmaiqh.jpg" alt="Guest-ready apartment detail" loading="lazy" width="736" height="1104" /><figcaption data-i18n="cap_guest">Apartment · Guest ready</figcaption></figure>
+      <figure class="reveal" data-cat="villas"><img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782209533/__-_2026-06-23T121103.214_u3bwtf.jpg" alt="Villa living space prepared for arrival" loading="lazy" width="736" height="1079" /><figcaption data-i18n="cap_villa_detail">Villa · Arrival check</figcaption></figure>
+      <figure class="reveal" data-cat="outdoor"><img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782209533/__-_2026-06-23T121140.341_fxsvqb.jpg" alt="Outdoor villa area maintained for guests" loading="lazy" width="736" height="969" /><figcaption data-i18n="cap_outdoor_detail">Outdoor · Ready areas</figcaption></figure>
+      <figure class="reveal" data-cat="outdoor"><img src="https://res.cloudinary.com/dqje367sj/image/upload/v1782176227/the_Adriatic_Sea_Croatia_wrk7bf.jpg" alt="Istria coastline" loading="lazy" width="736" height="1308" /><figcaption data-i18n="cap_coast">Istria · Coastline</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===============================
+12. SERVICE AREA
+================================ -->
+<section id="areas" class="dark" style="background:linear-gradient(180deg,var(--navy),var(--deep-navy))">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="areas_eyebrow">Where we operate</span>
+      <h2 data-i18n="areas_title">Serving Istria's coast</h2>
+      <p class="lead" data-i18n="areas_sub">On-the-ground coverage across Istria's key rental destinations, with additional areas available on request.</p>
+    </div>
+    <div class="areas-grid">
+      <div class="area-card reveal"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.6 7-11a7 7 0 1 0-14 0c0 4.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>Rovinj</b><small data-i18n="area_coastal">Coastal · Istria</small></div></div>
+      <div class="area-card reveal"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.6 7-11a7 7 0 1 0-14 0c0 4.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>Poreč</b><small data-i18n="area_coastal">Coastal · Istria</small></div></div>
+      <div class="area-card reveal"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.6 7-11a7 7 0 1 0-14 0c0 4.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>Pula</b><small data-i18n="area_coastal">Coastal · Istria</small></div></div>
+      <div class="area-card reveal"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.6 7-11a7 7 0 1 0-14 0c0 4.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>Novigrad</b><small data-i18n="area_coastal">Coastal · Istria</small></div></div>
+      <div class="area-card reveal"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.6 7-11a7 7 0 1 0-14 0c0 4.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>Umag</b><small data-i18n="area_coastal">Coastal · Istria</small></div></div>
+      <div class="area-card reveal"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.6 7-11a7 7 0 1 0-14 0c0 4.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>Medulin</b><small data-i18n="area_coastal">Coastal · Istria</small></div></div>
+    </div>
+    <p class="areas-more reveal" data-i18n="areas_more">+ Additional areas available on request</p>
+  </div>
+</section>
+
+<!-- ===============================
+13. LEAD FORM
+================================ -->
+<section id="contact" class="form-section">
+  <div class="wrap form-shell">
+    <div class="form-aside reveal">
+      <span class="eyebrow" data-i18n="form_eyebrow">Request a service</span>
+      <h2 data-i18n="form_title">Tell us about your property</h2>
+      <p class="lead" data-i18n="form_sub">Share a few details and we'll prepare a structured request. Submitting opens WhatsApp with your service ticket ready to send.</p>
+      <ul class="aside-list">
+        <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-i18n="form_a1">No upfront commitment — request a quote first</span></li>
+        <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-i18n="form_a2">Your request becomes a tracked WhatsApp ticket</span></li>
+        <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-i18n="form_a3">Fast response for urgent requests</span></li>
+      </ul>
+    </div>
+
+    <div class="card-form reveal">
+      <!-- FUTURE CRM: leadData object below is JSON-ready. Connect here to Google Sheets / Apps Script / Airtable / Notion / HubSpot / Pipedrive (POST leadData to your endpoint before / instead of opening WhatsApp). -->
+      <div id="leadForm" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="fullName" data-i18n="f_name">Full Name <span class="req">*</span></label><input id="fullName" name="fullName" type="text" autocomplete="name" required data-i18n-ph="ph_name" /><span class="err" data-i18n="v_required">This field is required</span></div>
+          <div class="field"><label for="email" data-i18n="f_email">Email <span class="req">*</span></label><input id="email" name="email" type="email" autocomplete="email" required data-i18n-ph="ph_email" /><span class="err" data-i18n="v_email">Enter a valid email</span></div>
+          <div class="field"><label for="phone" data-i18n="f_phone">Phone / WhatsApp <span class="req">*</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" required data-i18n-ph="ph_phone" /><span class="err" data-i18n="v_required">This field is required</span></div>
+          <div class="field"><label for="preferredLanguage" data-i18n="f_lang">Preferred Language <span class="req">*</span></label>
+            <select id="preferredLanguage" name="preferredLanguage" required>
+              <option value="" data-i18n="opt_select">Select…</option>
+              <option value="English" data-i18n="lang_en">English</option>
+              <option value="German" data-i18n="lang_de">German</option>
+              <option value="French" data-i18n="lang_fr">French</option>
+              <option value="Italian" data-i18n="lang_it">Italian</option>
+              <option value="Spanish" data-i18n="lang_es">Spanish</option>
+              <option value="Croatian" data-i18n="lang_hr">Croatian</option>
+            </select><span class="err" data-i18n="v_required">This field is required</span></div>
+          <div class="field"><label for="propertyType" data-i18n="f_ptype">Property Type <span class="req">*</span></label>
+            <select id="propertyType" name="propertyType" required>
+              <option value="" data-i18n="opt_select">Select…</option>
+              <option value="Apartment" data-i18n="pt_apartment">Apartment</option>
+              <option value="Villa" data-i18n="pt_villa">Villa</option>
+              <option value="Commercial Space" data-i18n="pt_commercial">Commercial Space</option>
+              <option value="Other" data-i18n="pt_other">Other</option>
+            </select><span class="err" data-i18n="v_required">This field is required</span></div>
+          <div class="field"><label for="location" data-i18n="f_location">Location <span class="req">*</span></label><input id="location" name="location" type="text" required data-i18n-ph="ph_location" /><span class="err" data-i18n="v_required">This field is required</span></div>
+          <div class="field"><label for="propertySize" data-i18n="f_size">Property Size (m²)</label><input id="propertySize" name="propertySize" type="number" min="0" data-i18n-ph="ph_size" /></div>
+          <div class="field"><label for="bedrooms" data-i18n="f_beds">Bedrooms</label><input id="bedrooms" name="bedrooms" type="number" min="0" data-i18n-ph="ph_num" /></div>
+          <div class="field"><label for="bathrooms" data-i18n="f_baths">Bathrooms</label><input id="bathrooms" name="bathrooms" type="number" min="0" data-i18n-ph="ph_num" /></div>
+          <div class="field"><label for="outdoorArea" data-i18n="f_outdoor">Outdoor Area</label>
+            <select id="outdoorArea" name="outdoorArea">
+              <option value="" data-i18n="opt_select">Select…</option>
+              <option value="None" data-i18n="oa_none">None</option>
+              <option value="Balcony" data-i18n="oa_balcony">Balcony</option>
+              <option value="Terrace" data-i18n="oa_terrace">Terrace</option>
+              <option value="Garden" data-i18n="oa_garden">Garden</option>
+              <option value="Pool" data-i18n="oa_pool">Pool</option>
+            </select></div>
+          <div class="field"><label for="requestedService" data-i18n="f_service">Requested Service <span class="req">*</span></label>
+            <select id="requestedService" name="requestedService" required>
+              <option value="" data-i18n="opt_select">Select…</option>
+              <option value="Apartment Cleaning" data-i18n="svc1_t">Apartment Cleaning</option>
+              <option value="Villa Cleaning" data-i18n="svc2_t">Villa Cleaning</option>
+              <option value="Laundry & Linen" data-i18n="svc3_t">Laundry &amp; Linen</option>
+              <option value="Deep Cleaning" data-i18n="svc9_t">Deep Cleaning</option>
+              <option value="Guest Check-In" data-i18n="svc4_t">Guest Check-In</option>
+              <option value="Guest Check-Out" data-i18n="svc5_t">Guest Check-Out</option>
+              <option value="Property Restocking" data-i18n="svc7_t">Property Restocking</option>
+              <option value="Commercial Cleaning" data-i18n="svc8_t">Commercial Cleaning</option>
+              <option value="Partnership Request" data-i18n="opt_partnership">Partnership Request</option>
+              <option value="General Question" data-i18n="opt_general">General Question</option>
+            </select><span class="err" data-i18n="v_required">This field is required</span></div>
+          <div class="field"><label for="frequency" data-i18n="f_frequency">Frequency <span class="req">*</span></label>
+            <select id="frequency" name="frequency" required>
+              <option value="" data-i18n="opt_select">Select…</option>
+              <option value="One-Time" data-i18n="fr_one">One-Time</option>
+              <option value="Weekly" data-i18n="fr_weekly">Weekly</option>
+              <option value="Monthly" data-i18n="fr_monthly">Monthly</option>
+              <option value="Seasonal" data-i18n="fr_seasonal">Seasonal</option>
+              <option value="Custom" data-i18n="fr_custom">Custom</option>
+            </select><span class="err" data-i18n="v_required">This field is required</span></div>
+          <div class="field"><label for="preferredDate" data-i18n="f_date">Preferred Date</label><input id="preferredDate" name="preferredDate" type="date" /></div>
+          <div class="field"><label for="urgency" data-i18n="f_urgency">Urgency <span class="req">*</span></label>
+            <select id="urgency" name="urgency" required>
+              <option value="" data-i18n="opt_select">Select…</option>
+              <option value="Normal" data-i18n="u_normal">Normal</option>
+              <option value="Priority" data-i18n="u_priority">Priority</option>
+              <option value="Emergency" data-i18n="u_emergency">Emergency</option>
+            </select><span class="err" data-i18n="v_required">This field is required</span></div>
+          <div class="field full"><label for="notes" data-i18n="f_notes">Additional Notes</label><textarea id="notes" name="notes" data-i18n-ph="ph_notes"></textarea></div>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-gold" id="leadSubmit" type="button">
+            <span class="spinner" id="leadSpinner"></span>
+            <span id="leadBtnText" data-i18n="form_submit">Generate Service Ticket</span>
+          </button>
+          <p class="form-note" data-i18n="form_note">Opens WhatsApp with your structured ticket — nothing is sent until you press send.</p>
+        </div>
+
+        <!-- signature: operations ticket stub -->
+        <div class="ticket" id="leadTicket" aria-live="polite">
+          <div class="stub"><b data-i18n="ticket_ready">Service ticket ready</b><span class="pill">ADRIATIC SHINE</span></div>
+          <div class="perf"></div>
+          <div class="body">
+            <div class="tid" id="leadTid">ADR-…</div>
+            <p class="msg" data-i18n="ticket_msg">Your request has been prepared. WhatsApp will now open with your service ticket.</p>
+            <a class="btn btn-wa" id="leadWaBtn" href="#" target="_blank" rel="noopener" data-i18n="ticket_open">Open WhatsApp Ticket</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===============================
+14. FAQ
+================================ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="faq_eyebrow">Good to know</span>
+      <h2 data-i18n="faq_title">Frequently asked questions</h2>
+    </div>
+    <div class="faq-search reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg>
+      <input id="faqSearch" type="search" data-i18n-ph="faq_search" placeholder="Search questions…" aria-label="Search FAQ" />
+    </div>
+    <div class="faq-list" id="faqList">
+      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="q1">Do you offer one-time cleaning?</span><span class="ic">+</span></button><div class="faq-a"><p data-i18n="a1">Yes. We handle one-time deep cleans, single turnovers and seasonal resets, as well as recurring schedules.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="q2">Can you manage guest check-ins?</span><span class="ic">+</span></button><div class="faq-a"><p data-i18n="a2">Absolutely. We offer professional check-in and check-out, key handover and a guest-ready welcome on arrival.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="q3">Can you help with last-minute cleaning requests?</span><span class="ic">+</span></button><div class="faq-a"><p data-i18n="a3">When our schedule and location allow, we respond quickly and confirm the earliest available slot.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="q4">Which areas do you cover?</span><span class="ic">+</span></button><div class="faq-a"><p data-i18n="a4">Rovinj, Poreč, Pula, Novigrad, Umag and Medulin, plus additional areas in Istria on request.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="q5">Do you work with agencies?</span><span class="ic">+</span></button><div class="faq-a"><p data-i18n="a5">Yes. We partner with property managers and rental agencies on consistent, scalable operational support.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="q6">Do you provide linen services?</span><span class="ic">+</span></button><div class="faq-a"><p data-i18n="a6">We manage hotel-grade linen and towels — laundered, replaced and restocked to a fresh, consistent standard.</p></div></div>
+      <p class="faq-empty" id="faqEmpty" data-i18n="faq_empty">No questions match your search.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===============================
+16. FOOTER
+================================ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="tagline" data-i18n="footer_tagline">Clean Apartments. Happy Guests.</div>
+        <p data-i18n="footer_about">Property care and hospitality operations for apartments, villas and holiday rentals across Istria, Croatia.</p>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="footer_explore">Explore</h4>
+        <a href="#services" data-i18n="nav_services">Services</a>
+        <a href="#how" data-i18n="nav_how">How It Works</a>
+        <a href="#areas" data-i18n="nav_areas">Areas</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="footer_contact">Contact</h4>
+        <a href="https://wa.me/34644075065" target="_blank" rel="noopener" data-wa-static>WhatsApp · +34 644 075 065</a>
+        <a href="mailto:info@adriaticshine.com">info@adriaticshine.com</a>
+        <p data-i18n="footer_region">Istria, Croatia</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Adriatic Shine. <span data-i18n="footer_rights">All rights reserved.</span></span>
+      <span class="future" data-i18n="footer_future">Client Portal · Property Dashboard — coming soon</span>
+    </div>
+  </div>
+</footer>
+</main>
+
+<!-- lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="close" id="lbClose" aria-label="Close">×</button>
+  <button class="nav-arrow prev" id="lbPrev" aria-label="Previous">‹</button>
+  <img id="lbImg" src="" alt="" />
+  <button class="nav-arrow next" id="lbNext" aria-label="Next">›</button>
+</div>
+
+<!-- WhatsApp float -->
+<a class="wa-float" href="https://wa.me/34644075065" target="_blank" rel="noopener" aria-label="Contact on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+</a>
+
+<!-- ===============================
+18. WHATSAPP TICKETS · 19. TRANSLATION SYSTEM · 21. UTILITIES
+================================ -->
+<script>
+(function(){
+"use strict";
+
+/* ===============================
+19. TRANSLATION SYSTEM
+================================ */
+const WA_BY_LANG = {
+  default:"34644075065",
+  hr:"385899281833"
+};
+const DEFAULT_LANG = "en";
+const LANGS = ["en","de","fr","it","es","hr"];
+
+const langMeta = {
+  en:{code:"EN",htmlLang:"en"},
+  de:{code:"DE",htmlLang:"de"},
+  fr:{code:"FR",htmlLang:"fr"},
+  it:{code:"IT",htmlLang:"it"},
+  es:{code:"ES",htmlLang:"es"},
+  hr:{code:"HR",htmlLang:"hr"}
+};
+
+// Per-language SEO (multi-language SEO system)
+const seo = {
+  en:{title:"Adriatic Shine — Premium Property Care & Hospitality Operations in Istria, Croatia",desc:"Reliable cleaning, guest services and operational support for apartments, villas and holiday rentals across Istria, Croatia."},
+  de:{title:"Adriatic Shine — Premium-Immobilienbetreuung & Gastgewerbe-Service in Istrien, Kroatien",desc:"Zuverlässige Reinigung, Gästeservice und operative Unterstützung für Apartments, Villen und Ferienunterkünfte in ganz Istrien, Kroatien."},
+  fr:{title:"Adriatic Shine — Gestion immobilière premium et opérations hôtelières en Istrie, Croatie",desc:"Nettoyage fiable, services aux hôtes et support opérationnel pour appartements, villas et locations de vacances en Istrie, Croatie."},
+  it:{title:"Adriatic Shine — Property care premium e operazioni hospitality in Istria, Croazia",desc:"Pulizie affidabili, servizi per gli ospiti e supporto operativo per appartamenti, ville e case vacanza in tutta l'Istria, Croazia."},
+  es:{title:"Adriatic Shine — Property care premium y operaciones de hospitality en Istria, Croacia",desc:"Limpieza fiable, servicios para huéspedes y apoyo operativo para apartamentos, villas y alojamientos vacacionales en toda Istria, Croacia."},
+  hr:{title:"Adriatic Shine — Premium briga o nekretninama i hospitality operacije u Istri, Hrvatska",desc:"Pouzdano ciscenje, usluge za goste i operativna podrska za apartmane, vile i smjestaj za odmor sirom Istre, Hrvatska."}
+};
+
+const translations = {
+  en:{
+    skip_main:"Skip to main content",theme_day:"Switch to day mode",theme_night:"Switch to night mode",nav_home:"Home",nav_services:"Services",nav_how:"How It Works",nav_areas:"Areas",nav_faq:"FAQ",nav_support:"Support",nav_contact:"Contact",nav_cta:"WhatsApp",
+    hero_kicker:"Property Care · Istria, Croatia",hero_title_a:"Professional property care",hero_title_b:"in Istria.",hero_sub:"Reliable cleaning, guest services and operational support for apartments, villas and holiday rentals.",hero_cta1:"Request a Service",hero_cta2:"Contact on WhatsApp",hero_m1:"Coverage areas",hero_m2:"Fast response",hero_m3:"Guest-ready standard",scroll:"Scroll",
+    trust_1:"Professional",trust_2:"Reliable",trust_3:"Guest Ready",trust_4:"Local Expertise",trust_5:"Detail Focused",trust_6:"Hospitality Standards",
+    services_eyebrow:"What we manage",services_title:"Operational care, end to end",services_sub:"Every service is delivered to a documented standard, so your property is consistently guest-ready between stays.",
+    svc1_t:"Apartment Cleaning",svc1_d:"Turnover and deep cleaning tailored to short-stay apartments and rental schedules.",
+    svc2_t:"Villa Cleaning",svc2_d:"Comprehensive care for larger properties, including outdoor areas and detailing.",
+    svc3_t:"Laundry & Linen",svc3_d:"Fresh, hotel-grade linen and towels managed, laundered and replaced on schedule.",
+    svc9_t:"Deep Cleaning",svc9_d:"Detailed seasonal or post-stay cleans for kitchens, bathrooms, appliances and hard-to-reach areas.",
+    svc4_t:"Guest Check-In",svc4_d:"Warm, professional arrivals with key handover and a guest-ready welcome.",
+    svc5_t:"Guest Check-Out",svc5_d:"Departure checks, inventory verification and rapid turnaround for the next stay.",
+    svc7_t:"Property Restocking",svc7_d:"Consumables, amenities and essentials replenished so guests never find a gap.",
+    svc8_t:"Commercial Cleaning",svc8_d:"Offices, boutique venues and hospitality spaces kept to a professional standard.",
+    owners_tag_b:"Guest-ready, always",owners_tag_s:"Verified before every arrival",owners_eyebrow:"For property owners",owners_title:"A trusted operational partner, not just a cleaner",owners_body:"We take the operational weight off owners and hosts — keeping properties consistently guest-ready while you stay in control and at ease.",
+    ben1_t:"Less operational stress",ben1_d:"One reliable point of contact for every turnover and request.",
+    ben2_t:"Better guest experience",ben2_d:"Spotless spaces and smooth arrivals that earn five-star reviews.",
+    ben3_t:"Reliable, consistent service",ben3_d:"A documented standard applied the same way, every single time.",
+    ben4_t:"Professional standards",ben4_d:"Hospitality-grade quality control on every property we touch.",
+    ben5_t:"Local support in Istria",ben5_d:"A team on the ground that knows the region and responds quickly.",
+    owners_cta:"Request a Service",
+    how_eyebrow:"A clear, simple process",how_title:"From request to verified result",
+    step1_t:"Submit Request",step1_d:"Send your details through the form or WhatsApp in minutes.",
+    step2_t:"Property Review",step2_d:"We assess your property, needs and schedule.",
+    step3_t:"Receive Quote",step3_d:"A clear, transparent proposal with no surprises.",
+    step4_t:"Service Delivery",step4_d:"Our team delivers to a documented standard.",
+    step5_t:"Quality Check",step5_d:"A final walkthrough verifies every property is guest-ready.",
+    std1_k:"Standards",std1_t:"Service Standards",std1_d:"A defined scope for every service so nothing is left to chance.",
+    std2_k:"Control",std2_t:"Quality Control",std2_d:"Independent checks before a property is signed off as ready.",
+    std3_k:"Checklist",std3_t:"Property Checklist",std3_d:"Room-by-room verification covering cleaning, inventory and presentation.",
+    std4_k:"Response",std4_t:"Response Time",std4_d:"Same-day capability for urgent turnovers and incidents in our areas.",
+    std5_k:"Local",std5_t:"Local Expertise",std5_d:"A team based in Istria that understands the rental season on the ground.",
+    std6_k:"Hospitality",std6_t:"Hospitality Experience",std6_d:"Standards drawn from boutique hospitality, applied to private rentals.",
+    gallery_eyebrow:"Visual proof",gallery_title:"Properties kept to standard",
+    filter_all:"All",filter_apartments:"Apartments",filter_villas:"Villas",filter_bathrooms:"Bathrooms",filter_bedrooms:"Bedrooms",filter_outdoor:"Outdoor",
+    cap_apartment:"Apartment · Turnover",cap_villa:"Villa · Full care",cap_bed:"Bedroom · Linen",cap_bath:"Bathroom · Detailing",cap_bath2:"Bathroom · Polished surfaces",cap_bath3:"Bathroom · Guest ready",cap_terrace:"Terrace · Outdoor areas",cap_pool:"Villa · Pool areas",cap_detail:"Interior · Detail check",cap_guest:"Apartment · Guest ready",cap_villa_detail:"Villa · Arrival check",cap_outdoor_detail:"Outdoor · Ready areas",cap_coast:"Istria · Coastline",
+    areas_eyebrow:"Where we operate",areas_title:"Serving Istria's coast",areas_sub:"On-the-ground coverage across Istria's key rental destinations, with additional areas available on request.",area_coastal:"Coastal · Istria",areas_more:"+ Additional areas available on request",
+    form_eyebrow:"Request a service",form_title:"Tell us about your property",form_sub:"Share a few details and we'll prepare a structured request. Submitting opens WhatsApp with your service ticket ready to send.",
+    form_a1:"No upfront commitment — request a quote first",form_a2:"Your request becomes a tracked WhatsApp ticket",form_a3:"Fast response for urgent requests",
+    f_name:"Full Name",f_email:"Email",f_phone:"Phone / WhatsApp",f_lang:"Preferred Language",f_ptype:"Property Type",f_location:"Location",f_size:"Property Size (m²)",f_beds:"Bedrooms",f_baths:"Bathrooms",f_outdoor:"Outdoor Area",f_service:"Requested Service",f_frequency:"Frequency",f_date:"Preferred Date",f_urgency:"Urgency",f_notes:"Additional Notes",
+    opt_select:"Select…",lang_en:"English",lang_de:"German",lang_fr:"French",lang_it:"Italian",lang_es:"Spanish",lang_hr:"Croatian",
+    pt_apartment:"Apartment",pt_villa:"Villa",pt_commercial:"Commercial Space",pt_other:"Other",
+    oa_none:"None",oa_balcony:"Balcony",oa_terrace:"Terrace",oa_garden:"Garden",oa_pool:"Pool",
+    opt_partnership:"Partnership Request",opt_general:"General Question",
+    fr_one:"One-Time",fr_weekly:"Weekly",fr_monthly:"Monthly",fr_seasonal:"Seasonal",fr_custom:"Custom",
+    u_normal:"Normal",u_priority:"Priority",u_emergency:"Emergency",
+    form_submit:"Generate Service Ticket",form_note:"Opens WhatsApp with your structured ticket — nothing is sent until you press send.",
+    ticket_ready:"Service ticket ready",ticket_msg:"Your request has been prepared. WhatsApp will now open with your service ticket.",ticket_open:"Open WhatsApp Ticket",ticket_sready:"Support ticket ready",
+    v_required:"This field is required",v_email:"Enter a valid email",
+    ph_name:"Your full name",ph_email:"you@email.com",ph_phone:"+385 …",ph_location:"City or area",ph_size:"e.g. 85",ph_num:"0",ph_notes:"Anything else we should know?",ph_desc:"Describe what you'd like changed or fixed…",faq_search:"Search questions…",
+    faq_eyebrow:"Good to know",faq_title:"Frequently asked questions",faq_empty:"No questions match your search.",
+    q1:"Do you offer one-time cleaning?",a1:"Yes. We handle one-time deep cleans, single turnovers and seasonal resets, as well as recurring schedules.",
+    q2:"Can you manage guest check-ins?",a2:"Absolutely. We offer professional check-in and check-out, key handover and a guest-ready welcome on arrival.",
+    q3:"Can you help with last-minute cleaning requests?",a3:"When our schedule and location allow, we respond quickly and confirm the earliest available slot.",
+    q4:"Which areas do you cover?",a4:"Rovinj, Poreč, Pula, Novigrad, Umag and Medulin, plus additional areas in Istria on request.",
+    q5:"Do you work with agencies?",a5:"Yes. We partner with property managers and rental agencies on consistent, scalable operational support.",
+    q6:"Do you provide linen services?",a6:"We manage hotel-grade linen and towels — laundered, replaced and restocked to a fresh, consistent standard.",
+    sla_normal:"Within 48 hours",sla_priority:"Within 24 hours",sla_urgent:"Same day",lvl_urgent:"Urgent",
+    footer_tagline:"Clean Apartments. Happy Guests.",footer_about:"Property care and hospitality operations for apartments, villas and holiday rentals across Istria, Croatia.",footer_explore:"Explore",footer_contact:"Contact",footer_region:"Istria, Croatia",footer_rights:"All rights reserved.",footer_future:"Client Portal · Property Dashboard — coming soon"
+  },
+  de:{
+    skip_main:"Zum Hauptinhalt springen",theme_day:"Zum Tagesmodus wechseln",theme_night:"Zum Nachtmodus wechseln",nav_home:"Start",nav_services:"Leistungen",nav_how:"Ablauf",nav_areas:"Gebiete",nav_faq:"FAQ",nav_support:"Support",nav_contact:"Kontakt",nav_cta:"WhatsApp",
+    hero_kicker:"Immobilienbetreuung · Istrien, Kroatien",hero_title_a:"Professionelle Immobilienbetreuung",hero_title_b:"in Istrien.",hero_sub:"Zuverlässige Reinigung, Gästeservice und operative Unterstützung für Apartments, Villen und Ferienunterkünfte.",hero_cta1:"Service anfragen",hero_cta2:"Per WhatsApp kontaktieren",hero_m1:"Einsatzgebiete",hero_m2:"Schnelle Antwort",hero_m3:"Gästebereit-Standard",scroll:"Scrollen",
+    trust_1:"Professionell",trust_2:"Zuverlässig",trust_3:"Gästebereit",trust_4:"Lokale Expertise",trust_5:"Detailorientiert",trust_6:"Hotelstandards",
+    services_eyebrow:"Was wir übernehmen",services_title:"Operative Betreuung, von A bis Z",services_sub:"Jede Leistung wird nach einem dokumentierten Standard erbracht, damit Ihre Immobilie zwischen den Aufenthalten stets gästebereit ist.",
+    svc1_t:"Apartment-Reinigung",svc1_d:"Wechsel- und Grundreinigung, abgestimmt auf Kurzzeit-Apartments und Vermietungspläne.",
+    svc2_t:"Villen-Reinigung",svc2_d:"Umfassende Betreuung größerer Objekte, inklusive Außenbereichen und Detailpflege.",
+    svc3_t:"Wäsche & Bettwäsche",svc3_d:"Frische Bettwäsche und Handtücher in Hotelqualität, verwaltet, gewaschen und planmäßig ersetzt.",
+    svc9_t:"Grundreinigung",svc9_d:"Detaillierte saisonale oder nach dem Aufenthalt ausgeführte Reinigung von Küchen, Bädern, Geräten und schwer erreichbaren Bereichen.",
+    svc4_t:"Gäste-Check-in",svc4_d:"Herzliche, professionelle Ankunft mit Schlüsselübergabe und gästebereitem Empfang.",
+    svc5_t:"Gäste-Check-out",svc5_d:"Abreisekontrolle, Inventarprüfung und schnelle Vorbereitung für den nächsten Aufenthalt.",
+    svc7_t:"Auffüllen der Ausstattung",svc7_d:"Verbrauchsartikel, Annehmlichkeiten und Essentials aufgefüllt, damit Gästen nichts fehlt.",
+    svc8_t:"Gewerbereinigung",svc8_d:"Büros, Boutique-Locations und Gastgewerbeflächen auf professionellem Niveau gepflegt.",
+    owners_tag_b:"Immer gästebereit",owners_tag_s:"Vor jeder Ankunft geprüft",owners_eyebrow:"Für Eigentümer",owners_title:"Ein verlässlicher operativer Partner, nicht nur eine Reinigungskraft",owners_body:"Wir nehmen Eigentümern und Gastgebern die operative Last ab — Ihre Immobilie bleibt durchgehend gästebereit, während Sie entspannt die Kontrolle behalten.",
+    ben1_t:"Weniger operativer Stress",ben1_d:"Ein verlässlicher Ansprechpartner für jeden Wechsel und jede Anfrage.",
+    ben2_t:"Bessere Gästeerfahrung",ben2_d:"Makellose Räume und reibungslose Ankünfte, die Fünf-Sterne-Bewertungen bringen.",
+    ben3_t:"Verlässlicher, gleichbleibender Service",ben3_d:"Ein dokumentierter Standard, jedes Mal gleich umgesetzt.",
+    ben4_t:"Professionelle Standards",ben4_d:"Qualitätskontrolle auf Hotelniveau für jede betreute Immobilie.",
+    ben5_t:"Lokaler Support in Istrien",ben5_d:"Ein Team vor Ort, das die Region kennt und schnell reagiert.",
+    owners_cta:"Service anfragen",
+    how_eyebrow:"Ein klarer, einfacher Ablauf",how_title:"Von der Anfrage zum geprüften Ergebnis",
+    step1_t:"Anfrage senden",step1_d:"Senden Sie Ihre Angaben in Minuten über das Formular oder WhatsApp.",
+    step2_t:"Objektprüfung",step2_d:"Wir bewerten Ihre Immobilie, Anforderungen und den Zeitplan.",
+    step3_t:"Angebot erhalten",step3_d:"Ein klares, transparentes Angebot ohne Überraschungen.",
+    step4_t:"Leistungserbringung",step4_d:"Unser Team liefert nach einem dokumentierten Standard.",
+    step5_t:"Qualitätskontrolle",step5_d:"Eine abschließende Begehung bestätigt, dass jede Immobilie gästebereit ist.",
+    std1_k:"Standards",std1_t:"Servicestandards",std1_d:"Ein definierter Umfang für jede Leistung, damit nichts dem Zufall überlassen wird.",
+    std2_k:"Kontrolle",std2_t:"Qualitätskontrolle",std2_d:"Unabhängige Prüfungen, bevor eine Immobilie als bereit freigegeben wird.",
+    std3_k:"Checkliste",std3_t:"Objekt-Checkliste",std3_d:"Raum-für-Raum-Prüfung von Reinigung, Inventar und Präsentation.",
+    std4_k:"Reaktion",std4_t:"Reaktionszeit",std4_d:"Kapazität am selben Tag für dringende Wechsel und Zwischenfälle in unseren Gebieten.",
+    std5_k:"Lokal",std5_t:"Lokale Expertise",std5_d:"Ein Team in Istrien, das die Vermietungssaison vor Ort kennt.",
+    std6_k:"Gastgewerbe",std6_t:"Gastgewerbe-Erfahrung",std6_d:"Standards aus der Boutique-Hotellerie, angewandt auf private Vermietungen.",
+    gallery_eyebrow:"Sichtbarer Beweis",gallery_title:"Immobilien auf Standard gehalten",
+    filter_all:"Alle",filter_apartments:"Apartments",filter_villas:"Villen",filter_bathrooms:"Bäder",filter_bedrooms:"Schlafzimmer",filter_outdoor:"Außen",
+    cap_apartment:"Apartment · Wechsel",cap_villa:"Villa · Komplettbetreuung",cap_bed:"Schlafzimmer · Bettwäsche",cap_bath:"Bad · Detailpflege",cap_bath2:"Bad · Polierte Oberflächen",cap_bath3:"Bad · Gästebereit",cap_terrace:"Terrasse · Außenbereiche",cap_pool:"Villa · Poolbereiche",cap_detail:"Interieur · Detailprüfung",cap_guest:"Apartment · Gästebereit",cap_villa_detail:"Villa · Ankunftscheck",cap_outdoor_detail:"Außenbereich · Bereit",cap_coast:"Istrien · Küste",
+    areas_eyebrow:"Wo wir tätig sind",areas_title:"Für Istriens Küste im Einsatz",areas_sub:"Betreuung vor Ort in Istriens wichtigsten Vermietungsorten, weitere Gebiete auf Anfrage.",area_coastal:"Küste · Istrien",areas_more:"+ Weitere Gebiete auf Anfrage",
+    form_eyebrow:"Service anfragen",form_title:"Erzählen Sie uns von Ihrer Immobilie",form_sub:"Teilen Sie ein paar Angaben und wir bereiten eine strukturierte Anfrage vor. Beim Absenden öffnet sich WhatsApp mit Ihrem fertigen Service-Ticket.",
+    form_a1:"Keine Vorabverpflichtung — zuerst ein Angebot anfragen",form_a2:"Ihre Anfrage wird zu einem nachverfolgbaren WhatsApp-Ticket",form_a3:"Schnelle Antwort bei dringenden Anfragen",
+    f_name:"Vollständiger Name",f_email:"E-Mail",f_phone:"Telefon / WhatsApp",f_lang:"Bevorzugte Sprache",f_ptype:"Objekttyp",f_location:"Ort",f_size:"Objektgröße (m²)",f_beds:"Schlafzimmer",f_baths:"Bäder",f_outdoor:"Außenbereich",f_service:"Gewünschte Leistung",f_frequency:"Häufigkeit",f_date:"Wunschtermin",f_urgency:"Dringlichkeit",f_notes:"Zusätzliche Hinweise",
+    opt_select:"Auswählen…",lang_en:"Englisch",lang_de:"Deutsch",lang_fr:"Französisch",lang_it:"Italienisch",lang_es:"Spanisch",lang_hr:"Kroatisch",
+    pt_apartment:"Apartment",pt_villa:"Villa",pt_commercial:"Gewerbefläche",pt_other:"Sonstiges",
+    oa_none:"Keiner",oa_balcony:"Balkon",oa_terrace:"Terrasse",oa_garden:"Garten",oa_pool:"Pool",
+    opt_partnership:"Partnerschaftsanfrage",opt_general:"Allgemeine Frage",
+    fr_one:"Einmalig",fr_weekly:"Wöchentlich",fr_monthly:"Monatlich",fr_seasonal:"Saisonal",fr_custom:"Individuell",
+    u_normal:"Normal",u_priority:"Bevorzugt",u_emergency:"Notfall",
+    form_submit:"Service-Ticket erstellen",form_note:"Öffnet WhatsApp mit Ihrem strukturierten Ticket — nichts wird gesendet, bis Sie auf Senden tippen.",
+    ticket_ready:"Service-Ticket bereit",ticket_msg:"Ihre Anfrage wurde vorbereitet. WhatsApp öffnet sich nun mit Ihrem Service-Ticket.",ticket_open:"WhatsApp-Ticket öffnen",ticket_sready:"Support-Ticket bereit",
+    v_required:"Dieses Feld ist erforderlich",v_email:"Geben Sie eine gültige E-Mail ein",
+    ph_name:"Ihr vollständiger Name",ph_email:"sie@email.com",ph_phone:"+385 …",ph_location:"Stadt oder Gebiet",ph_size:"z. B. 85",ph_num:"0",ph_notes:"Sollen wir noch etwas wissen?",ph_desc:"Beschreiben Sie, was geändert oder behoben werden soll…",faq_search:"Fragen durchsuchen…",
+    faq_eyebrow:"Gut zu wissen",faq_title:"Häufig gestellte Fragen",faq_empty:"Keine Fragen entsprechen Ihrer Suche.",
+    q1:"Bieten Sie einmalige Reinigungen an?",a1:"Ja. Wir übernehmen einmalige Grundreinigungen, einzelne Wechsel und saisonale Auffrischungen sowie wiederkehrende Pläne.",
+    q2:"Übernehmen Sie Gäste-Check-ins?",a2:"Selbstverständlich. Wir bieten professionellen Check-in und Check-out, Schlüsselübergabe und einen gästebereiten Empfang bei Ankunft.",
+    q3:"Können Sie bei kurzfristigen Reinigungsanfragen helfen?",a3:"Wenn Zeitplan und Standort es erlauben, reagieren wir schnell und bestätigen den frühestmöglichen Termin.",
+    q4:"Welche Gebiete decken Sie ab?",a4:"Rovinj, Poreč, Pula, Novigrad, Umag und Medulin sowie weitere Gebiete in Istrien auf Anfrage.",
+    q5:"Arbeiten Sie mit Agenturen zusammen?",a5:"Ja. Wir kooperieren mit Hausverwaltungen und Vermietungsagenturen für konsistente, skalierbare operative Unterstützung.",
+    q6:"Bieten Sie Wäscheservice an?",a6:"Wir verwalten Bettwäsche und Handtücher in Hotelqualität — gewaschen, ersetzt und aufgefüllt nach einem frischen, gleichbleibenden Standard.",
+    sla_normal:"Innerhalb von 48 Stunden",sla_priority:"Innerhalb von 24 Stunden",sla_urgent:"Am selben Tag",lvl_urgent:"Dringend",
+    footer_tagline:"Saubere Apartments. Zufriedene Gäste.",footer_about:"Immobilienbetreuung und Gastgewerbe-Operationen für Apartments, Villen und Ferienunterkünfte in ganz Istrien, Kroatien.",footer_explore:"Entdecken",footer_contact:"Kontakt",footer_region:"Istrien, Kroatien",footer_rights:"Alle Rechte vorbehalten.",footer_future:"Kundenportal · Immobilien-Dashboard — in Kürze"
+  },
+  fr:{
+    skip_main:"Aller au contenu principal",theme_day:"Passer au mode jour",theme_night:"Passer au mode nuit",nav_home:"Accueil",nav_services:"Services",nav_how:"Méthode",nav_areas:"Zones",nav_faq:"FAQ",nav_support:"Support",nav_contact:"Contact",nav_cta:"WhatsApp",
+    hero_kicker:"Gestion immobilière · Istrie, Croatie",hero_title_a:"Gestion immobilière professionnelle",hero_title_b:"en Istrie.",hero_sub:"Nettoyage fiable, services aux hôtes et support opérationnel pour appartements, villas et locations de vacances.",hero_cta1:"Demander un service",hero_cta2:"Contacter via WhatsApp",hero_m1:"Zones couvertes",hero_m2:"Réponse rapide",hero_m3:"Standard prêt pour les hôtes",scroll:"Défiler",
+    trust_1:"Professionnel",trust_2:"Fiable",trust_3:"Prêt pour les hôtes",trust_4:"Expertise locale",trust_5:"Souci du détail",trust_6:"Standards hôteliers",
+    services_eyebrow:"Ce que nous gérons",services_title:"Une gestion opérationnelle de A à Z",services_sub:"Chaque service est réalisé selon un standard documenté, pour que votre bien soit toujours prêt à accueillir entre deux séjours.",
+    svc1_t:"Nettoyage d'appartement",svc1_d:"Remise en état et nettoyage en profondeur adaptés aux courts séjours et aux plannings de location.",
+    svc2_t:"Nettoyage de villa",svc2_d:"Prise en charge complète des grandes propriétés, espaces extérieurs et finitions inclus.",
+    svc3_t:"Blanchisserie & linge",svc3_d:"Linge et serviettes de qualité hôtelière gérés, lavés et remplacés selon le planning.",
+    svc9_t:"Nettoyage en profondeur",svc9_d:"Nettoyages détaillés saisonniers ou après séjour pour cuisines, salles de bain, appareils et zones difficiles d'accès.",
+    svc4_t:"Accueil des hôtes",svc4_d:"Arrivées chaleureuses et professionnelles avec remise des clés et accueil soigné.",
+    svc5_t:"Départ des hôtes",svc5_d:"Contrôles de départ, vérification de l'inventaire et remise en état rapide pour le séjour suivant.",
+    svc7_t:"Réapprovisionnement",svc7_d:"Consommables, équipements et essentiels réapprovisionnés pour que rien ne manque aux hôtes.",
+    svc8_t:"Nettoyage commercial",svc8_d:"Bureaux, lieux de charme et espaces d'accueil maintenus à un niveau professionnel.",
+    owners_tag_b:"Toujours prêt pour les hôtes",owners_tag_s:"Vérifié avant chaque arrivée",owners_eyebrow:"Pour les propriétaires",owners_title:"Un partenaire opérationnel de confiance, pas seulement un agent de ménage",owners_body:"Nous déchargeons les propriétaires et les hôtes du poids opérationnel — votre bien reste constamment prêt à accueillir, pendant que vous gardez le contrôle, l'esprit tranquille.",
+    ben1_t:"Moins de stress opérationnel",ben1_d:"Un interlocuteur fiable unique pour chaque rotation et chaque demande.",
+    ben2_t:"Meilleure expérience client",ben2_d:"Des espaces impeccables et des arrivées fluides qui génèrent des avis cinq étoiles.",
+    ben3_t:"Service fiable et constant",ben3_d:"Un standard documenté appliqué de la même façon, à chaque fois.",
+    ben4_t:"Standards professionnels",ben4_d:"Un contrôle qualité de niveau hôtelier sur chaque bien que nous gérons.",
+    ben5_t:"Support local en Istrie",ben5_d:"Une équipe sur place qui connaît la région et réagit vite.",
+    owners_cta:"Demander un service",
+    how_eyebrow:"Un processus clair et simple",how_title:"De la demande au résultat vérifié",
+    step1_t:"Envoyer la demande",step1_d:"Transmettez vos informations via le formulaire ou WhatsApp en quelques minutes.",
+    step2_t:"Évaluation du bien",step2_d:"Nous évaluons votre bien, vos besoins et votre planning.",
+    step3_t:"Recevoir le devis",step3_d:"Une proposition claire et transparente, sans surprise.",
+    step4_t:"Réalisation du service",step4_d:"Notre équipe intervient selon un standard documenté.",
+    step5_t:"Contrôle qualité",step5_d:"Une visite finale vérifie que chaque bien est prêt à accueillir.",
+    std1_k:"Standards",std1_t:"Standards de service",std1_d:"Un périmètre défini pour chaque service afin de ne rien laisser au hasard.",
+    std2_k:"Contrôle",std2_t:"Contrôle qualité",std2_d:"Des vérifications indépendantes avant de valider qu'un bien est prêt.",
+    std3_k:"Checklist",std3_t:"Checklist du bien",std3_d:"Vérification pièce par pièce du nettoyage, de l'inventaire et de la présentation.",
+    std4_k:"Réactivité",std4_t:"Délai de réponse",std4_d:"Capacité d'intervention le jour même pour les rotations et incidents urgents dans nos zones.",
+    std5_k:"Local",std5_t:"Expertise locale",std5_d:"Une équipe basée en Istrie qui connaît la saison de location sur le terrain.",
+    std6_k:"Hôtellerie",std6_t:"Expérience hôtelière",std6_d:"Des standards issus de l'hôtellerie de charme, appliqués aux locations privées.",
+    gallery_eyebrow:"Preuve visuelle",gallery_title:"Des biens tenus au standard",
+    filter_all:"Tout",filter_apartments:"Appartements",filter_villas:"Villas",filter_bathrooms:"Salles de bain",filter_bedrooms:"Chambres",filter_outdoor:"Extérieur",
+    cap_apartment:"Appartement · Rotation",cap_villa:"Villa · Prise en charge complète",cap_bed:"Chambre · Linge",cap_bath:"Salle de bain · Finitions",cap_bath2:"Salle de bain · Surfaces polies",cap_bath3:"Salle de bain · Prête pour les hôtes",cap_terrace:"Terrasse · Espaces extérieurs",cap_pool:"Villa · Espaces piscine",cap_detail:"Intérieur · Contrôle des détails",cap_guest:"Appartement · Prêt pour les hôtes",cap_villa_detail:"Villa · Contrôle d'arrivée",cap_outdoor_detail:"Extérieur · Espaces prêts",cap_coast:"Istrie · Littoral",
+    areas_eyebrow:"Où nous intervenons",areas_title:"Au service de la côte istrienne",areas_sub:"Une présence sur le terrain dans les principales destinations locatives d'Istrie, avec d'autres zones disponibles sur demande.",area_coastal:"Côte · Istrie",areas_more:"+ Autres zones disponibles sur demande",
+    form_eyebrow:"Demander un service",form_title:"Parlez-nous de votre bien",form_sub:"Donnez-nous quelques détails et nous préparerons une demande structurée. L'envoi ouvre WhatsApp avec votre ticket de service prêt à partir.",
+    form_a1:"Aucun engagement préalable — demandez d'abord un devis",form_a2:"Votre demande devient un ticket WhatsApp suivi",form_a3:"Réponse rapide pour les demandes urgentes",
+    f_name:"Nom complet",f_email:"E-mail",f_phone:"Téléphone / WhatsApp",f_lang:"Langue préférée",f_ptype:"Type de bien",f_location:"Lieu",f_size:"Surface (m²)",f_beds:"Chambres",f_baths:"Salles de bain",f_outdoor:"Espace extérieur",f_service:"Service demandé",f_frequency:"Fréquence",f_date:"Date souhaitée",f_urgency:"Urgence",f_notes:"Notes complémentaires",
+    opt_select:"Choisir…",lang_en:"Anglais",lang_de:"Allemand",lang_fr:"Français",lang_it:"Italien",lang_es:"Espagnol",lang_hr:"Croate",
+    pt_apartment:"Appartement",pt_villa:"Villa",pt_commercial:"Local commercial",pt_other:"Autre",
+    oa_none:"Aucun",oa_balcony:"Balcon",oa_terrace:"Terrasse",oa_garden:"Jardin",oa_pool:"Piscine",
+    opt_partnership:"Demande de partenariat",opt_general:"Question générale",
+    fr_one:"Ponctuel",fr_weekly:"Hebdomadaire",fr_monthly:"Mensuel",fr_seasonal:"Saisonnier",fr_custom:"Sur mesure",
+    u_normal:"Normal",u_priority:"Prioritaire",u_emergency:"Urgence",
+    form_submit:"Générer le ticket de service",form_note:"Ouvre WhatsApp avec votre ticket structuré — rien n'est envoyé tant que vous n'appuyez pas sur envoyer.",
+    ticket_ready:"Ticket de service prêt",ticket_msg:"Votre demande a été préparée. WhatsApp va maintenant s'ouvrir avec votre ticket de service.",ticket_open:"Ouvrir le ticket WhatsApp",ticket_sready:"Ticket de support prêt",
+    v_required:"Ce champ est obligatoire",v_email:"Saisissez un e-mail valide",
+    ph_name:"Votre nom complet",ph_email:"vous@email.com",ph_phone:"+385 …",ph_location:"Ville ou zone",ph_size:"ex. 85",ph_num:"0",ph_notes:"Autre chose à nous signaler ?",ph_desc:"Décrivez ce que vous souhaitez modifier ou corriger…",faq_search:"Rechercher une question…",
+    faq_eyebrow:"Bon à savoir",faq_title:"Questions fréquentes",faq_empty:"Aucune question ne correspond à votre recherche.",
+    q1:"Proposez-vous un nettoyage ponctuel ?",a1:"Oui. Nous réalisons des nettoyages en profondeur ponctuels, des rotations isolées et des remises en état saisonnières, ainsi que des plannings récurrents.",
+    q2:"Pouvez-vous gérer l'accueil des hôtes ?",a2:"Absolument. Nous proposons un check-in et un check-out professionnels, la remise des clés et un accueil soigné à l'arrivée.",
+    q3:"Pouvez-vous aider pour une demande de nettoyage de dernière minute ?",a3:"Lorsque notre planning et la localisation le permettent, nous répondons rapidement et confirmons le premier créneau disponible.",
+    q4:"Quelles zones couvrez-vous ?",a4:"Rovinj, Poreč, Pula, Novigrad, Umag et Medulin, ainsi que d'autres zones d'Istrie sur demande.",
+    q5:"Travaillez-vous avec des agences ?",a5:"Oui. Nous collaborons avec les gestionnaires de biens et les agences de location pour un support opérationnel cohérent et évolutif.",
+    q6:"Proposez-vous un service de linge ?",a6:"Nous gérons le linge et les serviettes de qualité hôtelière — lavés, remplacés et réapprovisionnés selon un standard frais et constant.",
+    sla_normal:"Sous 48 heures",sla_priority:"Sous 24 heures",sla_urgent:"Le jour même",lvl_urgent:"Urgent",
+    footer_tagline:"Des appartements impeccables. Des hôtes ravis.",footer_about:"Gestion immobilière et opérations hôtelières pour appartements, villas et locations de vacances en Istrie, Croatie.",footer_explore:"Explorer",footer_contact:"Contact",footer_region:"Istrie, Croatie",footer_rights:"Tous droits réservés.",footer_future:"Portail client · Tableau de bord — bientôt disponible"
+  },
+  it:{
+    skip_main:"Vai al contenuto principale",theme_day:"Passa alla modalità giorno",theme_night:"Passa alla modalità notte",nav_home:"Home",nav_services:"Servizi",nav_how:"Come funziona",nav_areas:"Zone",nav_faq:"FAQ",nav_support:"Supporto",nav_contact:"Contatti",nav_cta:"WhatsApp",
+    hero_kicker:"Property care · Istria, Croazia",hero_title_a:"Property care professionale",hero_title_b:"in Istria.",hero_sub:"Pulizie affidabili, servizi per gli ospiti e supporto operativo per appartamenti, ville e case vacanza.",hero_cta1:"Richiedi un servizio",hero_cta2:"Contatta su WhatsApp",hero_m1:"Zone coperte",hero_m2:"Risposta rapida",hero_m3:"Standard pronto-ospiti",scroll:"Scorri",
+    trust_1:"Professionali",trust_2:"Affidabili",trust_3:"Pronto-ospiti",trust_4:"Competenza locale",trust_5:"Attenti ai dettagli",trust_6:"Standard alberghieri",
+    services_eyebrow:"Cosa gestiamo",services_title:"Cura operativa, dall'inizio alla fine",services_sub:"Ogni servizio segue uno standard documentato, così la tua proprietà è sempre pronta per gli ospiti tra un soggiorno e l'altro.",
+    svc1_t:"Pulizia appartamenti",svc1_d:"Cambio e pulizia profonda su misura per appartamenti a breve termine e calendari di affitto.",
+    svc2_t:"Pulizia ville",svc2_d:"Cura completa per proprietà più grandi, inclusi spazi esterni e rifiniture.",
+    svc3_t:"Lavanderia & biancheria",svc3_d:"Biancheria e asciugamani in qualità alberghiera gestiti, lavati e sostituiti secondo programma.",
+    svc9_t:"Pulizia profonda",svc9_d:"Pulizie dettagliate stagionali o post-soggiorno per cucine, bagni, elettrodomestici e aree difficili da raggiungere.",
+    svc4_t:"Check-in ospiti",svc4_d:"Arrivi cordiali e professionali con consegna chiavi e accoglienza pronta per gli ospiti.",
+    svc5_t:"Check-out ospiti",svc5_d:"Controlli alla partenza, verifica dell'inventario e rapido riassetto per il soggiorno successivo.",
+    svc7_t:"Rifornimento proprietà",svc7_d:"Consumabili, comfort ed essenziali reintegrati così che agli ospiti non manchi nulla.",
+    svc8_t:"Pulizie commerciali",svc8_d:"Uffici, locali boutique e spazi dell'ospitalità mantenuti a livello professionale.",
+    owners_tag_b:"Sempre pronto-ospiti",owners_tag_s:"Verificata prima di ogni arrivo",owners_eyebrow:"Per i proprietari",owners_title:"Un partner operativo di fiducia, non solo un addetto alle pulizie",owners_body:"Togliamo il peso operativo a proprietari e host — la tua proprietà resta sempre pronta per gli ospiti, mentre tu mantieni il controllo in tutta tranquillità.",
+    ben1_t:"Meno stress operativo",ben1_d:"Un unico referente affidabile per ogni cambio e ogni richiesta.",
+    ben2_t:"Migliore esperienza per gli ospiti",ben2_d:"Spazi impeccabili e arrivi senza intoppi che generano recensioni a cinque stelle.",
+    ben3_t:"Servizio affidabile e costante",ben3_d:"Uno standard documentato applicato allo stesso modo, ogni singola volta.",
+    ben4_t:"Standard professionali",ben4_d:"Controllo qualità di livello alberghiero su ogni proprietà che gestiamo.",
+    ben5_t:"Supporto locale in Istria",ben5_d:"Un team sul posto che conosce la regione e risponde rapidamente.",
+    owners_cta:"Richiedi un servizio",
+    how_eyebrow:"Un processo chiaro e semplice",how_title:"Dalla richiesta al risultato verificato",
+    step1_t:"Invia la richiesta",step1_d:"Invia i tuoi dati tramite il modulo o WhatsApp in pochi minuti.",
+    step2_t:"Valutazione proprietà",step2_d:"Valutiamo la tua proprietà, le esigenze e il calendario.",
+    step3_t:"Ricevi il preventivo",step3_d:"Una proposta chiara e trasparente, senza sorprese.",
+    step4_t:"Erogazione del servizio",step4_d:"Il nostro team opera secondo uno standard documentato.",
+    step5_t:"Controllo qualità",step5_d:"Un sopralluogo finale verifica che ogni proprietà sia pronta per gli ospiti.",
+    std1_k:"Standard",std1_t:"Standard di servizio",std1_d:"Un ambito definito per ogni servizio, così nulla è lasciato al caso.",
+    std2_k:"Controllo",std2_t:"Controllo qualità",std2_d:"Verifiche indipendenti prima di dichiarare una proprietà pronta.",
+    std3_k:"Checklist",std3_t:"Checklist della proprietà",std3_d:"Verifica stanza per stanza di pulizia, inventario e presentazione.",
+    std4_k:"Risposta",std4_t:"Tempi di risposta",std4_d:"Capacità in giornata per cambi urgenti e imprevisti nelle nostre zone.",
+    std5_k:"Locale",std5_t:"Competenza locale",std5_d:"Un team con base in Istria che conosce la stagione degli affitti sul campo.",
+    std6_k:"Ospitalità",std6_t:"Esperienza nell'ospitalità",std6_d:"Standard ispirati all'hôtellerie boutique, applicati agli affitti privati.",
+    gallery_eyebrow:"Prova visiva",gallery_title:"Proprietà mantenute allo standard",
+    filter_all:"Tutto",filter_apartments:"Appartamenti",filter_villas:"Ville",filter_bathrooms:"Bagni",filter_bedrooms:"Camere",filter_outdoor:"Esterni",
+    cap_apartment:"Appartamento · Cambio",cap_villa:"Villa · Cura completa",cap_bed:"Camera · Biancheria",cap_bath:"Bagno · Rifiniture",cap_bath2:"Bagno · Superfici lucidate",cap_bath3:"Bagno · Pronto per gli ospiti",cap_terrace:"Terrazza · Spazi esterni",cap_pool:"Villa · Area piscina",cap_detail:"Interni · Controllo dettagli",cap_guest:"Appartamento · Pronto per gli ospiti",cap_villa_detail:"Villa · Controllo arrivo",cap_outdoor_detail:"Esterni · Aree pronte",cap_coast:"Istria · Costa",
+    areas_eyebrow:"Dove operiamo",areas_title:"Al servizio della costa istriana",areas_sub:"Copertura sul posto nelle principali località di affitto dell'Istria, con altre zone disponibili su richiesta.",area_coastal:"Costa · Istria",areas_more:"+ Altre zone disponibili su richiesta",
+    form_eyebrow:"Richiedi un servizio",form_title:"Parlaci della tua proprietà",form_sub:"Condividi qualche dettaglio e prepareremo una richiesta strutturata. L'invio apre WhatsApp con il tuo ticket di servizio pronto da inviare.",
+    form_a1:"Nessun impegno iniziale — richiedi prima un preventivo",form_a2:"La tua richiesta diventa un ticket WhatsApp tracciato",form_a3:"Risposta rapida per le richieste urgenti",
+    f_name:"Nome completo",f_email:"Email",f_phone:"Telefono / WhatsApp",f_lang:"Lingua preferita",f_ptype:"Tipo di proprietà",f_location:"Località",f_size:"Superficie (m²)",f_beds:"Camere",f_baths:"Bagni",f_outdoor:"Spazio esterno",f_service:"Servizio richiesto",f_frequency:"Frequenza",f_date:"Data preferita",f_urgency:"Urgenza",f_notes:"Note aggiuntive",
+    opt_select:"Seleziona…",lang_en:"Inglese",lang_de:"Tedesco",lang_fr:"Francese",lang_it:"Italiano",lang_es:"Spagnolo",lang_hr:"Croato",
+    pt_apartment:"Appartamento",pt_villa:"Villa",pt_commercial:"Spazio commerciale",pt_other:"Altro",
+    oa_none:"Nessuno",oa_balcony:"Balcone",oa_terrace:"Terrazza",oa_garden:"Giardino",oa_pool:"Piscina",
+    opt_partnership:"Richiesta di partnership",opt_general:"Domanda generale",
+    fr_one:"Una tantum",fr_weekly:"Settimanale",fr_monthly:"Mensile",fr_seasonal:"Stagionale",fr_custom:"Personalizzata",
+    u_normal:"Normale",u_priority:"Prioritaria",u_emergency:"Emergenza",
+    form_submit:"Genera ticket di servizio",form_note:"Apre WhatsApp con il tuo ticket strutturato — nulla viene inviato finché non premi invia.",
+    ticket_ready:"Ticket di servizio pronto",ticket_msg:"La tua richiesta è stata preparata. WhatsApp si aprirà ora con il tuo ticket di servizio.",ticket_open:"Apri ticket WhatsApp",ticket_sready:"Ticket di supporto pronto",
+    v_required:"Questo campo è obbligatorio",v_email:"Inserisci un'email valida",
+    ph_name:"Il tuo nome completo",ph_email:"tu@email.com",ph_phone:"+385 …",ph_location:"Città o zona",ph_size:"es. 85",ph_num:"0",ph_notes:"Qualcos'altro che dovremmo sapere?",ph_desc:"Descrivi cosa vorresti modificare o correggere…",faq_search:"Cerca tra le domande…",
+    faq_eyebrow:"Buono a sapersi",faq_title:"Domande frequenti",faq_empty:"Nessuna domanda corrisponde alla tua ricerca.",
+    q1:"Offrite pulizie una tantum?",a1:"Sì. Gestiamo pulizie profonde una tantum, singoli cambi e riassetti stagionali, oltre a programmi ricorrenti.",
+    q2:"Gestite i check-in degli ospiti?",a2:"Assolutamente. Offriamo check-in e check-out professionali, consegna delle chiavi e un'accoglienza pronta per gli ospiti all'arrivo.",
+    q3:"Potete aiutare con richieste di pulizia last-minute?",a3:"Quando programma e posizione lo permettono, rispondiamo rapidamente e confermiamo il primo slot disponibile.",
+    q4:"Quali zone coprite?",a4:"Rovinj, Poreč, Pula, Novigrad, Umag e Medulin, oltre ad altre zone dell'Istria su richiesta.",
+    q5:"Lavorate con le agenzie?",a5:"Sì. Collaboriamo con property manager e agenzie di affitto per un supporto operativo coerente e scalabile.",
+    q6:"Offrite il servizio di biancheria?",a6:"Gestiamo biancheria e asciugamani in qualità alberghiera — lavati, sostituiti e reintegrati secondo uno standard fresco e costante.",
+    sla_normal:"Entro 48 ore",sla_priority:"Entro 24 ore",sla_urgent:"In giornata",lvl_urgent:"Urgente",
+    footer_tagline:"Appartamenti impeccabili. Ospiti felici.",footer_about:"Property care e operazioni di ospitalità per appartamenti, ville e case vacanza in tutta l'Istria, Croazia.",footer_explore:"Esplora",footer_contact:"Contatti",footer_region:"Istria, Croazia",footer_rights:"Tutti i diritti riservati.",footer_future:"Portale clienti · Dashboard proprietà — in arrivo"
+  },
+  es:{
+    skip_main:"Saltar al contenido principal",theme_day:"Cambiar a modo día",theme_night:"Cambiar a modo noche",nav_home:"Inicio",nav_services:"Servicios",nav_how:"Cómo funciona",nav_areas:"Zonas",nav_faq:"FAQ",nav_support:"Soporte",nav_contact:"Contacto",nav_cta:"WhatsApp",
+    hero_kicker:"Property care · Istria, Croacia",hero_title_a:"Property care profesional",hero_title_b:"en Istria.",hero_sub:"Limpieza fiable, servicios para huéspedes y apoyo operativo para apartamentos, villas y alojamientos vacacionales.",hero_cta1:"Solicitar un servicio",hero_cta2:"Contactar por WhatsApp",hero_m1:"Zonas cubiertas",hero_m2:"Respuesta rápida",hero_m3:"Estándar listo para huéspedes",scroll:"Desliza",
+    trust_1:"Profesional",trust_2:"Fiable",trust_3:"Listo para huéspedes",trust_4:"Experiencia local",trust_5:"Atención al detalle",trust_6:"Estándares hoteleros",
+    services_eyebrow:"Lo que gestionamos",services_title:"Cuidado operativo, de principio a fin",services_sub:"Cada servicio se realiza con un estándar documentado, para que tu propiedad esté siempre lista para huéspedes entre estancias.",
+    svc1_t:"Limpieza de apartamentos",svc1_d:"Cambio y limpieza profunda adaptados a apartamentos de corta estancia y calendarios de alquiler.",
+    svc2_t:"Limpieza de villas",svc2_d:"Cuidado integral de propiedades más grandes, incluyendo zonas exteriores y acabados.",
+    svc3_t:"Lavandería y lencería",svc3_d:"Lencería y toallas de calidad hotelera gestionadas, lavadas y repuestas según calendario.",
+    svc9_t:"Limpieza profunda",svc9_d:"Limpiezas detalladas de temporada o post-estancia para cocinas, baños, electrodomésticos y zonas difíciles de alcanzar.",
+    svc4_t:"Check-in de huéspedes",svc4_d:"Llegadas cálidas y profesionales con entrega de llaves y una bienvenida lista para huéspedes.",
+    svc5_t:"Check-out de huéspedes",svc5_d:"Controles de salida, verificación de inventario y rápida preparación para la siguiente estancia.",
+    svc7_t:"Reposición de la propiedad",svc7_d:"Consumibles, amenidades y esenciales repuestos para que a los huéspedes nunca les falte nada.",
+    svc8_t:"Limpieza comercial",svc8_d:"Oficinas, locales boutique y espacios de hostelería mantenidos a nivel profesional.",
+    owners_tag_b:"Siempre listo para huéspedes",owners_tag_s:"Verificada antes de cada llegada",owners_eyebrow:"Para propietarios",owners_title:"Un socio operativo de confianza, no solo limpieza",owners_body:"Quitamos la carga operativa a propietarios y anfitriones — tu propiedad se mantiene siempre lista para huéspedes mientras tú mantienes el control con tranquilidad.",
+    ben1_t:"Menos estrés operativo",ben1_d:"Un único punto de contacto fiable para cada cambio y solicitud.",
+    ben2_t:"Mejor experiencia del huésped",ben2_d:"Espacios impecables y llegadas fluidas que generan reseñas de cinco estrellas.",
+    ben3_t:"Servicio fiable y constante",ben3_d:"Un estándar documentado aplicado de la misma forma, siempre.",
+    ben4_t:"Estándares profesionales",ben4_d:"Control de calidad de nivel hotelero en cada propiedad que gestionamos.",
+    ben5_t:"Apoyo local en Istria",ben5_d:"Un equipo sobre el terreno que conoce la región y responde rápido.",
+    owners_cta:"Solicitar un servicio",
+    how_eyebrow:"Un proceso claro y sencillo",how_title:"De la solicitud al resultado verificado",
+    step1_t:"Enviar solicitud",step1_d:"Envía tus datos por el formulario o WhatsApp en minutos.",
+    step2_t:"Revisión de la propiedad",step2_d:"Evaluamos tu propiedad, necesidades y calendario.",
+    step3_t:"Recibir presupuesto",step3_d:"Una propuesta clara y transparente, sin sorpresas.",
+    step4_t:"Prestación del servicio",step4_d:"Nuestro equipo trabaja con un estándar documentado.",
+    step5_t:"Control de calidad",step5_d:"Una revisión final verifica que cada propiedad está lista para huéspedes.",
+    std1_k:"Estándares",std1_t:"Estándares de servicio",std1_d:"Un alcance definido para cada servicio para no dejar nada al azar.",
+    std2_k:"Control",std2_t:"Control de calidad",std2_d:"Comprobaciones independientes antes de dar una propiedad por lista.",
+    std3_k:"Checklist",std3_t:"Checklist de la propiedad",std3_d:"Verificación habitación por habitación de limpieza, inventario y presentación.",
+    std4_k:"Respuesta",std4_t:"Tiempo de respuesta",std4_d:"Capacidad el mismo día para cambios urgentes e incidencias en nuestras zonas.",
+    std5_k:"Local",std5_t:"Experiencia local",std5_d:"Un equipo con base en Istria que conoce la temporada de alquiler sobre el terreno.",
+    std6_k:"Hostelería",std6_t:"Experiencia en hostelería",std6_d:"Estándares tomados de la hostelería boutique, aplicados a alquileres privados.",
+    gallery_eyebrow:"Prueba visual",gallery_title:"Propiedades mantenidas al estándar",
+    filter_all:"Todo",filter_apartments:"Apartamentos",filter_villas:"Villas",filter_bathrooms:"Baños",filter_bedrooms:"Dormitorios",filter_outdoor:"Exterior",
+    cap_apartment:"Apartamento · Cambio",cap_villa:"Villa · Cuidado integral",cap_bed:"Dormitorio · Lencería",cap_bath:"Baño · Acabados",cap_bath2:"Baño · Superficies pulidas",cap_bath3:"Baño · Listo para huéspedes",cap_terrace:"Terraza · Zonas exteriores",cap_pool:"Villa · Zona de piscina",cap_detail:"Interior · Revisión de detalles",cap_guest:"Apartamento · Listo para huéspedes",cap_villa_detail:"Villa · Revisión de llegada",cap_outdoor_detail:"Exterior · Zonas listas",cap_coast:"Istria · Costa",
+    areas_eyebrow:"Dónde operamos",areas_title:"Al servicio de la costa de Istria",areas_sub:"Cobertura sobre el terreno en los principales destinos de alquiler de Istria, con zonas adicionales disponibles bajo petición.",area_coastal:"Costa · Istria",areas_more:"+ Zonas adicionales disponibles bajo petición",
+    form_eyebrow:"Solicitar un servicio",form_title:"Cuéntanos sobre tu propiedad",form_sub:"Comparte unos datos y prepararemos una solicitud estructurada. Al enviar se abre WhatsApp con tu ticket de servicio listo para enviar.",
+    form_a1:"Sin compromiso previo — solicita primero un presupuesto",form_a2:"Tu solicitud se convierte en un ticket de WhatsApp con seguimiento",form_a3:"Respuesta rápida para solicitudes urgentes",
+    f_name:"Nombre completo",f_email:"Email",f_phone:"Teléfono / WhatsApp",f_lang:"Idioma preferido",f_ptype:"Tipo de propiedad",f_location:"Ubicación",f_size:"Superficie (m²)",f_beds:"Dormitorios",f_baths:"Baños",f_outdoor:"Zona exterior",f_service:"Servicio solicitado",f_frequency:"Frecuencia",f_date:"Fecha preferida",f_urgency:"Urgencia",f_notes:"Notas adicionales",
+    opt_select:"Seleccionar…",lang_en:"Inglés",lang_de:"Alemán",lang_fr:"Francés",lang_it:"Italiano",lang_es:"Español",lang_hr:"Croata",
+    pt_apartment:"Apartamento",pt_villa:"Villa",pt_commercial:"Espacio comercial",pt_other:"Otro",
+    oa_none:"Ninguna",oa_balcony:"Balcón",oa_terrace:"Terraza",oa_garden:"Jardín",oa_pool:"Piscina",
+    opt_partnership:"Solicitud de colaboración",opt_general:"Pregunta general",
+    fr_one:"Puntual",fr_weekly:"Semanal",fr_monthly:"Mensual",fr_seasonal:"Estacional",fr_custom:"Personalizada",
+    u_normal:"Normal",u_priority:"Prioritaria",u_emergency:"Emergencia",
+    form_submit:"Generar ticket de servicio",form_note:"Abre WhatsApp con tu ticket estructurado — no se envía nada hasta que pulses enviar.",
+    ticket_ready:"Ticket de servicio listo",ticket_msg:"Tu solicitud se ha preparado. WhatsApp se abrirá ahora con tu ticket de servicio.",ticket_open:"Abrir ticket de WhatsApp",ticket_sready:"Ticket de soporte listo",
+    v_required:"Este campo es obligatorio",v_email:"Introduce un email válido",
+    ph_name:"Tu nombre completo",ph_email:"tu@email.com",ph_phone:"+385 …",ph_location:"Ciudad o zona",ph_size:"p. ej. 85",ph_num:"0",ph_notes:"¿Algo más que debamos saber?",ph_desc:"Describe qué te gustaría cambiar o corregir…",faq_search:"Buscar preguntas…",
+    faq_eyebrow:"Bueno saberlo",faq_title:"Preguntas frecuentes",faq_empty:"Ninguna pregunta coincide con tu búsqueda.",
+    q1:"¿Ofrecéis limpieza puntual?",a1:"Sí. Hacemos limpiezas profundas puntuales, cambios individuales y puestas a punto estacionales, además de calendarios recurrentes.",
+    q2:"¿Gestionáis los check-in de huéspedes?",a2:"Por supuesto. Ofrecemos check-in y check-out profesionales, entrega de llaves y una bienvenida lista para huéspedes a la llegada.",
+    q3:"¿Podéis ayudar con limpiezas de última hora?",a3:"Cuando la agenda y la ubicación lo permiten, respondemos rápido y confirmamos el primer horario disponible.",
+    q4:"¿Qué zonas cubrís?",a4:"Rovinj, Poreč, Pula, Novigrad, Umag y Medulin, además de otras zonas de Istria bajo petición.",
+    q5:"¿Trabajáis con agencias?",a5:"Sí. Colaboramos con gestores de propiedades y agencias de alquiler para un apoyo operativo constante y escalable.",
+    q6:"¿Ofrecéis servicio de lencería?",a6:"Gestionamos lencería y toallas de calidad hotelera — lavadas, repuestas y reabastecidas con un estándar fresco y constante.",
+    sla_normal:"En 48 horas",sla_priority:"En 24 horas",sla_urgent:"El mismo día",lvl_urgent:"Urgente",
+    footer_tagline:"Apartamentos impecables. Huéspedes felices.",footer_about:"Property care y operaciones de hospitality para apartamentos, villas y alojamientos vacacionales en toda Istria, Croacia.",footer_explore:"Explorar",footer_contact:"Contacto",footer_region:"Istria, Croacia",footer_rights:"Todos los derechos reservados.",footer_future:"Portal de clientes · Panel de propiedades — próximamente"
+  }
+};
+
+translations.hr = Object.assign({}, translations.en, {
+  skip_main:"Preskoci na glavni sadrzaj",theme_day:"Prebaci na dnevni nacin",theme_night:"Prebaci na nocni nacin",
+  nav_home:"Pocetna",nav_services:"Usluge",nav_how:"Kako radimo",nav_areas:"Podrucja",nav_faq:"FAQ",nav_support:"Podrska",nav_contact:"Kontakt",nav_cta:"WhatsApp",
+  hero_kicker:"Briga o nekretninama · Istra, Hrvatska",hero_title_a:"Profesionalna briga o nekretninama",hero_title_b:"u Istri.",hero_sub:"Pouzdano ciscenje, usluge za goste i operativna podrska za apartmane, vile i smjestaj za odmor.",hero_cta1:"Zatrazite uslugu",hero_cta2:"Kontakt putem WhatsAppa",hero_m1:"Podrucja pokrivenosti",hero_m2:"Brz odgovor",hero_m3:"Standard spremno za goste",scroll:"Pomaknite",
+  trust_1:"Profesionalno",trust_2:"Pouzdano",trust_3:"Spremno za goste",trust_4:"Lokalno znanje",trust_5:"Paznja na detalje",trust_6:"Hospitality standardi",
+  services_eyebrow:"Sto preuzimamo",services_title:"Operativna briga od pocetka do kraja",services_sub:"Svaka usluga izvodi se prema dokumentiranom standardu, kako bi vasa nekretnina bila spremna za goste izmedu boravaka.",
+  svc1_t:"Ciscenje apartmana",svc1_d:"Ciscenje izmedu smjena i dubinsko ciscenje prilagodeno kratkorocnom najmu.",
+  svc2_t:"Ciscenje vila",svc2_d:"Sveobuhvatna briga za vece objekte, ukljucujuci vanjske prostore i detalje.",
+  svc3_t:"Pranje i posteljina",svc3_d:"Svjeza posteljina i rucnici hotelske kvalitete, oprani i zamijenjeni prema rasporedu.",
+  svc9_t:"Dubinsko ciscenje",svc9_d:"Detaljna sezonska ili post-stay ciscenja kuhinja, kupaonica, uredaja i tesko dostupnih prostora.",
+  svc4_t:"Check-in gostiju",svc4_d:"Lokalna podrska za dolaske, osnovne upute i prve dojmove.",
+  svc5_t:"Check-out gostiju",svc5_d:"Pregled nakon odlaska gostiju, izvjestaj o stanju i priprema za sljedeci boravak.",
+  owners_eyebrow:"Za vlasnike",owners_title:"Mirniji rad izmedu rezervacija",owners_sub:"Kombiniramo lokalnu dostupnost, jasnu komunikaciju i dosljedne standarde kako bi vlasnici i manageri imali manje operativnog opterecenja.",
+  owners_cta:"Zatrazite uslugu",
+  ben1_t:"Stvarno lokalna pokrivenost",ben1_d:"Tim u Istri za brzu koordinaciju i provjeru na terenu.",
+  ben2_t:"Jasna komunikacija",ben2_d:"Strukturirani zahtjevi, potvrde i WhatsApp tijekovi za brze odluke.",
+  ben3_t:"Pouzdana, dosljedna usluga",ben3_d:"Dokumentirani standard primijenjen na isti nacin svaki put.",
+  ben4_t:"Fleksibilno za sezonu",ben4_d:"Podrska za redovne promjene gostiju, dubinska ciscenja i hitne termine.",
+  how_eyebrow:"Proces",how_title:"Jednostavno od zahtjeva do realizacije",
+  step1_t:"Posaljite detalje",step1_d:"Podijelite lokaciju, tip objekta, velicinu i potrebnu uslugu.",
+  step2_t:"Potvrdujemo opseg",step2_d:"Definiramo zadatke, termine, pristup i posebne napomene.",
+  step3_t:"Dobivate ticket",step3_d:"WhatsApp ticket cuva sve detalje na jednom mjestu.",
+  step4_t:"Usluga se izvodi",step4_d:"Tim zavrsava posao prema dokumentiranom standardu.",
+  std1_k:"Standardi",std1_t:"Standardi usluge",std1_d:"Definiran opseg za svaku uslugu kako nista ne bi ostalo slucaju.",
+  std2_k:"Dokazi",std2_t:"Foto potvrde",std2_d:"Vizualne provjere mogu se dodati nakon svake usluge.",
+  std3_k:"Podrska",std3_t:"Kontinuitet sezone",std3_d:"Podrska kroz glavnu sezonu, promjene gostiju i hitne termine.",
+  gallery_eyebrow:"Vizualni dokaz",gallery_title:"Nekretnine odrzane na standardu",
+  filter_all:"Sve",filter_apartments:"Apartmani",filter_villas:"Vile",filter_bathrooms:"Kupaonice",filter_bedrooms:"Spavace sobe",filter_outdoor:"Vanjski prostori",
+  cap_apartment:"Apartman · Smjena gostiju",cap_villa:"Vila · Potpuna briga",cap_bed:"Spavaca soba · Posteljina",cap_bath:"Kupaonica · Detalji",cap_bath2:"Kupaonica · Polirane povrsine",cap_bath3:"Kupaonica · Spremno za goste",cap_terrace:"Terasa · Vanjski prostori",cap_pool:"Vila · Bazenski prostor",cap_detail:"Interijer · Provjera detalja",cap_guest:"Apartman · Spremno za goste",cap_villa_detail:"Vila · Provjera dolaska",cap_outdoor_detail:"Vanjski prostor · Spremno",cap_coast:"Istra · Obala",
+  areas_eyebrow:"Gdje radimo",areas_title:"Podrska duz istarske obale",areas_sub:"Terenska prisutnost u glavnim destinacijama za najam u Istri, s dodatnim podrucjima na zahtjev.",area_coastal:"Obala · Istra",areas_more:"+ Dodatna podrucja na zahtjev",
+  form_eyebrow:"Zatrazite uslugu",form_title:"Recite nam nesto o nekretnini",form_sub:"Podijelite nekoliko detalja i pripremit cemo strukturirani zahtjev. Slanje otvara WhatsApp s ticketom spremnim za slanje.",
+  f_name:"Ime i prezime",f_email:"Email",f_phone:"Telefon / WhatsApp",f_lang:"Preferirani jezik",f_ptype:"Tip nekretnine",f_location:"Lokacija",f_size:"Velicina nekretnine (m²)",f_beds:"Spavace sobe",f_baths:"Kupaonice",f_outdoor:"Vanjski prostor",f_service:"Trazena usluga",f_frequency:"Ucestalost",f_date:"Zeljeni datum",f_urgency:"Hitnost",f_notes:"Dodatne napomene",
+  opt_select:"Odaberite…",lang_en:"Engleski",lang_de:"Njemacki",lang_fr:"Francuski",lang_it:"Talijanski",lang_es:"Spanjolski",lang_hr:"Hrvatski",
+  pt_apartment:"Apartman",pt_villa:"Vila",pt_commercial:"Poslovni prostor",pt_other:"Ostalo",
+  freq_once:"Jednokratno",freq_weekly:"Tjedno",freq_biweekly:"Svaka dva tjedna",freq_monthly:"Mjesecno",freq_turnover:"Nakon svake rezervacije",
+  urg_normal:"Normalno",urg_soon:"Unutar 72 sata",urg_emergency:"Hitno / isti dan",
+  ph_name:"npr. Ana Horvat",ph_phone:"npr. +385…",ph_location:"Rovinj, Porec, Pula…",ph_num:"npr. 85",ph_notes:"Datumi check-in/check-out, posebni zahtjevi, pristup objektu…",
+  v_required:"Ovo polje je obavezno",v_email:"Unesite valjan email",
+  form_submit:"Generiraj service ticket",form_note:"Otvara WhatsApp sa strukturiranim ticketom. Nista se ne salje dok ne pritisnete send.",
+  ticket_ready:"Service ticket spreman",ticket_msg:"Vas zahtjev je pripremljen. WhatsApp ce se sada otvoriti s ticketom usluge.",ticket_open:"Otvori WhatsApp ticket",ticket_sready:"Support ticket spreman",
+  faq_eyebrow:"Pitanja",faq_title:"Brzi odgovori za vlasnike i managere",faq_search:"Pretrazi pitanja…",faq_empty:"Nema rezultata za tu pretragu.",
+  q1:"Radite li s apartmanima i vilama?",a1:"Da. Podrzavamo apartmane, vile i smjestaj za odmor diljem Istre.",
+  q2:"Mozete li raditi izmedu check-outa i check-ina?",a2:"Da. Usluge se mogu planirati oko smjena gostiju, ovisno o lokaciji i raspolozivosti tima.",
+  q3:"Mozete li pomoci s last-minute zahtjevima za ciscenje?",a3:"Kada raspored i lokacija dopustaju, brzo odgovaramo i potvrdujemo prvi dostupni termin.",
+  q4:"Koja podrucja pokrivate?",a4:"Rovinj, Porec, Pula, Novigrad, Umag i Medulin, uz dodatna podrucja u Istri na zahtjev.",
+  q5:"Radite li s agencijama?",a5:"Da. Suradujemo s property managerima i agencijama za najam kroz dosljednu operativnu podrsku.",
+  q6:"Nudite li uslugu posteljine?",a6:"Upravljamo posteljinom i rucnicima hotelske kvalitete, opranim, zamijenjenim i nadopunjenim prema svjezem standardu.",
+  sla_normal:"Unutar 48 sati",sla_priority:"Unutar 24 sata",sla_urgent:"Isti dan",lvl_urgent:"Hitno",
+  footer_tagline:"Cisti apartmani. Sretni gosti.",footer_about:"Briga o nekretninama i hospitality operacije za apartmane, vile i smjestaj za odmor sirom Istre, Hrvatska.",footer_explore:"Istrazi",footer_contact:"Kontakt",footer_region:"Istra, Hrvatska",footer_rights:"Sva prava pridrzana.",footer_future:"Klijentski portal · Nadzorna ploca nekretnina — uskoro"
+});
+
+let currentLang = DEFAULT_LANG;
+
+function t(key){
+  const dict = translations[currentLang] || translations.en;
+  return (dict[key] != null) ? dict[key] : (translations.en[key] != null ? translations.en[key] : key);
+}
+
+function applyTranslations(){
+  document.querySelectorAll("[data-i18n]").forEach(function(el){
+    const v = t(el.getAttribute("data-i18n"));
+    if(v != null) el.textContent = v;
+  });
+  document.querySelectorAll("[data-i18n-ph]").forEach(function(el){
+    const v = t(el.getAttribute("data-i18n-ph"));
+    if(v != null) el.setAttribute("placeholder", v);
+  });
+}
+
+function applySeo(){
+  const s = seo[currentLang] || seo.en;
+  document.title = s.title;
+  const md = document.querySelector('meta[name="description"]');
+  if(md) md.setAttribute("content", s.desc);
+}
+
+function currentWhatsAppNumber(){
+  return WA_BY_LANG[currentLang] || WA_BY_LANG.default;
+}
+
+function currentWhatsAppDisplay(){
+  return currentLang === "hr" ? "+385 89 928 1833" : "+34 644 075 065";
+}
+
+function updateWhatsAppLinks(){
+  const number = currentWhatsAppNumber();
+  document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function(a){
+    if(a.id === "leadWaBtn") return;
+    a.href = "https://wa.me/" + number;
+    if(a.hasAttribute("data-wa-static")) a.textContent = "WhatsApp · " + currentWhatsAppDisplay();
+  });
+}
+
+function updateThemeButton(){
+  const btn = document.getElementById("themeToggle");
+  if(!btn) return;
+  const night = document.body.getAttribute("data-theme") === "night";
+  const label = night ? t("theme_day") : t("theme_night");
+  btn.setAttribute("aria-label", label);
+  btn.setAttribute("title", label);
+  btn.setAttribute("aria-pressed", night ? "true" : "false");
+}
+
+function setTheme(theme, save){
+  const next = theme === "night" ? "night" : "day";
+  document.body.setAttribute("data-theme", next);
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+  if(metaTheme) metaTheme.setAttribute("content", next === "night" ? "#071421" : "#071F3A");
+  updateThemeButton();
+  if(save){ try{ localStorage.setItem("adriatic_theme", next); }catch(e){} }
+}
+
+function setLanguage(lang, save){
+  if(!translations[lang]) lang = DEFAULT_LANG;
+  currentLang = lang;
+  const meta = langMeta[lang];
+  document.documentElement.lang = meta.htmlLang;
+  applyTranslations();
+  applySeo();
+  updateThemeButton();
+  updateWhatsAppLinks();
+  // update language button label
+  const codeEl = document.getElementById("langCode");
+  if(codeEl) codeEl.textContent = meta.code;
+  // mark active in menu
+  document.querySelectorAll('#langMenu [data-lang]').forEach(function(b){
+    const active = b.getAttribute("data-lang") === lang;
+    b.classList.toggle("active", active);
+    b.setAttribute("aria-current", active ? "true" : "false");
+  });
+  if(save){ try{ localStorage.setItem("adriatic_lang", lang); }catch(e){} }
+}
+
+/* ===============================
+18. WHATSAPP TICKETS
+================================ */
+function pad(n){ return String(n).padStart(2,"0"); }
+function ticketId(prefix){
+  const d = new Date();
+  const date = d.getFullYear() + pad(d.getMonth()+1) + pad(d.getDate());
+  const time = pad(d.getHours()) + pad(d.getMinutes()) + pad(d.getSeconds());
+  return prefix + "-" + date + "-" + time;
+}
+function val(id){ const el = document.getElementById(id); return el ? el.value.trim() : ""; }
+function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+// Generic validation: returns true if all required fields valid; marks errors
+function validate(fieldDefs){
+  let ok = true;
+  fieldDefs.forEach(function(f){
+    const el = document.getElementById(f.id);
+    if(!el) return;
+    const wrap = el.closest(".field");
+    let invalid = false;
+    const v = el.value.trim();
+    if(f.required && !v) invalid = true;
+    if(f.email && v && !isEmail(v)) invalid = true;
+    if(wrap) wrap.classList.toggle("error", invalid);
+    if(invalid && ok){ el.focus(); }
+    if(invalid) ok = false;
+  });
+  return ok;
+}
+
+function openWhatsApp(message){
+  const url = "https://wa.me/" + currentWhatsAppNumber() + "?text=" + encodeURIComponent(message);
+  const win = window.open(url, "_blank");
+  return { url:url, blocked: (!win || win.closed || typeof win.closed === "undefined") };
+}
+
+// LEAD TICKET — generateWhatsAppTicket()
+function generateWhatsAppTicket(){
+  const fields = [
+    {id:"fullName",required:true},{id:"email",required:true,email:true},{id:"phone",required:true},
+    {id:"preferredLanguage",required:true},{id:"propertyType",required:true},{id:"location",required:true},
+    {id:"requestedService",required:true},{id:"frequency",required:true},{id:"urgency",required:true}
+  ];
+  if(!validate(fields)) return;
+
+  const btn = document.getElementById("leadSubmit");
+  const spinner = document.getElementById("leadSpinner");
+  btn.classList.add("loading"); if(spinner) spinner.style.display="inline-block";
+
+  setTimeout(function(){
+    const id = ticketId("ADR");
+    // FUTURE CRM: this object is JSON-ready for Google Sheets / Apps Script / Airtable / Notion / HubSpot / Pipedrive
+    const leadData = {
+      ticketId:id, source:"Website Lead Form",
+      name:val("fullName"), email:val("email"), phone:val("phone"), preferredLanguage:val("preferredLanguage"),
+      propertyType:val("propertyType"), location:val("location"), size:val("propertySize"),
+      bedrooms:val("bedrooms"), bathrooms:val("bathrooms"), outdoorArea:val("outdoorArea"),
+      service:val("requestedService"), frequency:val("frequency"), preferredDate:val("preferredDate"),
+      urgency:val("urgency"), notes:val("notes")
+    };
+
+    const msg =
+"NEW ADRIATIC SHINE TICKET\n\n"+
+"Ticket ID:\n"+id+"\n\n"+
+"Customer:\n"+
+"Name: "+leadData.name+"\n"+
+"Email: "+leadData.email+"\n"+
+"Phone: "+leadData.phone+"\n"+
+"Preferred Language: "+leadData.preferredLanguage+"\n\n"+
+"Property:\n"+
+"Type: "+leadData.propertyType+"\n"+
+"Location: "+leadData.location+"\n"+
+"Size: "+(leadData.size||"-")+" m²\n"+
+"Bedrooms: "+(leadData.bedrooms||"-")+"\n"+
+"Bathrooms: "+(leadData.bathrooms||"-")+"\n"+
+"Outdoor Area: "+(leadData.outdoorArea||"-")+"\n\n"+
+"Request:\n"+
+"Service: "+leadData.service+"\n"+
+"Frequency: "+leadData.frequency+"\n"+
+"Preferred Date: "+(leadData.preferredDate||"-")+"\n"+
+"Urgency: "+leadData.urgency+"\n\n"+
+"Notes:\n"+(leadData.notes||"-")+"\n\n"+
+"Source:\nWebsite Lead Form";
+
+    const res = openWhatsApp(msg);
+    btn.classList.remove("loading"); if(spinner) spinner.style.display="none";
+
+    const ticket = document.getElementById("leadTicket");
+    const tid = document.getElementById("leadTid");
+    const wa = document.getElementById("leadWaBtn");
+    if(tid) tid.textContent = id;
+    if(wa) wa.href = res.url;
+    if(ticket) ticket.classList.add("show");
+  }, 650);
+}
+
+/* ===============================
+21. UTILITIES (UI behaviour)
+================================ */
+document.addEventListener("DOMContentLoaded", function(){
+  // footer year
+  const yr = document.getElementById("year"); if(yr) yr.textContent = new Date().getFullYear();
+
+  // restore language
+  let saved = DEFAULT_LANG;
+  try{ saved = localStorage.getItem("adriatic_lang") || DEFAULT_LANG; }catch(e){}
+  setLanguage(LANGS.indexOf(saved) >= 0 ? saved : DEFAULT_LANG, false);
+
+  // restore theme
+  let savedTheme = "day";
+  try{ savedTheme = localStorage.getItem("adriatic_theme") || "day"; }catch(e){}
+  setTheme(savedTheme === "night" ? "night" : "day", false);
+
+  const themeToggle = document.getElementById("themeToggle");
+  if(themeToggle){
+    themeToggle.addEventListener("click", function(){
+      const night = document.body.getAttribute("data-theme") === "night";
+      setTheme(night ? "day" : "night", true);
+    });
+  }
+
+  // sticky header
+  const header = document.getElementById("header");
+  function onScroll(){
+    const y = window.scrollY || window.pageYOffset;
+    if(header) header.classList.toggle("scrolled", y > 40);
+    // hero parallax
+    const heroBg = document.getElementById("heroBg");
+    if(heroBg && y < window.innerHeight) heroBg.style.transform = "translateY(" + (y * 0.25) + "px)";
+  }
+  window.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+
+  // language menu toggle
+  const langSelect = document.querySelector(".lang-select");
+  const langBtn = document.getElementById("langBtn");
+  if(langBtn){
+    langBtn.addEventListener("click", function(e){
+      e.stopPropagation();
+      const open = langSelect.classList.toggle("open");
+      langBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
+  document.querySelectorAll('#langMenu [data-lang]').forEach(function(b){
+    b.addEventListener("click", function(){
+      setLanguage(b.getAttribute("data-lang"), true);
+      langSelect.classList.remove("open");
+      if(langBtn) langBtn.setAttribute("aria-expanded","false");
+    });
+  });
+  document.addEventListener("click", function(){ if(langSelect) langSelect.classList.remove("open"); });
+
+  // mobile drawer
+  const burger = document.getElementById("burger");
+  const drawer = document.getElementById("drawer");
+  if(burger && drawer){
+    burger.addEventListener("click", function(){
+      const open = drawer.classList.toggle("open");
+      burger.classList.toggle("open", open);
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    drawer.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){ drawer.classList.remove("open"); burger.classList.remove("open"); burger.setAttribute("aria-expanded","false"); });
+    });
+  }
+
+  // scroll reveal
+  const revObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); revObs.unobserve(en.target); } });
+  }, {threshold:0.12, rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll(".reveal").forEach(function(el){ revObs.observe(el); });
+
+  // counters
+  const counters = document.querySelectorAll("[data-count]");
+  const cObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting) return;
+      const el = en.target; const target = parseInt(el.getAttribute("data-count"),10) || 0;
+      const suffix = el.getAttribute("data-suffix") || ""; const dur = 1400; const start = performance.now();
+      function tick(now){
+        const p = Math.min((now-start)/dur, 1);
+        const eased = 1 - Math.pow(1-p, 3);
+        el.textContent = Math.round(eased*target) + suffix;
+        if(p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick); cObs.unobserve(el);
+    });
+  }, {threshold:0.5});
+  counters.forEach(function(el){ cObs.observe(el); });
+
+  // active nav tracking
+  const sections = ["home","services","how","areas","faq","contact"];
+  const navLinks = document.querySelectorAll(".nav-links a");
+  const secObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        const id = en.target.id;
+        navLinks.forEach(function(a){ a.classList.toggle("active", a.getAttribute("href") === "#"+id); });
+      }
+    });
+  }, {threshold:0.4});
+  sections.forEach(function(id){ const s = document.getElementById(id); if(s) secObs.observe(s); });
+
+  // FAQ accordion
+  document.querySelectorAll(".faq-item .faq-q").forEach(function(q){
+    q.addEventListener("click", function(){
+      const item = q.closest(".faq-item");
+      const a = item.querySelector(".faq-a");
+      const isOpen = item.classList.contains("open");
+      document.querySelectorAll(".faq-item.open").forEach(function(o){ o.classList.remove("open"); o.querySelector(".faq-a").style.maxHeight = null; });
+      if(!isOpen){ item.classList.add("open"); a.style.maxHeight = a.scrollHeight + "px"; }
+    });
+  });
+  // FAQ search
+  const faqSearch = document.getElementById("faqSearch");
+  const faqEmpty = document.getElementById("faqEmpty");
+  if(faqSearch){
+    faqSearch.addEventListener("input", function(){
+      const term = faqSearch.value.toLowerCase().trim();
+      let visible = 0;
+      document.querySelectorAll("#faqList .faq-item").forEach(function(item){
+        const text = item.textContent.toLowerCase();
+        const show = !term || text.indexOf(term) !== -1;
+        item.style.display = show ? "" : "none";
+        if(show) visible++;
+      });
+      if(faqEmpty) faqEmpty.style.display = visible === 0 ? "block" : "none";
+    });
+  }
+
+  // gallery filters
+  const figures = document.querySelectorAll("#galleryGrid figure");
+  document.querySelectorAll(".filters button").forEach(function(b){
+    b.addEventListener("click", function(){
+      document.querySelectorAll(".filters button").forEach(function(x){
+        x.classList.remove("active");
+        x.setAttribute("aria-pressed","false");
+      });
+      b.classList.add("active");
+      b.setAttribute("aria-pressed","true");
+      const f = b.getAttribute("data-filter");
+      figures.forEach(function(fig){
+        const show = (f === "all") || (fig.getAttribute("data-cat") === f);
+        fig.style.display = show ? "" : "none";
+      });
+    });
+  });
+
+  // lightbox
+  const lb = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lbImg");
+  const visibleFigs = function(){ return Array.prototype.filter.call(figures, function(f){ return f.style.display !== "none"; }); };
+  let lbList = [], lbIndex = 0;
+  function openLb(i){ lbList = visibleFigs(); lbIndex = i; show(); lb.classList.add("open"); }
+  function show(){ const img = lbList[lbIndex].querySelector("img"); lbImg.src = img.src; lbImg.alt = img.alt; }
+  figures.forEach(function(fig){
+    fig.addEventListener("click", function(){ const list = visibleFigs(); openLb(list.indexOf(fig)); });
+  });
+  document.getElementById("lbClose").addEventListener("click", function(){ lb.classList.remove("open"); });
+  document.getElementById("lbPrev").addEventListener("click", function(e){ e.stopPropagation(); lbIndex = (lbIndex - 1 + lbList.length) % lbList.length; show(); });
+  document.getElementById("lbNext").addEventListener("click", function(e){ e.stopPropagation(); lbIndex = (lbIndex + 1) % lbList.length; show(); });
+  lb.addEventListener("click", function(e){ if(e.target === lb) lb.classList.remove("open"); });
+  document.addEventListener("keydown", function(e){
+    if(!lb.classList.contains("open")) return;
+    if(e.key === "Escape") lb.classList.remove("open");
+    if(e.key === "ArrowLeft"){ lbIndex = (lbIndex - 1 + lbList.length) % lbList.length; show(); }
+    if(e.key === "ArrowRight"){ lbIndex = (lbIndex + 1) % lbList.length; show(); }
+  });
+
+  // form submit hooks
+  const leadBtn = document.getElementById("leadSubmit");
+  if(leadBtn) leadBtn.addEventListener("click", generateWhatsAppTicket);
+  // clear error on input
+  document.querySelectorAll(".field input, .field select, .field textarea").forEach(function(el){
+    el.addEventListener("input", function(){ const w = el.closest(".field"); if(w) w.classList.remove("error"); });
+    el.addEventListener("change", function(){ const w = el.closest(".field"); if(w) w.classList.remove("error"); });
+  });
+});
+
+})();
+</script>
+
+<!-- ===============================
+23. ADMIN MAINTENANCE BLOCK
+================================
+ADRIATIC SHINE — MAINTENANCE NOTES
+Project Version: 1.0
+Last Update: 2026-06
+Languages: en (default), de, fr, it, es, hr  ·  stored in localStorage key "adriatic_lang"
+
+WhatsApp Number EN/DE/FR/IT/ES (display): +34 644 075 065
+WhatsApp Number EN/DE/FR/IT/ES (technical): 34644075065
+WhatsApp Number HR (display): +385 89 928 1833
+WhatsApp Number HR (technical): 385899281833
+
+Logo:            https://res.cloudinary.com/dqje367sj/image/upload/v1782176548/B5939967-0269-4A72-9CD5-79184399AD28_mekq0p.png
+Alternative Logo: https://res.cloudinary.com/dqje367sj/image/upload/v1782176791/E7B2C13D-6BCA-4BD9-AA6B-BD9E248A3E9E_stzkzq.png
+Apartment:       https://res.cloudinary.com/dqje367sj/image/upload/v1782209535/Spring_cleaning_essentials_cleangirlroutine___wmqq9g.jpg
+Villa:           https://res.cloudinary.com/dqje367sj/image/upload/v1782209534/Luxury_holiday_villa_with_pool_in_Istria_-_Homes_of_Croatia_cd8tt3.jpg
+Bed / Linen:     https://res.cloudinary.com/dqje367sj/image/upload/v1782209534/Move-in_Move-out_cleaning_ajxval.jpg
+Bathroom:        https://res.cloudinary.com/dqje367sj/image/upload/v1782176499/__-_2026-06-23T030049.341_hrjoao.jpg
+Bathroom Extra:  https://res.cloudinary.com/dqje367sj/image/upload/v1782209532/__-_2026-06-23T120754.990_bnwudj.jpg
+Terrace / Pool:  https://res.cloudinary.com/dqje367sj/image/upload/v1782209534/Modern_villa_with_private_pool_and_jacuzzi_-_Homes_of_Croatie_collection_sc9s3p.jpg
+Istria Coast:    https://res.cloudinary.com/dqje367sj/image/upload/v1782176227/the_Adriatic_Sea_Croatia_wrk7bf.jpg
+
+LEAD TICKET STRUCTURE (generateWhatsAppTicket → wa.me/34644075065):
+  ID format: ADR-YYYYMMDD-HHMMSS
+  Fields: fullName*, email*, phone*, preferredLanguage*, propertyType*, location*, propertySize,
+          bedrooms, bathrooms, outdoorArea, requestedService*, frequency*, preferredDate, urgency*, notes
+
+SERVICE LIST: Apartment Cleaning, Villa Cleaning, Laundry & Linen, Guest Check-In, Guest Check-Out,
+  Property Restocking, Commercial Cleaning, Partnership Request, General Question
+SUPPORT CATEGORIES: Content Update, Image Replacement, Service Change, Pricing Update,
+  Translation Correction, Form / Ticket Update, Technical Issue, Other
+
+FUTURE INTEGRATION NOTES:
+  - leadData object in the script is JSON-ready. To connect a CRM (Google Sheets via Apps Script,
+    Airtable, Notion, HubSpot, Pipedrive): POST the object to your endpoint inside generateWhatsAppTicket()
+    BEFORE openWhatsApp(). Keep the WhatsApp open as a fallback/confirmation.
+  - Per-city local SEO: structure supports one page per city (Rovinj, Poreč, Pula, Novigrad, Umag, Medulin).
+    Duplicate index.html per city, adjust <title>, meta description, schema areaServed and hero copy.
+  - Client Portal / Property Dashboard / Service History / Invoice Center: placeholders only (see footer).
+
+CODE MAINTENANCE: CSS is organised in numbered sections (01 RESET … 20 RESPONSIVE).
+  JS is organised: 18 WHATSAPP TICKETS, 19 TRANSLATION SYSTEM, 21 UTILITIES.
+  To edit any text, change the value in the `translations` object for each language (keys match data-i18n attributes).
+-->
+
+</body>
+</html>
