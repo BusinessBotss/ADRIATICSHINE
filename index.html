@@ -436,6 +436,20 @@ body[data-theme="night"] .price-row b{color:#071F3A}
 @keyframes spin{to{transform:rotate(360deg)}}
 .form-note{font-size:.74rem;color:var(--text-muted);text-align:center}
 
+.estimate-card{grid-column:1/-1;background:linear-gradient(145deg,rgba(255,255,255,.82),rgba(232,197,106,.14));border:1px solid rgba(200,155,60,.22);border-radius:18px;padding:20px;box-shadow:var(--shadow-sm)}
+.estimate-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px}
+.estimate-head h3{font-size:1.22rem;color:var(--navy)}
+.estimate-head p{font-size:.86rem;color:var(--text-muted);max-width:58ch}
+.estimate-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:16px}
+.estimate-result{background:var(--navy);color:#fff;border-radius:16px;padding:18px;display:grid;gap:10px}
+.estimate-result .line{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:8px;font-size:.9rem}
+.estimate-result .line:last-child{border-bottom:none;padding-bottom:0}
+.estimate-result .total{font-family:var(--font-display);font-size:1.6rem;color:var(--soft-gold)}
+.estimate-result small{color:rgba(248,245,239,.68)}
+body[data-theme="night"] .estimate-card{background:rgba(255,255,255,.08);border-color:rgba(232,197,106,.2)}
+body[data-theme="night"] .estimate-head h3{color:#fff}
+body[data-theme="night"] .estimate-head p{color:rgba(248,245,239,.72)}
+
 /* ticket success (signature element) */
 .ticket{display:none;margin-top:22px;background:var(--navy);border-radius:14px;color:#fff;overflow:hidden;position:relative;box-shadow:var(--shadow-md)}
 .ticket.show{display:block;animation:ticketIn .6s var(--ease)}
@@ -529,6 +543,7 @@ footer{background:var(--deep-navy);color:rgba(248,245,239,.7);padding-block:64px
   .owners,.form-shell,.desk{grid-template-columns:1fr}
   .price-launch{grid-template-columns:1fr}
   .price-dialog{max-height:90vh;border-radius:24px}
+  .estimate-grid{grid-template-columns:repeat(2,1fr)}
   .timeline{grid-template-columns:1fr;gap:0}
   .timeline::before{display:none}
   .step{display:flex;text-align:left;gap:18px;padding:14px 0;align-items:flex-start}
@@ -541,6 +556,8 @@ footer{background:var(--deep-navy);color:rgba(248,245,239,.7);padding-block:64px
   .price-dialog{padding:18px;border-radius:20px}
   .price-dialog-head{gap:12px}
   .price-row{align-items:flex-start}
+  .estimate-grid{grid-template-columns:1fr}
+  .estimate-head{display:block}
   .gallery{columns:1}
   .hero-meta{gap:20px}
   .foot-grid{grid-template-columns:1fr;gap:28px}
@@ -981,6 +998,28 @@ html[dir="rtl"] body{text-align:right}
               <option value="Emergency" data-i18n="u_emergency">Emergency</option>
             </select><span class="err" data-i18n="v_required">This field is required</span></div>
           <div class="field full"><label for="notes" data-i18n="f_notes">Additional Notes</label><textarea id="notes" name="notes" data-i18n-ph="ph_notes"></textarea></div>
+          <div class="estimate-card">
+            <div class="estimate-head">
+              <div>
+                <h3 data-i18n="estimate_title">Instant price estimator</h3>
+                <p data-i18n="estimate_sub">Estimate the base cleaning price and optional extras before sending your request.</p>
+              </div>
+            </div>
+            <div class="estimate-grid">
+              <div class="field"><label for="estWindows" data-i18n="estimate_windows">Window m²</label><input id="estWindows" type="number" min="0" data-i18n-ph="ph_num" /></div>
+              <div class="field"><label for="estWashers" data-i18n="estimate_washers">Laundry washers</label><input id="estWashers" type="number" min="0" data-i18n-ph="ph_num" /></div>
+              <div class="field"><label for="estIronSets" data-i18n="estimate_iron_sets">Ironing sets</label><input id="estIronSets" type="number" min="0" data-i18n-ph="ph_num" /></div>
+              <div class="field"><label for="estTowelSets" data-i18n="estimate_towel_sets">Towel sets</label><input id="estTowelSets" type="number" min="0" data-i18n-ph="ph_num" /></div>
+              <div class="field"><label for="estBeds" data-i18n="estimate_beds">Bed changes</label><input id="estBeds" type="number" min="0" data-i18n-ph="ph_num" /></div>
+            </div>
+            <div class="estimate-result" id="estimateResult" aria-live="polite">
+              <div class="line"><span data-i18n="estimate_base">Base service</span><b id="estimateBase">—</b></div>
+              <div class="line"><span data-i18n="estimate_extras">Extras</span><b id="estimateExtras">0 €</b></div>
+              <div class="line"><span data-i18n="estimate_urgency">Urgency adjustment</span><b id="estimateUrgency">0 €</b></div>
+              <div class="line"><span data-i18n="estimate_total">Estimated total</span><b class="total" id="estimateTotal">—</b></div>
+              <small id="estimateNote" data-i18n="estimate_note_empty">Select property type, service and size to calculate an estimate.</small>
+            </div>
+          </div>
         </div>
         <div class="form-actions">
           <button class="btn btn-gold" id="leadSubmit" type="button">
@@ -1472,6 +1511,19 @@ Object.keys(pricingTranslations).forEach(function(lang){
   translations[lang] = Object.assign({}, translations[lang] || translations.en, pricingTranslations[lang]);
 });
 
+
+const estimatorTranslations = {
+  en:{estimate_title:"Instant price estimator",estimate_sub:"Estimate the base cleaning price and optional extras before sending your request.",estimate_windows:"Window m²",estimate_washers:"Laundry washers",estimate_iron_sets:"Ironing sets",estimate_towel_sets:"Towel sets",estimate_beds:"Bed changes",estimate_base:"Base service",estimate_extras:"Extras",estimate_urgency:"Urgency adjustment",estimate_total:"Estimated total",estimate_note_empty:"Select property type, service and size to calculate an estimate.",estimate_note_ready:"Estimated total based on the published price list. Final quote may vary after review.",estimate_note_agreement:"This request needs a custom quote by agreement.",estimate_from_hour:"from 20 € / hour",estimate_need_size:"Add size in m²"},
+  de:{estimate_title:"Sofortiger Preisrechner",estimate_sub:"Schätzen Sie Grundreinigung und optionale Extras vor dem Absenden der Anfrage.",estimate_windows:"Fenster m²",estimate_washers:"Waschmaschinen",estimate_iron_sets:"Bügel-Sets",estimate_towel_sets:"Handtuch-Sets",estimate_beds:"Bettwechsel",estimate_base:"Basisleistung",estimate_extras:"Extras",estimate_urgency:"Dringlichkeitsaufschlag",estimate_total:"Geschätzte Summe",estimate_note_empty:"Wählen Sie Objekttyp, Leistung und Größe, um eine Schätzung zu berechnen.",estimate_note_ready:"Geschätzte Summe gemäß veröffentlichter Preisliste. Das finale Angebot kann nach Prüfung abweichen.",estimate_note_agreement:"Diese Anfrage benötigt ein individuelles Angebot nach Vereinbarung.",estimate_from_hour:"ab 20 € / Stunde",estimate_need_size:"Größe in m² eingeben"},
+  fr:{estimate_title:"Estimateur instantané",estimate_sub:"Estimez le prix de base et les extras optionnels avant d'envoyer votre demande.",estimate_windows:"Vitres m²",estimate_washers:"Machines de linge",estimate_iron_sets:"Sets repassage",estimate_towel_sets:"Sets serviettes",estimate_beds:"Changements de lit",estimate_base:"Service de base",estimate_extras:"Extras",estimate_urgency:"Ajustement urgence",estimate_total:"Total estimé",estimate_note_empty:"Sélectionnez type de bien, service et surface pour calculer une estimation.",estimate_note_ready:"Total estimé selon la liste de prix publiée. Le devis final peut varier après vérification.",estimate_note_agreement:"Cette demande nécessite un devis personnalisé sur accord.",estimate_from_hour:"dès 20 € / heure",estimate_need_size:"Ajoutez la surface en m²"},
+  it:{estimate_title:"Calcolatore prezzo istantaneo",estimate_sub:"Stima il prezzo base e gli extra opzionali prima di inviare la richiesta.",estimate_windows:"Finestre m²",estimate_washers:"Lavatrici",estimate_iron_sets:"Set stiratura",estimate_towel_sets:"Set asciugamani",estimate_beds:"Cambi letto",estimate_base:"Servizio base",estimate_extras:"Extra",estimate_urgency:"Adeguamento urgenza",estimate_total:"Totale stimato",estimate_note_empty:"Seleziona tipo proprietà, servizio e metratura per calcolare una stima.",estimate_note_ready:"Totale stimato secondo il listino pubblicato. Il preventivo finale può variare dopo verifica.",estimate_note_agreement:"Questa richiesta richiede un preventivo personalizzato su accordo.",estimate_from_hour:"da 20 € / ora",estimate_need_size:"Aggiungi m²"},
+  es:{estimate_title:"Calculador instantáneo",estimate_sub:"Calcula el precio base y extras opcionales antes de enviar la solicitud.",estimate_windows:"Ventanas m²",estimate_washers:"Lavadoras",estimate_iron_sets:"Sets de planchado",estimate_towel_sets:"Sets de toallas",estimate_beds:"Cambios de cama",estimate_base:"Servicio base",estimate_extras:"Extras",estimate_urgency:"Ajuste por urgencia",estimate_total:"Total estimado",estimate_note_empty:"Selecciona tipo de propiedad, servicio y metros para calcular una estimación.",estimate_note_ready:"Total estimado según la lista de precios publicada. La cotización final puede variar tras revisión.",estimate_note_agreement:"Esta solicitud necesita presupuesto personalizado a convenir.",estimate_from_hour:"desde 20 € / hora",estimate_need_size:"Añade m²"},
+  hr:{estimate_title:"Brzi kalkulator cijene",estimate_sub:"Procijenite osnovnu cijenu čišćenja i dodatne usluge prije slanja zahtjeva.",estimate_windows:"Prozori m²",estimate_washers:"Perilice rublja",estimate_iron_sets:"Setovi peglanja",estimate_towel_sets:"Setovi ručnika",estimate_beds:"Promjene kreveta",estimate_base:"Osnovna usluga",estimate_extras:"Dodaci",estimate_urgency:"Dodatak za hitnost",estimate_total:"Procijenjeni ukupno",estimate_note_empty:"Odaberite tip objekta, uslugu i veličinu za izračun procjene.",estimate_note_ready:"Procjena prema objavljenom cjeniku. Konačna ponuda može varirati nakon pregleda.",estimate_note_agreement:"Za ovaj zahtjev potrebna je individualna ponuda po dogovoru.",estimate_from_hour:"od 20 € / sat",estimate_need_size:"Dodajte m²"}
+};
+Object.keys(estimatorTranslations).forEach(function(lang){
+  translations[lang] = Object.assign({}, translations[lang] || translations.en, estimatorTranslations[lang]);
+});
+
 let currentLang = DEFAULT_LANG;
 
 function t(key){
@@ -1488,6 +1540,11 @@ function applyTranslations(){
     const v = t(el.getAttribute("data-i18n-ph"));
     if(v != null) el.setAttribute("placeholder", v);
   });
+  document.querySelectorAll("[data-i18n-aria]").forEach(function(el){
+    const v = t(el.getAttribute("data-i18n-aria"));
+    if(v != null) el.setAttribute("aria-label", v);
+  });
+  updateEstimate();
 }
 
 function applySeo(){
@@ -1585,6 +1642,61 @@ function validate(fieldDefs){
   return ok;
 }
 
+
+function money(n){ return Math.round(n) + " €"; }
+function numberVal(id){ const raw = val(id); const n = parseFloat(raw); return isNaN(n) || n < 0 ? 0 : n; }
+function baseEstimate(type, service, size){
+  const commercial = type === "Commercial Space" || service === "Commercial Cleaning";
+  if(commercial) return {amount:20, label:t("estimate_from_hour"), calculable:false};
+  if(!size) return {amount:null, label:t("estimate_need_size"), calculable:false};
+  const villa = type === "Villa" || service === "Villa Cleaning";
+  if(villa){
+    if(size <= 150) return {amount:140, label:"140 €", calculable:true};
+    if(size <= 250) return {amount:180, label:"180 €", calculable:true};
+    return {amount:null, label:t("price_by_agreement"), calculable:false};
+  }
+  if(size <= 40) return {amount:50, label:"50 €", calculable:true};
+  if(size <= 60) return {amount:65, label:"65 €", calculable:true};
+  if(size <= 80) return {amount:80, label:"80 €", calculable:true};
+  if(size <= 100) return {amount:100, label:"100 €", calculable:true};
+  return {amount:null, label:t("price_by_agreement"), calculable:false};
+}
+function calculateEstimate(){
+  const type = val("propertyType");
+  const service = val("requestedService");
+  const size = numberVal("propertySize");
+  const base = baseEstimate(type, service, size);
+  const extras = (numberVal("estWindows") * 3) + (numberVal("estWashers") * 10) + (numberVal("estIronSets") * 10) + (numberVal("estTowelSets") * 3) + (numberVal("estBeds") * 5);
+  const baseAmount = base.amount || 0;
+  const urgencyAmount = val("urgency") === "Emergency" && base.calculable ? (baseAmount + extras) * 0.2 : 0;
+  const total = base.calculable ? baseAmount + extras + urgencyAmount : null;
+  return {base:base, extras:extras, urgencyAmount:urgencyAmount, total:total};
+}
+function updateEstimate(){
+  const baseEl = document.getElementById("estimateBase");
+  if(!baseEl) return;
+  const extrasEl = document.getElementById("estimateExtras");
+  const urgencyEl = document.getElementById("estimateUrgency");
+  const totalEl = document.getElementById("estimateTotal");
+  const noteEl = document.getElementById("estimateNote");
+  const estimate = calculateEstimate();
+  baseEl.textContent = estimate.base.label;
+  if(extrasEl) extrasEl.textContent = money(estimate.extras);
+  if(urgencyEl) urgencyEl.textContent = money(estimate.urgencyAmount);
+  if(totalEl) totalEl.textContent = estimate.total == null ? t("price_by_agreement") : money(estimate.total);
+  if(noteEl){
+    if(estimate.total == null) noteEl.textContent = estimate.base.label === t("estimate_need_size") ? t("estimate_note_empty") : t("estimate_note_agreement");
+    else noteEl.textContent = t("estimate_note_ready");
+  }
+}
+function estimateSummary(){
+  const estimate = calculateEstimate();
+  return "Base: "+estimate.base.label+"\n"+
+    "Extras: "+money(estimate.extras)+"\n"+
+    "Urgency adjustment: "+money(estimate.urgencyAmount)+"\n"+
+    "Estimated total: "+(estimate.total == null ? t("price_by_agreement") : money(estimate.total));
+}
+
 function openWhatsApp(message){
   const url = "https://wa.me/" + currentWhatsAppNumber() + "?text=" + encodeURIComponent(message);
   const win = window.open(url, "_blank");
@@ -1613,7 +1725,10 @@ function generateWhatsAppTicket(){
       propertyType:val("propertyType"), location:val("location"), size:val("propertySize"),
       bedrooms:val("bedrooms"), bathrooms:val("bathrooms"), outdoorArea:val("outdoorArea"),
       service:val("requestedService"), frequency:val("frequency"), preferredDate:val("preferredDate"),
-      urgency:val("urgency"), notes:val("notes")
+      urgency:val("urgency"),
+      estimateWindows:val("estWindows"), estimateWashers:val("estWashers"), estimateIronSets:val("estIronSets"),
+      estimateTowelSets:val("estTowelSets"), estimateBeds:val("estBeds"),
+      priceEstimate:estimateSummary(), notes:val("notes")
     };
 
     const msg =
@@ -1854,6 +1969,13 @@ document.addEventListener("DOMContentLoaded", function(){
     if(e.key === "ArrowLeft"){ lbIndex = (lbIndex - 1 + lbList.length) % lbList.length; show(); }
     if(e.key === "ArrowRight"){ lbIndex = (lbIndex + 1) % lbList.length; show(); }
   });
+
+  // price estimator updates
+  ["propertyType","propertySize","requestedService","urgency","estWindows","estWashers","estIronSets","estTowelSets","estBeds"].forEach(function(id){
+    const el = document.getElementById(id);
+    if(el){ el.addEventListener("input", updateEstimate); el.addEventListener("change", updateEstimate); }
+  });
+  updateEstimate();
 
   // form submit hooks
   const leadBtn = document.getElementById("leadSubmit");
