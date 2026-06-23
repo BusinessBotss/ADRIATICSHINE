@@ -247,8 +247,8 @@ body[data-theme="night"] .theme-toggle .sun{display:block}
 ================================ */
 .hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--deep-navy);padding-top:120px}
 .hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:contain;object-position:72% center;position:absolute;top:0;left:0;opacity:.28;will-change:transform}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(4,21,39,.96) 0%,rgba(4,21,39,.82) 42%,rgba(7,31,58,.48) 72%,rgba(7,31,58,.22) 100%)}
+.hero-bg img{width:100%;height:100%;object-fit:contain;object-position:72% center;position:absolute;top:0;left:0;opacity:.62;will-change:transform}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(4,21,39,.78) 0%,rgba(4,21,39,.56) 40%,rgba(7,31,58,.20) 72%,rgba(7,31,58,.04) 100%)}
 .hero-inner{position:relative;z-index:2;max-width:760px}
 .hero h1{color:#fff;margin:20px 0 22px}
 .hero h1 em{font-style:italic;color:var(--soft-gold);font-weight:500}
@@ -258,10 +258,6 @@ body[data-theme="night"] .theme-toggle .sun{display:block}
 .hero-meta div{min-width:90px}
 .hero-meta .num{font-family:var(--font-display);font-size:2rem;color:var(--soft-gold);line-height:1}
 .hero-meta .lbl{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(248,245,239,.6);margin-top:8px}
-.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.5);font-family:var(--font-mono);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px}
-.scroll-hint::after{content:"";width:1px;height:40px;background:linear-gradient(rgba(255,255,255,.5),transparent);animation:drop 2s var(--ease) infinite}
-@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-
 /* ===============================
 07. TRUST BAR
 ================================ */
@@ -575,7 +571,6 @@ html[dir="rtl"] body{text-align:right}
       <div><div class="num" data-count="100" data-suffix="%">0</div><div class="lbl" data-i18n="hero_m3">Guest-ready standard</div></div>
     </div>
   </div>
-  <div class="scroll-hint" aria-hidden="true"><span data-i18n="scroll">Scroll</span></div>
 </section>
 
 <!-- ===============================
